@@ -1,0 +1,210 @@
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <title>EFI Tools - Tom Zohar</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background-color: #f5f5f5;
+      font-family: Arial, sans-serif;
+    }
+    .navbar {
+      background-color: #343a40;
+    }
+    .navbar-dark .navbar-nav .nav-link {
+      color: #fff;
+    }
+    .card {
+      background-color: #2e2e2e;
+      color: white;
+      margin: 20px;
+      border-radius: 10px;
+    }
+    .card input, .card select, .card output {
+      margin-top: 10px;
+      width: 100%;
+    }
+    footer {
+      background-color: #343a40;
+      color: white;
+      text-align: center;
+      padding: 10px;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark">
+  <a class="navbar-brand" href="#">EFI</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainNav"
+          aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="mainNav">
+    <ul class="navbar-nav mr-auto">
+
+      <!-- פריט ה־Status הפך ל־dropdown -->
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="statusDropdown" role="button"
+           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Status
+        </a>
+        <div class="dropdown-menu dropdown-menu-right bg-dark" aria-labelledby="statusDropdown">
+          <a class="dropdown-item text-white" href="SVutek.html">Vutek</a>
+         <div class="dropdown-divider" style="border-color: #555;"></div>
+          <a class="dropdown-item text-white" href="SPRO.html">PRO</a>
+        </div>
+      </li>
+
+	   <!-- פריט ה־MATAN הפך ל־dropdown -->
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="statusDropdown" role="button"
+           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Matan
+        </a>
+        <div class="dropdown-menu dropdown-menu-right bg-dark" aria-labelledby="statusDropdown">
+          
+          <!-- כאן הוספנו את הקישור -->
+          <a class="dropdown-item text-white" href="Matan 5M.html">Matan 5M</a>
+          <div class="dropdown-divider" style="border-color: #555;"></div>
+          <a class="dropdown-item text-white" href="Matan 3M.html">Matan 3M</a>
+        </div>
+     
+      </li>
+	  <!-- פריט ה־Vutek DR  הפך ל־dropdown -->
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="statusDropdown" role="button"
+           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Vutek DR
+        </a>
+        <div class="dropdown-menu dropdown-menu-right bg-dark" aria-labelledby="statusDropdown">
+          
+          <!-- כאן הוספנו את הקישור -->
+          <a class="dropdown-item text-white" href="Vutek D 5r.html">Vutek D 5r</a>
+          <div class="dropdown-divider" style="border-color: #555;"></div>
+          <a class="dropdown-item text-white" href="Vutek D 3r.html">Vutek D 3r</a>
+        </div>
+      </li>
+	   </li>
+	<!-- פריט ה־Vutek R+ הפך ל־dropdown -->
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="statusDropdown" role="button"
+           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Vutek R
+        </a>
+        <div class="dropdown-menu dropdown-menu-right bg-dark" aria-labelledby="statusDropdown">
+         
+          <!-- כאן הוספנו את הקישור -->
+          <a class="dropdown-item text-white" href="Vutek5R+.html">Vutek5R+</a>
+          <div class="dropdown-divider" style="border-color: #555;"></div>
+          <a class="dropdown-item text-white" href="Vutek3R+.html">Vutek3R+</a>
+        </div>
+	  
+	  <!-- פריט ה־ Vutek QR  הפך ל־dropdown -->
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="statusDropdown" role="button"
+           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+           Vutek QR 
+        </a>
+        <div class="dropdown-menu dropdown-menu-right bg-dark" aria-labelledby="statusDropdown">
+          
+          <!-- כאן הוספנו את הקישור -->
+          <a class="dropdown-item text-white" href=" Vutek QR 5.html"> Vutek Q5R </a>
+          <div class="dropdown-divider" style="border-color: #555;"></div>
+          <a class="dropdown-item text-white" href=" Vutek QR 3.html"> Vutek Q3R </a>
+        </div>
+      </li>
+	  
+	
+	    
+	  <!-- פריט ה־ Vutek XR  הפך ל־dropdown -->
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="statusDropdown" role="button"
+           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Vutek XR 
+        </a>
+        <div class="dropdown-menu dropdown-menu-right bg-dark" aria-labelledby="statusDropdown">
+          
+          <!-- כאן הוספנו את הקישור -->
+          <a class="dropdown-item text-white" href=" Vutek X5R.html"> Vutek X5R </a>
+          <div class="dropdown-divider" style="border-color: #555;"></div>
+          <a class="dropdown-item text-white" href=" Vutek X3R.html"> Vutek X3R </a>
+        </div>
+      </li>
+	  
+	    
+	  
+	  <!-- פריט ה־ PRO  הפך ל־dropdown -->
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="statusDropdown" role="button"
+           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          PRO 
+        </a>
+        <div class="dropdown-menu dropdown-menu-right bg-dark" aria-labelledby="statusDropdown">
+          
+          <!-- כאן הוספנו את הקישור -->
+          <a class="dropdown-item text-white" href=" PRO32.html"> PRO32 </a>
+          <div class="dropdown-divider" style="border-color: #555;"></div>
+          <a class="dropdown-item text-white" href=" PRO33.html"> PRO33 </a>
+        </div>
+      </li>
+	
+	  
+	  
+	  
+	  
+      <!-- שאר הפריטים כפי שהיו כאן אתה מוסיף את השמות אב בתפריט --> 
+      
+     
+     
+      <li class="nav-item"><a class="nav-link" href="#">EFI OPTION</a></li>
+    </ul>
+  </div>
+</nav>
+<!-- חישוב Y --> 
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="card p-4">
+        <h4>New Y Encoder Resolution</h4>
+        <form oninput="x.value = (a.value * (1500 + (1500 - b.value)) / 1500).toFixed(3)">
+          <label for="a">Old Encoder Resolution:</label>
+          <input type="number" id="a" name="a" value="26205.191" step="any" class="form-control">
+
+          <label for="b">Actual Measurement (~1500mm):</label>
+          <input type="number" id="b" name="b" step="any" class="form-control">
+
+          <label for="x">New Y Resolution Result:</label>
+          <output name="x" for="a b" class="form-control" style="color:lime;"></output>
+        </form>
+
+        <hr style="background: #555;">
+        <p>if less than 150 mm is indicated, indicate the deviation is minus(-).</p>
+        <p>if more than 150 mm is indicated, indicate which deviation is plus(+).</p>
+        <p><strong>for example:</strong><br>149 mm, specify -1<br>151 mm, specify 1</p>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="card p-4">
+        <h4>Voltage tolerance</h4>
+        <p><strong>GEN 5</strong><br>~(14.0v - 15.5v)<br>Delta V [-3.50]</p>
+        <hr style="background: #555;">
+        <p><strong>GEN 3</strong><br>Normal Drops: ~(35.0v - 38.0v)<br>Delta V [+5.20]</p>
+        <p>Small Drops: ~(25.0v - 28.0v)<br>Delta V [0.00]</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  Created by ©Tom Zohar 2019-2025
+</footer>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

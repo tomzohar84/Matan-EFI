@@ -1,0 +1,679 @@
+
+
+
+<!DOCTYPE html>
+<html lang="he">
+<head>
+    <meta charset="UTF-8" />
+    <title>Vutek 5r+ - Box Status Integration</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+
+/*------------------------------- לא לגעת  סגנונות כלליים לדף ----------------------------------------*/
+/* סגנונות כלליים לדף */
+body {
+    font-family: Arial, sans-serif; /* הגדרת גופן ברירת מחדל */
+    background: #fff; /* צבע רקע לבן */
+    margin: 0; /* הסרת שוליים חיצוניים */
+    padding: 0; /* הסרת ריווח פנימי */
+}
+
+h1 {
+    text-align: center; /* מיקום הכותרת במרכז */
+    color: #176c4c; /* צבע ירוק כהה לכותרת */
+    margin: 18px 0 10px 0; /* שוליים חיצוניים סביב הכותרת */
+    font-size: 1em; /* גודל גופן קטן יחסית */
+    letter-spacing: 1px; /* ריווח בין אותיות */
+}
+
+/* סגנונות לטבלה ולמסגרת סביבה */
+.box-table-wrapper {
+    position: relative; /* מיקום יחסי כדי לאפשר מיקום מוחלט של כפתורים בתוכו */
+    width: 900px; /* רוחב מוגדל לטבלה במסכים גדולים */
+    max-width: 98vw; /* רוחב מקסימלי למניעת גלישה במסכים קטנים */
+    margin: 18px auto 0 auto; /* מיקום במרכז הדף עם שוליים עליונים */
+    page-break-inside: avoid; /* מניעת שבירת טבלה בהדפסה */
+}
+
+.box-table {
+    width: 100%; /* רוחב מלא של המסגרת */
+    border-collapse: collapse; /* איחוד גבולות התאים */
+    background: #fff; /* רקע לבן לטבלה */
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04); /* צל קל סביב הטבלה לעומק */
+    font-size: 0.93em; /* גודל גופן קטן יחסית */
+}
+
+.box-table th, .box-table td {
+    border: 1px solid #176c4c; /* גבול ירוק כהה סביב כל תא */
+    padding: 8px; /* ריווח פנימי בתוך התאים */
+    text-align: center; /* מיקום טקסט במרכז התא */
+    color: #176c4c; /* צבע טקסט ירוק כהה */
+    overflow: visible; /* מניעת חיתוך טקסט */
+    text-overflow: unset; /* מניעת קיצור טקסט */
+    white-space: normal; /* אפשרות לשבירת שורות */
+    word-wrap: break-word; /* שבירת מילים ארוכות */
+}
+
+.box-table th {
+    background: #e6f2ef; /* רקע ירוק בהיר לכותרות */
+    font-weight: bold; /* טקסט מודגש */
+}
+
+.box-table th.box-header {
+    background: #e6f2ef; /* רקע ירוק בהיר לתא BOX */
+    color: #176c4c; /* צבע טקסט ירוק כהה */
+    width: 7%; /* רוחב מוקטן לתא BOX */
+    padding: 0; /* ללא ריווח פנימי */
+    white-space: normal; /* אפשרות לשבירת שורות */
+    line-height: 1.2; /* גובה שורה קטן למראה צפוף */
+}
+
+/* סגנונות לתאים ספציפיים בטבלה */
+.row-num-cell {
+    width: 5%; /* רוחב מוקטן מאוד לתא מספר שורה */
+    font-weight: bold; /* טקסט מודגש */
+    color: #176c4c; /* צבע ירוק כהה */
+    text-align: center; /* מיקום טקסט במרכז */
+    background: #fff; /* ללא צבע רקע */
+    border: 1px solid #176c4c; /* מסגרת ירוקה תואמת */
+}
+
+.desc-col {
+    text-align: left; /* מיקום טקסט בצד שמאל לתיאור */
+    font-weight: bold; /* טקסט מודגש */
+    color: #176c4c; /* צבע ירוק כהה */
+    width: 73%; /* רוחב מוגדל מאוד לתא תיאור כדי שיהיה דומיננטי */
+    white-space: normal; /* אפשרות לשבירת שורות */
+    word-break: break-all; /* שבירת מילים ארוכות */
+    font-size: 1.1em; /* גודל גופן מעט גדול יותר לקריאות */
+}
+
+.pn-col {
+    width: 10%; /* רוחב מוקטן מאוד לתא מק"ט */
+    font-weight: bold; /* טקסט מודגש */
+}
+
+.qty-col {
+    width: 15%; /* רוחב מוקטן מאוד לתא כמות */
+    font-weight: bold; /* טקסט מודגש */
+}
+
+.check-col {
+    width: 5%; /* רוחב מוקטן מאוד לתא צ'קבוקס */
+    font-weight: bold; /* טקסט מודגש */
+}
+
+.action-col {
+    width: 5%; /* רוחב מוקטן מאוד לתא פעולות (הסרה/שחזור) */
+}
+
+/* סגנונות לצ'קבוקס */
+input[type="checkbox"] {
+    width: 16px; /* רוחב הצ'קבוקס */
+    height: 16px; /* גובה הצ'קבוקס */
+    cursor: pointer; /* סמן עכבר בצורת יד ללחיצה */
+}
+
+/* סגנונות לשדות קלט (תיבות טקסט) בשורות חדשות */
+input[type="text"], input[type="number"] {
+    border: none; /* הסרת מסגרת סביב שדות הקלט */
+    background: transparent; /* רקע שקוף כדי שלא ייראה כמו ריבוע */
+    width: 100%; /* רוחב מלא של התא */
+    height: 100%; /* גובה מלא של התא */
+    padding: 0; /* הסרת ריווח פנימי */
+    margin: 0; /* הסרת שוליים */
+    outline: none; /* הסרת מסגרת פוקוס בעת לחיצה */
+    text-align: inherit; /* ירושת מיקום טקסט מהתא (שמאל לתיאור, מרכז לאחרים) */
+    color: #176c4c; /* צבע טקסט ירוק כהה, תואם לטבלה */
+    font-size: 1em; /* גודל גופן תואם לטבלה */
+    font-family: Arial, sans-serif; /* גופן תואם לטבלה */
+}
+
+/* סגנונות לתפריט נפתח (select) */
+select {
+    border: none; /* הסרת מסגרת סביב התפריט הנפתח */
+    background: transparent; /* רקע שקוף */
+    width: 100%; /* רוחב מלא של התא */
+    padding: 0; /* הסרת ריווח פנימי */
+    margin: 0; /* הסרת שוליים */
+    outline: none; /* הסרת מסגרת פוקוס */
+    color: #176c4c; /* צבע טקסט ירוק כהה */
+    font-size: 1em; /* גודל גופן תואם לטבלה */
+    cursor: pointer; /* סמן עכבר בצורת יד */
+}
+
+/* סגנונות לכפתורים בצד הימני של הטבלה */
+.icon-btn {
+    position: absolute; /* מיקום מוחלט ביחס למסגרת הטבלה */
+    right: -35px; /* מרחיק את הכפתורים מהטבלה כדי למנוע חפיפה */
+    background: none; /* ללא רקע */
+    border: none; /* ללא מסגרת */
+    cursor: pointer; /* סמן עכבר בצורת יד */
+    z-index: 10; /* שכבה עליונה כדי שיהיה מעל אלמנטים אחרים */
+    padding: 0; /* ללא ריווח פנימי */
+    margin-bottom: 10px; /* מרווח אנכי בין כפתורים */
+}
+
+.icon-btn img {
+    width: 24px; /* גודל אייקון מוגדל לבהירות */
+    height: 24px; /* גודל אייקון מוגדל */
+    display: block; /* תצוגה כבלוק */
+}
+
+.trashBtn {
+    top: 0px; /* כפתור הפח בראש, קרוב לשורת הכותרת */
+}
+
+.undoBtn {
+    top: 0px; /* כפתור השחזור של הטבלה באותו מקום כמו הפח (מופיע רק כשהפח מוסתר) */
+}
+
+.addRowBtn {
+    top: 34px; /* כפתור הוספת שורה מתחת לפח, עם מרווח אנכי ברור */
+}
+
+/* סגנונות למצב מוסתר (טבלה או שורה) */
+.dimmed {
+    opacity: 0.34; /* שקיפות לטבלה מוסתרת */
+    pointer-events: none; /* מניעת לחיצה */
+    filter: grayscale(0.7) blur(1px); /* אפקט אפור וטשטוש */
+    user-select: none; /* מניעת בחירת טקסט */
+}
+
+.dimmed * {
+    pointer-events: none !important; /* מניעת לחיצה על כל האלמנטים בתוך הטבלה המוסתרת */
+    user-select: none !important; /* מניעת בחירת טקסט */
+}
+
+.box-table-wrapper.dimmed .undoBtn {
+    pointer-events: auto !important; /* אפשרות ללחוץ על כפתור השחזור בטבלה מוסתרת */
+    filter: none !important; /* הסרת טשטוש */
+    opacity: 1 !important; /* שקיפות מלאה */
+}
+
+/* סגנונות לחלון הכפתורים הצף */
+.floating-window {
+    position: fixed; /* מיקום קבוע בצד שמאל למעלה */
+    top: 10px; /* מרחק מהחלק העליון */
+    left: 10px; /* מרחק מהצד השמאלי */
+    background: #fff; /* רקע לבן */
+    border: 2px solid #23b6d8; /* מסגרת כחולה */
+    border-radius: 16px; /* פינות מעוגלות */
+    box-shadow: 0 4px 18px rgba(0,0,0,0.10); /* צל סביב החלון */
+    z-index: 2000; /* שכבה עליונה מאוד */
+    display: flex; /* תצוגת פלקס לעריכה אנכית */
+    flex-direction: column; /* כיוון אנכי */
+    gap: 12px; /* מרווח בין כפתורים */
+    align-items: center; /* מיקום במרכז */
+    padding: 12px 10px; /* ריווח פנימי */
+    user-select: none; /* מניעת בחירת טקסט */
+}
+
+.floating-window button {
+    background: none; /* ללא רקע */
+    border: none; /* ללא מסגרת */
+    padding: 0; /* ללא ריווח פנימי */
+    cursor: pointer; /* סמן עכבר בצורת יד */
+    transition: transform 0.13s; /* אנימציה קלה בעת ריחוף */
+    outline: none; /* הסרת מסגרת פוקוס */
+}
+
+.floating-window button:focus,
+.floating-window button:hover {
+    transform: scale(1.08); /* הגדלה קלה בעת ריחוף או פוקוס */
+}
+
+.floating-window img {
+    width: 32px; /* גודל אייקון */
+    height: 32px; /* גודל אייקון */
+    border-radius: 50%; /* צורה עגולה */
+    background: #fff; /* רקע לבן */
+    border: 2px solid #ff9900; /* מסגרת כתומה */
+    box-shadow: 0 2px 8px rgba(0,0,0,0.10); /* צל קל */
+}
+
+.floating-window .add-btn {
+    width: 34px; /* גודל כפתור הוספה */
+    height: 34px; /* גודל כפתור הוספה */
+    border-radius: 50%; /* צורה עגולה */
+    background: #23b6d8; /* רקע כחול */
+    color: #fff; /* צבע טקסט לבן */
+    font-size: 2em; /* גודל גופן גדול */
+    line-height: 0.8; /* גובה שורה */
+    box-shadow: 0 2px 8px rgba(0,0,0,0.10); /* צל קל */
+    display: flex; /* תצוגת פלקס למיקום */
+    align-items: center; /* מיקום אנכי במרכז */
+    justify-content: center; /* מיקום אופקי במרכז */
+}
+
+.floating-window .add-btn:hover {
+    background: #176c4c; /* שינוי צבע לירוק כהה בעת ריחוף */
+}
+
+/* סגנונות לשורות מוסתרות */
+.row-dimmed td, .row-dimmed input, .row-dimmed select {
+    color: #aaa !important; /* צבע אפור לטקסט בשורות מוסתרות */
+    background: #f5f5f5 !important; /* רקע אפור בהיר */
+}
+
+.row-dimmed input, .row-dimmed select {
+    pointer-events: none; /* מניעת לחיצה על צ'קבוקס או תפריט נפתח בשורות מוסתרות */
+}
+
+.row-dimmed .del-row-btn {
+    display: none; /* הסתרת כפתור הסרה בשורות מוסתרות */
+}
+
+.row-dimmed .undo-row-btn {
+    display: inline; /* הצגת כפתור שחזור בשורות מוסתרות */
+}
+
+.undo-row-btn {
+    display: none; /* כפתור שחזור מוסתר כברירת מחדל */
+}
+
+/* סגנונות לכפתורי פעולה בתוך הטבלה */
+.del-row-btn, .undo-row-btn {
+    background: none; /* ללא רקע */
+    border: none; /* ללא מסגרת */
+    cursor: pointer; /* סמן עכבר בצורת יד */
+    color: #176c4c; /* צבע ירוק כהה */
+    font-size: 1em; /* גודל גופן רגיל */
+}
+
+/* סגנונות לאזור הערות בסוף הדף */
+.notes-section {
+    width: 877px; /* רוחב תואם לטבלאות */
+    max-width: 98vw; /* רוחב מקסימלי למניעת גלישה */
+    margin: 20px auto; /* מיקום במרכז הדף עם שוליים עליונים */
+    padding: 10px; /* ריווח פנימי */
+    background: #fff; /* רקע לבן */
+    border: 1px solid #176c4c; /* מסגרת ירוקה תואמת לטבלאות */
+    border-radius: 5px; /* פינות מעוגלות קלות */
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04); /* צל קל לעומק, תואם לטבלאות */
+}
+
+.notes-section h2 {
+    color: #176c4c; /* צבע ירוק כהה לכותרת, תואם לטבלאות */
+    font-size: 1.2em; /* גודל גופן מעט גדול */
+    margin: 0 0 10px 0; /* שוליים תחתונים */
+    text-align: center; /* מיקום במרכז */
+    background: #e6f2ef; /* רקע ירוק בהיר, תואם לכותרות הטבלאות */
+    padding: 5px; /* ריווח פנימי */
+    border-radius: 3px; /* פינות מעוגלות קלות */
+}
+
+#notes-area {
+    width: 100%; /* רוחב מלא של האזור */
+    border: 1px solid #176c4c; /* מסגרת ירוקה דקה, תואמת לטבלאות */
+    border-radius: 5px; /* פינות מעוגלות */
+    padding: 10px; /* ריווח פנימי */
+    font-family: Arial, sans-serif; /* גופן תואם לטבלה */
+    font-size: 1em; /* גודל גופן רגיל */
+    color: #176c4c; /* צבע טקסט ירוק כהה, תואם לטבלאות */
+    resize: vertical; /* אפשרות לשנות גובה בלבד */
+    box-sizing: border-box; /* כולל את המסגרת והריווח בחישוב הרוחב */
+    background: #fff; /* רקע לבן, תואם לטבלאות */
+}
+
+#notes-area:focus {
+    outline: none; /* הסרת מסגרת פוקוס */
+    border-color: #176c4c; /* שמירה על צבע מסגרת בעת פוקוס */
+    box-shadow: 0 0 3px rgba(23, 108, 76, 0.3); /* צל קל בעת פוקוס */
+}
+
+.save-notes-btn {
+    display: block; /* תצוגה כבלוק */
+    margin: 10px auto 0 auto; /* מיקום במרכז עם שוליים עליונים */
+    padding: 8px 15px; /* ריווח פנימי */
+    background: #23b6d8; /* רקע כחול, תואם לכפתורי הוספה */
+    color: #fff; /* צבע טקסט לבן */
+    border: none; /* ללא מסגרת */
+    border-radius: 5px; /* פינות מעוגלות */
+    cursor: pointer; /* סמן עכבר בצורת יד */
+    font-size: 1em; /* גודל גופן רגיל */
+    transition: background 0.2s; /* אנימציה לשינוי צבע */
+}
+
+.save-notes-btn:hover {
+    background: #176c4c; /* שינוי צבע לירוק כהה בעת ריחוף, תואם לכפתורים אחרים */
+}
+
+/* סגנונות לקו מפריד */
+hr.air {
+    width: 950px; /* רוחב תואם לטבלאות */
+    max-width: 98vw; /* רוחב מקסימלי למניעת גלישה */
+    margin: 15px auto; /* מיקום במרכז עם שוליים עליונים ותחתונים */
+    border: 0; /* הסרת גבול ברירת מחדל */
+    border-top: 5px solid #ff0000; /* קו אדום, עובי ניתן לשינוי */
+    height: 0; /* גובה אפס כדי להציג רק את הקו */
+}
+
+/* סגנונות להדפסה */
+@media print {
+    .floating-window, .icon-btn, .save-notes-btn, hr.air, .noPrint {
+        display: none !important; /* הסתרת כפתורים צפים, כפתורי טבלה, קו מפריד אדום ואלמנטים עם noPrint בהדפסה */
+    }
+    .box-table-wrapper.dimmed {
+        display: none !important; /* הסתרת טבלאות מוסתרות בהדפסה */
+
+
+/*------------------------------- לא לגעת   סיום סגנונות כלליים לדף ----------------------------------------*/
+    </style>
+</head>
+<body>
+
+    <!------------------------------------- לא לגעת  חלון כפתורים צף---------------------- -->
+    <div class="floating-window">
+        <button title="הצג כ-PDF" onclick="window.print()">
+            <img src="https://raw.githubusercontent.com/RL3printer/Matan_EFI/main/icons/pdficon.png" alt="PDF">
+        </button>
+        <button title="חזרה לדף הבית" onclick="window.location.href='index.html'">
+            <img src="https://raw.githubusercontent.com/RL3printer/Matan_EFI/main/icons/backIcon.jpg" alt="Home">
+        </button>
+        <button class="add-btn" title="הוסף טבלה ריקה" onclick="addEmptyTable()">+</button>
+    </div>
+
+<!------------------------------------- לא לגעת סיום   חלון כפתורים צף---------------------- -->
+
+<!------------------------------------- כותרת של הדף---------------------- -->
+    <h1>PRO33 - Box Status Integration</h1>
+<!------------------------------------- כותרת של הדף---------------------- -->
+	
+	
+<!---------------------------- טבלה מסוג 1 - BOX 1 ---------------------------->
+<div class="box-table-wrapper">
+    <button class="icon-btn trashBtn" title="הסר טבלה" onclick="dimTable(this)">
+        <img src="https://cdn-icons-png.flaticon.com/512/1214/1214428.png" alt="Delete">
+    </button>
+    <button class="icon-btn undoBtn" title="החזר טבלה" style="display:none;" onclick="restoreTable(this)">
+        <img src="https://cdn-icons-png.flaticon.com/512/109/109618.png" alt="Undo">
+    </button>
+    <button class="icon-btn addRowBtn" title="הוסף שורה" onclick="addRowToTable(this)">
+        <img src="https://cdn-icons-png.flaticon.com/512/992/992651.png" alt="Add Row">
+    </button>
+    <table class="box-table">
+        <tr>
+            <th class="box-header">BOX<br><span class="box-current"></span><br>מתוך<br><span class="box-total"></span></th>
+            <th>DESCRIPTION</th>
+            <th>P/N</th>
+            <th>Qty</th>
+            <th>CHECK LIST</th>
+            <th class="action-col">Del</th>
+        </tr>
+        <tr class="data-row">
+            <td class="row-num-cell">1</td>
+            <td class="desc-col">Double Wheel Holder</td>
+            <td class="pn-col">11100461</td>
+            <td class="qty-col">3</td>
+            <td class="check-col"><input type="checkbox"></td>
+            <td class="action-col">
+                <button class="del-row-btn" onclick="hideRow(this)">✖</button>
+                <button class="undo-row-btn" onclick="restoreRow(this)">↩</button>
+            </td>
+		 <tr class="data-row">
+                 <td class="row-num-cell">2</td>
+			  <td class="desc-col">SHAFT SUPPORT</td>
+<td class="pn-col">11102040</td>
+            <td class="qty-col">6</td>
+            <td class="check-col"><input type="checkbox"></td>
+            <td class="action-col">
+                <button class="del-row-btn" onclick="hideRow(this)">✖</button>
+                <button class="undo-row-btn" onclick="restoreRow(this)">↩</button>
+        </tr>
+        <!-- שורות נוספות כפי שמופיעות בקוד שלך -->
+    </table>
+</div>
+
+<!---------------------------- טבלה מסוג 1 סיום- BOX 1 ---------------------------->
+	
+<!-- קו מפריד בין טבלאות, לא יופיע בהדפסה -->
+<hr class="noPrint air">
+
+
+<!----------------------------- טבלה ראשונה עם תפריט נפתח --------------------->
+
+<div class="box-table-wrapper">
+    <button class="icon-btn trashBtn" title="הסר טבלה" onclick="dimTable(this)">
+        <img src="https://cdn-icons-png.flaticon.com/512/1214/1214428.png" alt="Delete">
+    </button>
+    <button class="icon-btn undoBtn" title="החזר טבלה" style="display:none;" onclick="restoreTable(this)">
+        <img src="https://cdn-icons-png.flaticon.com/512/109/109618.png" alt="Undo">
+    </button>
+    <button class="icon-btn addRowBtn" title="הוסף שורה" onclick="addRowToTable(this)">
+        <img src="https://cdn-icons-png.flaticon.com/512/992/992651.png" alt="Add Row">
+    </button>
+    <table class="box-table">
+        <tr>
+            <th class="box-header">BOX<br><span class="box-current">5</span><br>מתוך<br><span class="box-total">41</span></th>
+            <th>DESCRIPTION</th>
+            <th>P/N</th>
+            <th>Qty</th>
+            <th>CHECK<br>LIST</th>
+            <th class="action-col">Del</th>
+        </tr>
+        <tr class="data-row">
+            <td class="row-num-cell">1</td>
+            <td class="desc-col">MEDIA DISK</td>
+            <td class="pn-col">11100551</td>
+            <td class="qty-col">
+                <select>
+                    <option>2</option>
+                    <option>4</option>
+                    <option>6</option>
+                </select>
+            </td>
+            <td class="check-col"><input type="checkbox"></td>
+            <td class="action-col">
+                <button class="del-row-btn" onclick="hideRow(this)">✖</button>
+                <button class="undo-row-btn" onclick="restoreRow(this)">↩</button>
+            </td>
+        </tr>
+    </table>
+</div>
+<!----------------------------- טבלה ראשונה עם תפריט נפתח סיום  --------------------->
+
+
+
+   <!-------------------------- טבלה אחרונה - BOX 42 עם מחיקת שורות ------------------>
+<div class="box-table-wrapper">
+    <button class="icon-btn trashBtn" title="הסר טבלה" onclick="dimTable(this)">
+        <img src="https://cdn-icons-png.flaticon.com/512/1214/1214428.png" alt="Delete">
+    </button>
+    <button class="icon-btn undoBtn" title="החזר טבלה" style="display:none;" onclick="restoreTable(this)">
+        <img src="https://cdn-icons-png.flaticon.com/512/109/109618.png" alt="Undo">
+    </button>
+    <button class="icon-btn addRowBtn" title="הוסף שורה" onclick="addRowToTable(this)">
+        <img src="https://cdn-icons-png.flaticon.com/512/992/992651.png" alt="Add Row">
+    </button>
+    <table class="box-table">
+        <tr>
+            <th class="box-header">BOX<br><span class="box-current"></span><br>מתוך<br><span class="box-total"></span></th>
+            <th>DESCRIPTION</th>
+            <th>P/N</th>
+            <th>Qty</th>
+            <th>CHECK LIST</th>
+            <th class="action-col">Del</th>
+        </tr>
+        <tr class="data-row">
+            <td class="row-num-cell">1</td>
+            <td class="desc-col">INK EFI MATAN SUPERRANGE XF V3 CYAN</td>
+            <td class="pn-col">45190876</td>
+            <td class="qty-col"><input type="text" placeholder="כמות"></td>
+            <td class="check-col"><input type="checkbox"></td>
+            <td class="action-col">
+                <button class="del-row-btn" onclick="hideRow(this)">✖</button>
+                <button class="undo-row-btn" onclick="restoreRow(this)">↩</button>
+            </td>
+        </tr>
+        <!-- אפשר להוסיף עוד שורות באותו פורמט -->
+    </table>
+</div>
+
+ <!-------------------------- טבלה אחרונה - BOX 42 עם מחיקת שורות ------------------>
+	
+<!---------------------- אזור הערות בסוף הדף, מתחת לכל הטבלאות ---------------------->
+<div class="notes-section">
+    <h2>הערות</h2>
+    <textarea id="notes-area" placeholder="כתוב כאן את ההערות שלך..." rows="5"></textarea>
+    
+</div>
+<!---------------------- אזור הערות בסוף הדף, מתחת לכל הטבלאות ---------------------->
+
+    <script>
+
+ <!----------------------JavaScript  ----------------------> 
+	   
+// עדכון מספור BOX רק לטבלאות גלויות
+function updateBoxNumbers() {
+    const visibleWrappers = Array.from(document.querySelectorAll('.box-table-wrapper:not(.dimmed)'));
+    visibleWrappers.forEach((wrapper, index) => {
+        const currentSpan = wrapper.querySelector('.box-current');
+        const totalSpan = wrapper.querySelector('.box-total');
+        if (currentSpan) currentSpan.textContent = index + 1;
+        if (totalSpan) totalSpan.textContent = visibleWrappers.length;
+    });
+}
+
+// עדכון מספרי שורה בטבלה
+function updateRowNumbers(table) {
+    const rows = table.querySelectorAll('tr.data-row:not(.row-dimmed)'); // שורות הנתונים הגלויות בלבד
+    rows.forEach((row, index) => {
+        const rowNumCell = row.querySelector('.row-num-cell');
+        if (rowNumCell) {
+            rowNumCell.textContent = index + 1;
+        }
+    });
+}
+
+// הפעלת העדכון עבור כל הטבלאות בדף
+function updateAllRowNumbers() {
+    const tables = document.querySelectorAll('.box-table');
+    tables.forEach(table => updateRowNumbers(table));
+}
+
+// הוספת טבלה חדשה לפני אזור ההערות
+function addEmptyTable() {
+    const wrapper = document.createElement('div');
+    wrapper.className = 'box-table-wrapper';
+    wrapper.innerHTML = `
+        <button class="icon-btn trashBtn" title="הסר טבלה" onclick="dimTable(this)">
+            <img src="https://cdn-icons-png.flaticon.com/512/1214/1214428.png" alt="Delete">
+        </button>
+        <button class="icon-btn undoBtn" title="החזר טבלה" style="display:none;" onclick="restoreTable(this)">
+            <img src="https://cdn-icons-png.flaticon.com/512/109/109618.png" alt="Undo">
+        </button>
+        <button class="icon-btn addRowBtn" title="הוסף שורה" onclick="addRowToTable(this)">
+            <img src="https://cdn-icons-png.flaticon.com/512/992/992651.png" alt="Add Row">
+        </button>
+        <table class="box-table">
+            <tr>
+                <th class="box-header">BOX<br><span class="box-current"></span><br>מתוך<br><span class="box-total"></span></th>
+                <th>DESCRIPTION</th>
+                <th>P/N</th>
+                <th>Qty</th>
+                <th>CHECK LIST</th>
+                <th class="action-col">Del</th>
+            </tr>
+            <tr class="data-row">
+                <td class="row-num-cell"></td>
+                <td class="desc-col"><input type="text" placeholder="תיאור"></td>
+                <td class="pn-col"><input type="text" placeholder="מק״ט"></td>
+                <td class="qty-col"><input type="number" placeholder="כמות"></td>
+                <td class="check-col"><input type="checkbox"></td>
+                <td class="action-col">
+                    <button class="del-row-btn" onclick="hideRow(this)">✖</button>
+                    <button class="undo-row-btn" onclick="restoreRow(this)">↩</button>
+                </td>
+            </tr>
+        </table>
+    `;
+    // הוספת הטבלה החדשה לפני אזור ההערות
+    const notesSection = document.querySelector('.notes-section');
+    if (notesSection) {
+        document.body.insertBefore(wrapper, notesSection);
+    } else {
+        document.body.appendChild(wrapper);
+    }
+    updateBoxNumbers(); // עדכון מספרי BOX לאחר הוספת טבלה
+    updateAllRowNumbers(); // עדכון מספרי שורה
+}
+
+// הוספת שורה חדשה לטבלה
+function addRowToTable(btn) {
+    const wrapper = btn.closest('.box-table-wrapper');
+    const table = wrapper.querySelector('.box-table');
+    const newRow = document.createElement('tr');
+    newRow.className = 'data-row';
+    newRow.innerHTML = `
+        <td class="row-num-cell"></td>
+        <td class="desc-col"><input type="text" placeholder="תיאור"></td>
+        <td class="pn-col"><input type="text" placeholder="מק״ט"></td>
+        <td class="qty-col"><input type="number" placeholder="כמות"></td>
+        <td class="check-col"><input type="checkbox"></td>
+        <td class="action-col">
+            <button class="del-row-btn" onclick="hideRow(this)">✖</button>
+            <button class="undo-row-btn" onclick="restoreRow(this)">↩</button>
+        </td>
+    `;
+    table.appendChild(newRow);
+    updateRowNumbers(table); // עדכון מספרי שורה לאחר הוספה
+}
+
+// הסתרת שורה
+function hideRow(btn) {
+    const tr = btn.closest('tr');
+    tr.classList.add('row-dimmed');
+    tr.querySelector('.del-row-btn').style.display = 'none';
+    tr.querySelector('.undo-row-btn').style.display = 'inline';
+    updateRowNumbers(tr.closest('.box-table')); // עדכון מספרי שורה לאחר הסתרה
+}
+
+// שחזור שורה
+function restoreRow(btn) {
+    const tr = btn.closest('tr');
+    tr.classList.remove('row-dimmed');
+    tr.querySelector('.del-row-btn').style.display = 'inline';
+    tr.querySelector('.undo-row-btn').style.display = 'none';
+    updateRowNumbers(tr.closest('.box-table')); // עדכון מספרי שורה לאחר שחזור
+}
+
+// הסתרת טבלה
+function dimTable(btn) {
+    const wrapper = btn.closest('.box-table-wrapper');
+    wrapper.classList.add('dimmed');
+    wrapper.querySelector('.trashBtn').style.display = 'none';
+    wrapper.querySelector('.undoBtn').style.display = 'block';
+    updateBoxNumbers(); // עדכון מספרי BOX לאחר הסתרה
+}
+
+// שחזור טבלה
+function restoreTable(btn) {
+    const wrapper = btn.closest('.box-table-wrapper');
+    wrapper.classList.remove('dimmed');
+    wrapper.querySelector('.trashBtn').style.display = 'block';
+    wrapper.querySelector('.undoBtn').style.display = 'none';
+    updateBoxNumbers(); // עדכון מספרי BOX לאחר שחזור
+}
+
+// שמירת הערות (פונקציה בסיסית, ניתן להרחיב)
+function saveNotes() {
+    const notes = document.getElementById('notes-area').value;
+    localStorage.setItem('notes', notes); // שמירה ב-localStorage
+    alert('ההערות נשמרו בהצלחה!');
+}
+
+// טעינת הערות משמירה קודמת בעת טעינת הדף
+window.onload = function() {
+    const savedNotes = localStorage.getItem('notes');
+    if (savedNotes) {
+        document.getElementById('notes-area').value = savedNotes;
+    }
+    updateBoxNumbers(); // עדכון מספרי BOX בעת טעינה
+    updateAllRowNumbers(); // עדכון מספרי שורה בעת טעינה
+};
+
+    </script>
+
+</body>
+</html>

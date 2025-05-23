@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="he" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <title>STATUS Pro 32</title>
+  <style>
+    /* עיצוב כללי של הדף */
+    body {
+      background: #fff;
+      font-family: Arial, sans-serif;
+      color: #111;
+      margin: 0;
+      padding: 0;
+    }
+    /* עיצוב הכותרת הראשית */
+    h1 {
+      color: #e53935;
+      text-align: center;
+      margin: 50px 0 10px 0; /* רווח במסך */
+      font-size: 2.2rem;
+      letter-spacing: 1px;
+    }
+    /* קונטיינר ראשי שמרכז את שתי העמודות */
+    .main-container {
+      margin: 0 auto 0 auto;
+      max-width: 1200px;
+      display: flex; /* שתי עמודות זו לצד זו */
+      gap: 24px;
+      justify-content: center;
+      align-items: flex-start;
+    }
+    /* כל עמודה (שמאלית/ימנית) */
+    .col {
+      flex: 1 1 0;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      min-width: 0;
+    }
+    /* כותרות סקשנים */
+    .section-title {
+      color: #ff9900;
+      font-weight: bold;
+      font-size: 1.1rem;
+      text-align: center;
+      border-bottom: 2px solid #ff9900;
+      margin-bottom: 0;
+      margin-top: 8px;
+      padding-bottom: 2px;
+      letter-spacing: 0.2px;
+      background: #fff;
+    }
+    /* עיצוב טבלאות */
+    .custom-table {
+      width: 100%;
+      border: 1px solid #bdbdbd;
+      border-collapse: collapse;
+      background: #fff;
+      font-size: 1rem;
+    }
+    /* עיצוב תאים בטבלאות */
+    .custom-table th, .custom-table td {
+      border: 1px solid #bdbdbd;
+      padding: 6px 8px;
+      vertical-align: middle;
+    }
+    /* כותרות עמודות בטבלאות */
+    .custom-table th {
+      background: #fff;
+      color: #111;
+      text-align: center;
+      font-weight: bold;
+    }
+    /* שדות טקסט בטבלאות */
+    .custom-table input[type="text"] {
+      width: 98%;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+      padding: 2px 6px;
+      font-size: 1rem;
+      background: #fafafa;
+      transition: border 0.2s;
+    }
+    /* שינוי גבול שדה טקסט בפוקוס */
+    .custom-table input[type="text"]:focus {
+      border: 1.5px solid #ff9900;
+      outline: none;
+      background: #fffbe8;
+    }
+    /* עיצוב תאי אופציות */
+    .options-table td {
+      text-align: left;
+    }
+    /* עיצוב תיבות סימון */
+    .options-table input[type="checkbox"] {
+      display: block;
+      margin: 0 auto;
+      transform: scale(1.1);
+    }
+    /* עיצוב שדות טקסט בטבלת אופציות */
+    .options-table input[type="text"] {
+      width: 70px;
+      text-align: center;
+      margin: 0 auto;
+      font-size: 1rem;
+      border: 1px solid #bdbdbd;
+      border-radius: 3px;
+      padding: 2px 4px;
+    }
+    /* תווית לשדה לקוח */
+    .form-label {
+      font-weight: bold;
+      font-size: 1.07rem;
+      margin-bottom: 0;
+      color: #222;
+    }
+    /* שדה לקוח */
+    .customer-input {
+      border: 2px solid #ff9900;
+      border-radius: 4px;
+      width: 500px;
+      display: inline-block;
+      margin-left: 10px;
+      padding: 2px 8px;
+      font-size: 1rem;
+      background: #fafafa;
+      transition: border 0.2s;
+    }
+    /* שינוי גבול שדה לקוח בפוקוס */
+    .customer-input:focus {
+      border: 2px solid #e53935;
+      outline: none;
+      background: #fffbe8;
+    }
+    /* שורת שדה הלקוח */
+    .customer-row {
+      margin-bottom: 14px;
+      margin-top: 18px;
+      text-align: left;
+      max-width: 1200px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    /* אזור ההערות */
+    .notes-section {
+      max-width: 1200px;
+      margin: 30px auto 0 auto;
+      padding: 0 10px;
+    }
+    .notes-section label {
+      font-weight: bold;
+      color: #ff9900;
+      font-size: 1.07rem;
+      margin-bottom: 2px;
+      display: block;
+    }
+    .notes-section textarea {
+      width: 100%;
+      min-height: 60px;
+      border: 1.5px solid #bdbdbd;
+      border-radius: 4px;
+      padding: 6px 8px;
+      font-size: 1rem;
+      background: #fafafa;
+      resize: vertical;
+      transition: border 0.2s;
+    }
+    .notes-section textarea:focus {
+      border: 1.5px solid #ff9900;
+      outline: none;
+      background: #fffbe8;
+    }
+    /* חלון צף עם אייקונים */
+    .floating-window {
+      position: fixed;
+      top: 24px;
+      left: 24px;
+      background: #ffffffee;
+      border: 1.5px solid #ccc;
+      border-radius: 12px;
+      padding: 10px 18px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.13);
+      z-index: 2000;
+      cursor: move;
+      display: flex;
+      gap: 16px;
+      align-items: center;
+      user-select: none;
+    }
+    .floating-window button {
+      background: none;
+      border: none;
+      padding: 0;
+      cursor: pointer;
+      pointer-events: auto;
+      transition: transform 0.12s;
+    }
+    .floating-window button:hover {
+      transform: scale(1.08);
+    }
+    .floating-window img {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: #fff;
+      border: 1.5px solid #ff9900;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.07);
+      object-fit: cover;
+      transition: box-shadow 0.2s;
+    }
+    .floating-window img:hover {
+      box-shadow: 0 3px 12px rgba(255,153,0,0.19);
+    }
+    /* רספונסיביות למסכים קטנים */
+    @media (max-width: 900px) {
+      .main-container {
+        flex-direction: column;
+        align-items: stretch;
+        padding: 0 2vw;
+        max-width: 98vw;
+        gap: 0;
+      }
+      .col {
+        min-width: 0;
+        max-width: 100%;
+      }
+      .notes-section, .customer-row {
+        max-width: 98vw;
+      }
+      .floating-window {
+        left: 8px;
+        top: 8px;
+        padding: 6px 8px;
+        gap: 8px;
+      }
+      .floating-window img {
+        width: 36px;
+        height: 36px;
+      }
+    }
+    /* עיצוב הדפסה - הכל נכנס לעמוד אחד במצב Portrait */
+    @media print {
+      @page {
+        size: A4 portrait; /* שינוי למצב Portrait */
+        margin: 0.5cm;
+      }
+      html, body {
+        background: #fff !important;
+        color: #111 !important;
+        width: 100vw;
+        height: 100vh;
+        font-size: 9px !important; /* הקטנת גופן כדי להתאים ל-Portrait */
+        margin: 0;
+        padding: 0;
+        margin-top: 15px !important; /* הוספת רווח של 15 פיקסלים בחלק העליון בהדפסה */
+        box-shadow: none !important;
+      }
+      h1 {
+        font-size: 1.1rem !important;
+        margin: 0 0 5px 0 !important;
+      }
+      .main-container,
+      .customer-row,
+      .notes-section {
+        max-width: 100vw !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        box-shadow: none !important;
+        background: #fff !important;
+      }
+      .main-container {
+        display: flex !important;
+        flex-direction: row !important; /* שמירה על שתי טבלאות זו לצד זו */
+        gap: 5px !important; /* הקטנת המרווח בין הטבלאות */
+      }
+      .col {
+        flex: 1 1 0;
+        gap: 3px !important; /* הקטנת מרווחים פנימיים */
+        min-width: 0;
+        width: 49.5% !important; /* וידוא שכל עמודה תופסת חצי מהרוחב */
+        box-sizing: border-box !important;
+      }
+      .section-title {
+        font-size: 0.9rem !important;
+        padding-bottom: 1px !important;
+        margin-top: 3px !important;
+        margin-bottom: 0 !important;
+      }
+      .custom-table,
+      .custom-table th, .custom-table td {
+        font-size: 0.85em !important;
+        padding: 1px 2px !important;
+        border-width: 1px !important;
+      }
+      .custom-table input[type="text"],
+      .options-table input[type="text"] {
+        font-size: 0.85em !important;
+        padding: 1px 2px !important;
+        width: 95% !important;
+      }
+      .notes-section textarea {
+        font-size: 0.85em !important;
+        min-height: 25px !important;
+        padding: 2px 3px !important;
+      }
+      .floating-window {
+        display: none !important; /* לא להדפיס את החלון הצף */
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- חלון צף עם שני אייקונים (PDF וחזרה) -->
+  <div class="floating-window" id="floatWin">
+    <!-- כפתור הדפסה -->
+    <button title="הצג כ-PDF" onclick="window.print()">
+      <img src="https://raw.githubusercontent.com/RL3printer/Matan_EFI/main/icons/pdficon.png" alt="PDF">
+    </button>
+    <!-- כפתור חזרה לדף הבית -->
+    <button title="חזרה לדף הבית" onclick="window.location.href='index.html'">
+      <img src="https://raw.githubusercontent.com/RL3printer/Matan_EFI/main/icons/backIcon.jpg" alt="Home">
+    </button>
+  </div>
+
+  <!-- כותרת ראשית -->
+  <h1>STATUS Pro 32</h1>
+  <!-- שדה לקוח -->
+  <div class="customer-row">
+    <label class="form-label" for="customerName">Customer name:</label>
+    <input type="text" class="customer-input" id="customerName" name="customerName" placeholder="הזן שם לקוח">
+  </div>
+  <!-- שתי עמודות של טבלאות -->
+  <div class="main-container">
+    <!-- עמודה שמאלית -->
+    <div class="col">
+      <!-- טבלת קונפיגורציה -->
+      <div>
+        <div class="section-title">Configuration</div>
+        <table class="custom-table">
+          <tr>
+            <td>Serial Number <!-- מספר סידורי --></td>
+            <td><input type="text" placeholder="Enter serial"></td>
+          </tr>
+          <tr>
+            <td>Model <!-- דגם --></td>
+            <td><input type="text" value="PRO 32+"></td>
+          </tr>
+          <tr>
+            <td>White options <!-- אפשרות צבע לבן --></td>
+            <td><input type="checkbox"></td>
+          </tr>
+          <tr>
+            <td>S/W front end <!-- גרסת תוכנה --></td>
+            <td><input type="text"></td>
+          </tr>
+        </table>
+      </div>
+      <!-- טבלת מחשבים ותקעים -->
+      <div>
+        <div class="section-title">Computers & Plugs</div>
+        <table class="custom-table">
+          <tr>
+            <td>S/N Computer <!-- מספר מחשב --></td>
+            <td><input type="text"></td>
+          </tr>
+          <tr>
+            <td>Plug ID <!-- מזהה תקע --></td>
+            <td><input type="text"></td>
+          </tr>
+        </table>
+      </div>
+      <!-- טבלת נתוני FPGA -->
+      <div>
+        <div class="section-title">For NEW data pass options</div>
+        <table class="custom-table">
+          <tr>
+            <td>Video card FPGA (Ferrari) <!-- כרטיס וידאו FPGA --></td>
+            <td><input type="text" value="0x"></td>
+          </tr>
+          <tr>
+            <td>Carriage FPGA (Tarro) <!-- FPGA מנוע --></td>
+            <td><input type="text" value="0x"></td>
+          </tr>
+          <tr>
+            <td>Id Card FPGA (Maxwell) <!-- FPGA מזהה --></td>
+            <td><input type="text" value="0x"></td>
+          </tr>
+          <tr>
+            <td>DP SW Ver <!-- גרסת תוכנה DP --></td>
+            <td><input type="text"></td>
+          </tr>
+        </table>
+      </div>
+    </div>
+    <!-- עמודה ימנית -->
+    <div class="col">
+      <!-- טבלת גרסאות BURN -->
+      <div>
+        <div class="section-title">Burn Version</div>
+        <table class="custom-table">
+          <tr>
+            <td>Controller <!-- בקר --></td>
+            <td><input type="text"></td>
+          </tr>
+          <tr>
+            <td>PLC Block <!-- בלוק PLC --></td>
+            <td><input type="text"></td>
+          </tr>
+          <tr>
+            <td>PLC Machine <!-- PLC מכונה --></td>
+            <td><input type="text"></td>
+          </tr>
+        </table>
+      </div>
+      <!-- טבלת אופציות -->
+      <div>
+        <div class="section-title">OPTIONS INCLUDET</div>
+        <table class="custom-table options-table">
+          <tr>
+            <td>BLOCK OUT <!-- חסימת יציאה --></td>
+            <td><input type="checkbox"></td>
+          </tr>
+          <tr>
+            <td>AUTOMATIC BACKLIT FOR PRO 32R+ <!-- תאורה אחורית אוטומטית --></td>
+            <td><input type="checkbox"></td>
+          </tr>
+          <tr>
+            <td>EDGE GUARD <!-- מגן קצה --></td>
+            <td><input type="text" placeholder="№ of set"></td>
+          </tr>
+          <tr>
+            <td>DUAL ROLL 1.6M*2 SPLIT SHAFTS – LOADING FOR PRO 32R+ <!-- גלילים כפולים טעינה --></td>
+            <td><input type="text"></td>
+          </tr>
+          <tr>
+            <td>DUAL ROLL 1.6M*2 SPLIT SHAFTS – COLLECTION FOR PRO 32R+ <!-- גלילים כפולים איסוף --></td>
+            <td><input type="text"></td>
+          </tr>
+          <tr>
+            <td>SLITTER FOR PRO 32R+ <!-- חותך --></td>
+            <td><input type="text"></td>
+          </tr>
+          <tr>
+            <td>H-DETECTOR <!-- גלאי H --></td>
+            <td><input type="checkbox"></td>
+          </tr>
+          <tr>
+            <td>CHILLER <!-- צ'ילר --></td>
+            <td><input type="checkbox"></td>
+          </tr>
+          <tr>
+            <td>ONE SITE REPAIR KIT <!-- ערכת תיקון --></td>
+            <td><input type="checkbox"></td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+  <!-- אזור להערות חופשיות -->
+  <div class="notes-section">
+    <label for="notes">הערות נוספות:</label>
+    <textarea id="notes" name="notes" placeholder="כתוב כאן הערות או מידע נוסף..."></textarea>
+  </div>
+  <script>
+    // פונקציה לגרירת החלון הצף עם העכבר
+    const floatWin = document.getElementById('floatWin');
+    let isDragging = false, startX, startY;
+    floatWin.addEventListener('mousedown', e => {
+      // לא לגרור אם לוחצים על כפתור או תמונה (כדי לא להפריע ללחיצה)
+      if (e.target.tagName === 'BUTTON' || e.target.tagName === 'IMG') return;
+      isDragging = true;
+      startX = e.clientX - floatWin.offsetLeft;
+      startY = e.clientY - floatWin.offsetTop;
+    });
+    document.addEventListener('mousemove', e => {
+      if (!isDragging) return;
+      floatWin.style.left = (e.clientX - startX) + 'px';
+      floatWin.style.top  = (e.clientY - startY) + 'px';
+    });
+    document.addEventListener('mouseup', () => { isDragging = false; });
+  </script>
+</body>
+</html>
