@@ -2,9 +2,9 @@
 <html lang="he" dir="ltr">
 <head>
   <meta charset="UTF-8">
-  <title>STATUS Pro </title>
+  <title>STATUS Pro</title>
   <style>
-    /* עיצוב כללי של הדף */
+ <!----------------------------------------- CSS עיצוב דף -------------------------------->
     body {
       background: #fff;
       font-family: Arial, sans-serif;
@@ -310,7 +310,10 @@
   </style>
 </head>
 <body>
-  <!------------------------------------------ חלון צף עם שני אייקונים (PDF וחזרה) ----------------------------------------------------------->
+ <!-----------------------------------------  סיום CSS עיצוב דף -------------------------------->
+
+
+  <!-- חלון צף עם שני אייקונים (PDF וחזרה) -->
   <div class="floating-window" id="floatWin">
     <!-- כפתור הדפסה -->
     <button title="הצג כ-PDF" onclick="window.print()">
@@ -322,12 +325,14 @@
     </button>
   </div>
 
-  <!-- כותרת ראשית -->
+  <!----------------------------------------- כותרת ראשית -------------------------------->
   <h1>STATUS Pro </h1>
+    <!----------------------------------------- כותרת ראשית סיום -------------------------------->
+  
   <!-- שדה לקוח -->
   <div class="customer-row">
     <label class="form-label" for="customerName">Customer name:</label>
-    <input type="text" class="customer-input" id="customerName" name="customerName" placeholder="הזן שם לקוח">
+    <input type="text" class="customer-input" id="customerName" name="customerName" placeholder="add costumer name">
   </div>
   <!-- שתי עמודות של טבלאות -->
   <div class="main-container">
@@ -339,16 +344,16 @@
         <table class="custom-table">
           <tr>
             <td>Serial Number <!-- מספר סידורי --></td>
-            <td><input type="text" placeholder="Enter serial"></td>
+            <td><input type="text" placeholder="Enter serial Number"></td>
           </tr>
- </td></tr>
-         <tr><td>Model</td><td>
+		  
+		  <tr><td>Model</td><td>
             <select>
               <option></option>
-              <option></option>
-              <option>PRO 32</option>
+              <option> PRO 32+ </option>
               <option>PRO 33</option>
-            </select>
+            </select> 
+</td></tr>			
           <tr>
             <td>White options <!-- אפשרות צבע לבן --></td>
             <td><input type="checkbox"></td>
@@ -463,8 +468,10 @@
   <!-- אזור להערות חופשיות -->
   <div class="notes-section">
     <label for="notes">הערות נוספות:</label>
-    <textarea id="notes" name="notes" placeholder="כתוב כאן הערות או מידע נוסף..."></textarea>
+    <textarea id="notes" name="notes" placeholder="..."></textarea>
   </div>
+   <!----------------------------------------- java -------------------------------->
+  
   <script>
     // פונקציה לגרירת החלון הצף עם העכבר
     const floatWin = document.getElementById('floatWin');
