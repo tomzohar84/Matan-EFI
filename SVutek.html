@@ -276,9 +276,35 @@
         <div class="section-title">Configuration</div>
         <table class="custom-table">
           <tr><td>Serial Number</td><td><input type="text"></td></tr>
-          <tr><td>Name</td><td><input type="text"></td></tr>
-          <tr><td>Type</td><td><input type="text"></td></tr>
-          <tr><td>S/W front end</td><td><input type="text"></td></tr>
+          	  <tr><td>Name</td><td>
+            <select>
+              <option></option>
+              <option>Matan 3</option>
+              <option>Matan 5</option>
+              <option>Vutek D3R</option>
+              <option>Vutek D5R</option>
+              <option>Vutek 3R+</option>
+			  <option>Vutek 5R+</option>
+			  <option>Vutek Q3R</option>
+			  <option>Vutek Q5R</option>
+			  <option>Vutek X3R</option>
+			  <option>Vutek X5R</option>
+            </select> 
+					 
+		  		  <tr><td>Type</td><td>
+            <select>
+              <option></option>
+              <option>4 Color</option>
+              <option>4 Color + White</option>
+              <option>4 Color + White + Clear</option>
+              <option>4 Color + Clear</option>
+              <option>7 Color</option>
+			  <option>7 Color + White</option>
+			  <option>7 Color + White + Clear</option>
+			  <option>7 Color + Clear</option>
+			            </select> 	  	 		  
+		 
+                    <tr><td>S/W front end</td><td><input type="text"></td></tr>
         </table>
       </div>
       <div>
@@ -293,17 +319,17 @@
         <div class="section-title computers">Computers & Plugs</div>
         <table class="custom-table">
           <tr><td>S/N Computer</td><td><input type="text"></td></tr>
-          <tr><td>Plug ID</td><td><input type="text"></td></tr>
-          <tr><td>S/N Caldera</td><td><input type="text"></td></tr>
-          <tr><td>Plug Caldera</td><td><input type="text"></td></tr>
+          <tr><td>Hasp</td><td><input type="text"></td></tr>
+          <tr><td>Rip PC S/N </td><td><input type="text"></td></tr>
+          <tr><td>Rip Plug </td><td><input type="text"></td></tr>
         </table>
       </div>
       <div>
         <div class="section-title new">For NEW data pass options</div>
         <table class="custom-table">
           <tr><td>Video card FPGA</td><td><input type="text" value="0x"></td></tr>
-          <tr><td>Carriage FPGA (Tarro)</td><td><input type="text" value="0x"></td></tr>
-          <tr><td>Id Card FPGA (Maxwell)</td><td><input type="text" value="0x"></td></tr>
+          <tr><td>Carriage FPGA </td><td><input type="text" value="0x"></td></tr>
+          <tr><td>Id Card FPGA </td><td><input type="text" value="0x"></td></tr>
           <tr><td>DP SW Ver</td><td><input type="text"></td></tr>
         </table>
       </div>
@@ -320,8 +346,8 @@
       <div>
        
         <!-- אזור הערות מתחת לטבלה החדשה -->
-        <div class="section-title custom">הערות</div>
-        <textarea class="notes-area" rows="3" placeholder="כתוב כאן את ההערות שלך..."></textarea>
+        <div class="section-title custom">Comments</div>
+        <textarea class="notes-area" rows="3" placeholder="..."></textarea>
       </div>
     </div>
     <!-- עמודה ימנית -->
@@ -351,7 +377,7 @@
           <tr><td>X MOTOR SUPPORT</td><td><input type="checkbox"></td></tr>
           <tr><td>MEDIA SHAFT 5.20M</td><td><input type="checkbox"></td></tr>
           <tr><td>PHOTO INTERRUPTER</td><td><input type="checkbox"></td></tr>
-          <tr><td>PULS</td><td><input type="text" value="Wave-DRP2-T2-v2_2"></td></tr>
+          <tr><td>PULS</td><td><input type="text" value=""></td></tr>
           <tr><td>CUTTER</td><td><input type="checkbox"></td></tr>
           <tr>
             <td class="airshaft-title" rowspan="3">AIR SHAFT FRONT</td>
@@ -387,7 +413,10 @@
               </select>
             </td>
           </tr>
-          <tr><td>BLOCK OUT</td><td><input type="checkbox"></td></tr>
+          <tr><td>AUTO MESH</td><td><input type="checkbox"></td></tr>
+		  <tr><td>HD WINDER REAR</td><td><input type="checkbox"></td></tr> 
+		  <tr><td>HD WINDER FRONT</td><td><input type="checkbox"></td></tr>
+	      <tr><td>BLOCK OUT</td><td><input type="checkbox"></td></tr>
           <tr><td>BACK LIT</td><td><input type="checkbox"></td></tr>
           <tr><td>CAMERA</td><td><input type="checkbox"></td></tr>
           <tr><td>ID BACK PRINTER</td><td><input type="checkbox"></td></tr>
@@ -407,8 +436,13 @@
           <tr><td>INSTALLATION KIT</td><td><input type="checkbox"></td></tr>
           <tr><td>SLITTER</td><td><input type="checkbox"></td></tr>
           <tr><td>MULTI ROLL KIT</td><td><input type="checkbox"></td></tr>
-          <tr><td>BALANCE T</td><td><input type="checkbox"></td></tr>
-          <tr><td>BALANCE Y</td><td><input type="checkbox"></td></tr>
+		 
+          
+		  <tr>
+                            <td>BALANCE T<br>BALANCE Y</td>
+                            <td><input type="checkbox" /><br><input type="checkbox" /></td>
+                        </tr>
+		  				
           <tr><td>SPREADERS KIT</td><td><input type="checkbox"></td></tr>
           <tr>
             <td>WASTE</td>
@@ -423,8 +457,8 @@
           <tr><td>CHILLER</td><td><input type="checkbox"></td></tr>
           <tr><td>ORANGE CABLES 110V</td><td><input type="checkbox"></td></tr>
           <tr><td>ROLL & TYPE</td><td><input type="checkbox"></td></tr>
-          <tr><td>INSPECTION KIT</td><td><input type="checkbox"></td></tr>
-          <tr><td>SCANNER</td><td><input type="checkbox"></td></tr>
+          <tr><td>INSPECTION </td><td><input type="checkbox"></td></tr>
+          <tr><td>SCANNER KIT</td><td><input type="checkbox"></td></tr>
           <tr><td>EDGE MEDIA GUARD</td><td><input type="checkbox"></td></tr>
         </table>
       </div>
