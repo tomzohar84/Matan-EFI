@@ -7,9 +7,7 @@
     <title>Vutek 5r+ - Box Status Integration</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <style>
-
-/*------------------------------- לא לגעת  סגנונות כלליים לדף ----------------------------------------*/
-/* סגנונות כלליים לדף */
+     /* סגנונות כלליים לדף */
 body {
     font-family: Arial, sans-serif; /* הגדרת גופן ברירת מחדל */
     background: #fff; /* צבע רקע לבן */
@@ -41,6 +39,14 @@ h1 {
     box-shadow: 0 2px 8px rgba(0,0,0,0.04); /* צל קל סביב הטבלה לעומק */
     font-size: 0.93em; /* גודל גופן קטן יחסית */
 }
+
+/* הפיכת כל הכתב בדף למודגש */
+body, body * {
+    font-weight: bold !important;
+	text-transform: uppercase !important;
+
+}
+
 
 .box-table th, .box-table td {
     border: 1px solid #176c4c; /* גבול ירוק כהה סביב כל תא */
@@ -171,6 +177,10 @@ select {
     top: 34px; /* כפתור הוספת שורה מתחת לפח, עם מרווח אנכי ברור */
 }
 
+.cloneBtn {
+    top: 74px; /* כפתור שכפול מתחת לכפתור הוספת שורה, עם מרווח אנכי גדול יותר */
+}
+
 /* סגנונות למצב מוסתר (טבלה או שורה) */
 .dimmed {
     opacity: 0.34; /* שקיפות לטבלה מוסתרת */
@@ -270,6 +280,27 @@ select {
 .undo-row-btn {
     display: none; /* כפתור שחזור מוסתר כברירת מחדל */
 }
+/* סגנונות לתיבת בחירה בעמודה Qty */
+.qty-col select {
+    text-align: center; /* מרכוז הטקסט בתיבת הבחירה */
+    text-align-last: center; /* מרכוז הטקסט הנבחר בדפדפנים כמו Chrome */
+    -ms-text-align-last: center; /* תמיכה ב-Edge ו-IE */
+    -moz-text-align-last: center; /* תמיכה ב-Firefox */
+    width: 100%; /* ודא שהתיבה תופסת את כל רוחב התא */
+    border: none; /* הסרת מסגרת */
+    background: transparent; /* רקע שקוף */
+    padding: 0; /* הסרת ריווח פנימי */
+    margin: 0; /* הסרת שוליים */
+    outline: none; /* הסרת מסגרת פוקוס */
+    color: #176c4c; /* צבע טקסט ירוק כהה */
+    font-size: 1em; /* גודל גופן תואם לטבלה */
+    cursor: pointer; /* סמן עכבר בצורת יד */
+}
+/* מרכוז אפשרויות בתוך תיבת הבחירה (עבור דפדפנים שתומכים) */
+.qty-col select option {
+    text-align: center; /* ניסיון למרכז את האפשרויות עצמן, אם הדפדפן תומך */
+}
+
 
 /* סגנונות לכפתורי פעולה בתוך הטבלה */
 .del-row-btn, .undo-row-btn {
@@ -282,7 +313,7 @@ select {
 
 /* סגנונות לאזור הערות בסוף הדף */
 .notes-section {
-    width: 877px; /* רוחב תואם לטבלאות */
+    width: 876px; /* רוחב תואם לטבלאות */
     max-width: 98vw; /* רוחב מקסימלי למניעת גלישה */
     margin: 20px auto; /* מיקום במרכז הדף עם שוליים עליונים */
     padding: 10px; /* ריווח פנימי */
@@ -347,14 +378,120 @@ hr.air {
     border-top: 5px solid #ff0000; /* קו אדום, עובי ניתן לשינוי */
     height: 0; /* גובה אפס כדי להציג רק את הקו */
 }
-
 /* סגנונות להדפסה */
 @media print {
-    .floating-window, .icon-btn, .save-notes-btn, hr.air, .noPrint {
-        display: none !important; /* הסתרת כפתורים צפים, כפתורי טבלה, קו מפריד אדום ואלמנטים עם noPrint בהדפסה */
+    .floating-window {
+        display: none !important; /* הסתרת חלון הכפתורים הצף */
     }
-    .box-table-wrapper.dimmed {
-        display: none !important; /* הסתרת טבלאות מוסתרות בהדפסה */
+    .icon-btn, .trashBtn, .undoBtn, .addRowBtn, .cloneBtn {
+        display: none !important; /* הסתרת כל הכפתורים בצד הטבלאות */
+    }
+    .save-notes-btn {
+        display: none !important; /* הסתרת כפתור שמירת הערות */
+    }
+    hr.air, .noPrint {
+        display: none !important; /* הסתרת אלמנטים נוספים שלא צריכים להופיע */
+    }
+    .action-col {
+        display: none !important; /* הסתרת עמודת DEL (עם כפתורי מחיקה ושחזור) */
+    }
+    .row-dimmed {
+        display: none !important; /* הסתרת שורות מחוקות (עם המחלקה row-dimmed) */
+    }
+    .dimmed {
+        display: none !important; /* הסתרת טבלאות מחוקות (עם המחלקה dimmed) */
+    }
+    .box-table-wrapper.empty-table {
+        display: none !important; /* הסתרת טבלאות ריקות (ללא שורות גלויות) */
+    }
+    /* התאמת רוחב העמודות כדי לפצות על הסרת עמודת DEL */
+    .desc-col {
+        width: 50% !important; /* התאמת רוחב עמודת התיאור - ניתן לשנות לפי הצורך */
+    }
+    .pn-col {
+        width: 20% !important; /* התאמת רוחב עמודת P/N */
+    }
+    .qty-col {
+        width: 15% !important; /* התאמת רוחב עמודת Qty */
+    }
+    .check-col {
+        width: 15% !important; /* התאמת רוחב עמודת Check List */
+    }
+    /* שאר הסגנונות להדפסה כפי שהיו */
+    @page {
+        size: A4 portrait;
+        margin: 1cm;
+    }
+    html, body {
+        font-size: 8.5pt !important;
+        line-height: 1.05 !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        background: #fff !important;
+        color: #111 !important;
+    }
+    .main-container {
+        display: flex !important;
+        flex-direction: row !important;
+        justify-content: space-between;
+        align-items: flex-start;
+        width: 100vw;
+        max-width: 100vw !important;
+        gap: 0 !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+    .col {
+        width: 49.5% !important;
+        min-width: 0 !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        box-sizing: border-box !important;
+        border-width: 1px !important;
+        box-shadow: none !important;
+    }
+    .section-title {
+        font-size: 0.92em !important;
+        padding: 1px 0 !important;
+        margin: 0 !important;
+        border-width: 1px !important;
+    }
+    .custom-table, .custom-table th, .custom-table td {
+        font-size: 0.82em !important;
+        padding: 1px 2px !important;
+        border-width: 1px !important;
+    }
+    input, select {
+        font-size: 0.82em !important;
+        padding: 1px 2px !important;
+        margin: 0 !important;
+        width: 98% !important;
+        box-sizing: border-box !important;
+        border: none !important; /* הסרת מסגרות משדות קלט */
+        background: transparent !important; /* רקע שקוף לשדות קלט */
+    }
+    .customer-row {
+        margin: 4cm 0 4px 0 !important;
+        font-size: 1em !important;
+        max-width: 100vw !important;
+        padding: 0 !important;
+    }
+    h1 {
+        text-align: center !important; /* מרכוז הכותרת בהדפסה */
+        margin: 10px auto !important; /* מיקום במרכז */
+    }
+    /* הוספת סגנון לתא BOX בהדפסה */
+    .box-header {
+        background: #e6f2ef !important; /* רקע ירוק בהיר */
+        color: #176c4c !important; /* צבע טקסט ירוק כהה */
+        font-size: 0.9em !important; /* גודל גופן קטן יותר */
+        text-align: center !important; /* מרכוז הטקסט */
+    }
+    .box-fraction {
+        font-weight: bold !important; /* הדגשת המספר השבר */
+        color: #0d3d2c !important; /* צבע כהה יותר למספר השבר */
+    }
+}
 
 
 /*------------------------------- לא לגעת   סיום סגנונות כלליים לדף ----------------------------------------*/
@@ -391,9 +528,13 @@ hr.air {
     <button class="icon-btn addRowBtn" title="הוסף שורה" onclick="addRowToTable(this)">
         <img src="https://cdn-icons-png.flaticon.com/512/992/992651.png" alt="Add Row">
     </button>
+    <!-- כפתור חדש לשכפול הטבלה 
+    <button class="icon-btn cloneBtn" title="שכפל טבלה" onclick="cloneTable(this)">
+        <img src="https://cdn-icons-png.flaticon.com/512/2983/2983067.png" alt="Clone">
+    </button>-->
     <table class="box-table">
         <tr>
-            <th class="box-header">BOX<br><span class="box-current"></span><br>מתוך<br><span class="box-total"></span></th>
+            <th class="box-header">BOX<br><span class="box-current"></span>/<span class="box-total"></span></th>
             <th>DESCRIPTION</th>
             <th>P/N</th>
             <th>Qty</th>
@@ -410,19 +551,22 @@ hr.air {
                 <button class="del-row-btn" onclick="hideRow(this)">✖</button>
                 <button class="undo-row-btn" onclick="restoreRow(this)">↩</button>
             </td>
-		 <tr class="data-row">
-                 <td class="row-num-cell">2</td>
-			  <td class="desc-col">SHAFT SUPPORT</td>
-<td class="pn-col">11102040</td>
+        </tr>
+        <tr class="data-row">
+            <td class="row-num-cell">2</td>
+            <td class="desc-col">SHAFT SUPPORT</td>
+            <td class="pn-col">11102040</td>
             <td class="qty-col">6</td>
             <td class="check-col"><input type="checkbox"></td>
             <td class="action-col">
                 <button class="del-row-btn" onclick="hideRow(this)">✖</button>
                 <button class="undo-row-btn" onclick="restoreRow(this)">↩</button>
+            </td>
         </tr>
         <!-- שורות נוספות כפי שמופיעות בקוד שלך -->
     </table>
 </div>
+
 
 <!---------------------------- טבלה מסוג 1 סיום- BOX 1 ---------------------------->
 	
@@ -444,7 +588,7 @@ hr.air {
     </button>
     <table class="box-table">
         <tr>
-            <th class="box-header">BOX<br><span class="box-current">5</span><br>מתוך<br><span class="box-total">41</span></th>
+            <th class="box-header">BOX<br><span class="box-current">5</span>/<span class="box-total">41</span></th>
             <th>DESCRIPTION</th>
             <th>P/N</th>
             <th>Qty</th>
@@ -471,23 +615,30 @@ hr.air {
     </table>
 </div>
 <!----------------------------- טבלה ראשונה עם תפריט נפתח סיום  --------------------->
+	
+<!-- קו מפריד בין טבלאות, לא יופיע בהדפסה -->
+<hr class="noPrint air">
 
 
 
-   <!-------------------------- טבלה אחרונה - BOX 42 עם מחיקת שורות ------------------>
-<div class="box-table-wrapper">
+ <!-------------------------- טבלה אחרונה - BOX 42 עם מחיקת שורות ------------------>
+<div class="box-table-wrapper" data-group-id="ink-cyan">
     <button class="icon-btn trashBtn" title="הסר טבלה" onclick="dimTable(this)">
         <img src="https://cdn-icons-png.flaticon.com/512/1214/1214428.png" alt="Delete">
     </button>
     <button class="icon-btn undoBtn" title="החזר טבלה" style="display:none;" onclick="restoreTable(this)">
         <img src="https://cdn-icons-png.flaticon.com/512/109/109618.png" alt="Undo">
     </button>
-    <button class="icon-btn addRowBtn" title="הוסף שורה" onclick="addRowToTable(this)">
+    <!--<button class="icon-btn addRowBtn" title="הוסף שורה" onclick="addRowToTable(this)">
         <img src="https://cdn-icons-png.flaticon.com/512/992/992651.png" alt="Add Row">
+    </button>
+    <!-- כפתור חדש לשכפול הטבלה -->
+    <button class="icon-btn cloneBtn" title="שכפל טבלה" onclick="cloneTable(this)">
+        <img src="https://cdn-icons-png.flaticon.com/512/2983/2983067.png" alt="Clone">
     </button>
     <table class="box-table">
         <tr>
-            <th class="box-header">BOX<br><span class="box-current"></span><br>מתוך<br><span class="box-total"></span></th>
+            <th class="box-header">BOX<br><span class="box-current"></span>/<span class="box-total"></span></th>
             <th>DESCRIPTION</th>
             <th>P/N</th>
             <th>Qty</th>
@@ -498,10 +649,10 @@ hr.air {
             <td class="row-num-cell">1</td>
             <td class="desc-col">INK EFI MATAN SUPERRANGE XF V3 CYAN</td>
             <td class="pn-col">45190876</td>
-            <td class="qty-col"><input type="text" placeholder="כמות"></td>
+            <td class="qty-col"><input type="text" value="1/1"></td>
             <td class="check-col"><input type="checkbox"></td>
             <td class="action-col">
-                <button class="del-row-btn" onclick="hideRow(this)">✖</button>
+             <button class="del-row-btn" onclick="hideRow(this)">✖</button>
                 <button class="undo-row-btn" onclick="restoreRow(this)">↩</button>
             </td>
         </tr>
@@ -509,12 +660,20 @@ hr.air {
     </table>
 </div>
 
+
+
  <!-------------------------- טבלה אחרונה - BOX 42 עם מחיקת שורות ------------------>
+	
+	
+<!-- קו מפריד בין טבלאות, לא יופיע בהדפסה -->
+<hr class="noPrint air">
+
+	
 	
 <!---------------------- אזור הערות בסוף הדף, מתחת לכל הטבלאות ---------------------->
 <div class="notes-section">
     <h2>הערות</h2>
-    <textarea id="notes-area" placeholder="כתוב כאן את ההערות שלך..." rows="5"></textarea>
+    <textarea id="notes-area" placeholder="..." rows="5"></textarea>
     
 </div>
 <!---------------------- אזור הערות בסוף הדף, מתחת לכל הטבלאות ---------------------->
@@ -567,7 +726,7 @@ function addEmptyTable() {
         </button>
         <table class="box-table">
             <tr>
-                <th class="box-header">BOX<br><span class="box-current"></span><br>מתוך<br><span class="box-total"></span></th>
+                <th class="box-header">BOX<br><span class="box-current"></span>/<span class="box-total"></span></th>
                 <th>DESCRIPTION</th>
                 <th>P/N</th>
                 <th>Qty</th>
@@ -576,9 +735,9 @@ function addEmptyTable() {
             </tr>
             <tr class="data-row">
                 <td class="row-num-cell"></td>
-                <td class="desc-col"><input type="text" placeholder="תיאור"></td>
-                <td class="pn-col"><input type="text" placeholder="מק״ט"></td>
-                <td class="qty-col"><input type="number" placeholder="כמות"></td>
+                <td class="desc-col"><input type="text" placeholder=""></td>
+                <td class="pn-col"><input type="text" placeholder=""></td>
+                <td class="qty-col"><input type="text" placeholder=""></td>
                 <td class="check-col"><input type="checkbox"></td>
                 <td class="action-col">
                     <button class="del-row-btn" onclick="hideRow(this)">✖</button>
@@ -606,9 +765,9 @@ function addRowToTable(btn) {
     newRow.className = 'data-row';
     newRow.innerHTML = `
         <td class="row-num-cell"></td>
-        <td class="desc-col"><input type="text" placeholder="תיאור"></td>
-        <td class="pn-col"><input type="text" placeholder="מק״ט"></td>
-        <td class="qty-col"><input type="number" placeholder="כמות"></td>
+        <td class="desc-col"><input type="text" placeholder=""></td>
+        <td class="pn-col"><input type="text" placeholder=""></td>
+        <td class="qty-col"><input type="text" placeholder=""></td>
         <td class="check-col"><input type="checkbox"></td>
         <td class="action-col">
             <button class="del-row-btn" onclick="hideRow(this)">✖</button>
@@ -670,7 +829,135 @@ window.onload = function() {
     }
     updateBoxNumbers(); // עדכון מספרי BOX בעת טעינה
     updateAllRowNumbers(); // עדכון מספרי שורה בעת טעינה
-};
+}
+// הסרת טבלה (עמעום בלבד)
+function dimTable(btn) {
+    const wrapper = btn.closest('.box-table-wrapper');
+    wrapper.classList.add('dimmed');
+    btn.style.display = 'none';
+    wrapper.querySelector('.undoBtn').style.display = 'block';
+    updateBoxNumbers(); // עדכון מספרי BOX לאחר הסרה
+    // אין צורך לשנות את ערכי Qty, הם נשארים כפי שהם
+}
+
+// שחזור טבלה מעומעמת
+function restoreTable(btn) {
+    const wrapper = btn.closest('.box-table-wrapper');
+    wrapper.classList.remove('dimmed');
+    btn.style.display = 'none';
+    wrapper.querySelector('.trashBtn').style.display = 'block';
+    updateBoxNumbers(); // עדכון מספרי BOX לאחר שחזור
+    // אין צורך לשנות את ערכי Qty, הם נשארים כפי שהם
+}
+
+// הסרת טבלה (עמעום בלבד)
+function dimTable(btn) {
+    const wrapper = btn.closest('.box-table-wrapper');
+    wrapper.classList.add('dimmed');
+    btn.style.display = 'none';
+    wrapper.querySelector('.undoBtn').style.display = 'block';
+    updateBoxNumbers(); // עדכון מספרי BOX לאחר הסרה
+    updateQtyValues(); // עדכון ערכי Qty לאחר הסרה
+}
+
+// שחזור טבלה מעומעמת
+function restoreTable(btn) {
+    const wrapper = btn.closest('.box-table-wrapper');
+    wrapper.classList.remove('dimmed');
+    btn.style.display = 'none';
+    wrapper.querySelector('.trashBtn').style.display = 'block';
+    updateBoxNumbers(); // עדכון מספרי BOX לאחר שחזור
+    updateQtyValues(); // עדכון ערכי Qty לאחר שחזור
+}
+
+// שכפול טבלה והוספת העותק מתחתיה
+function cloneTable(btn) {
+    const wrapper = btn.closest('.box-table-wrapper');
+    const clonedWrapper = wrapper.cloneNode(true); // שכפול הטבלה כולל כל התוכן
+    // איפוס מצב הכפתורים בטבלה המשוכפלת
+    clonedWrapper.classList.remove('dimmed');
+    clonedWrapper.querySelector('.trashBtn').style.display = 'block';
+    clonedWrapper.querySelector('.undoBtn').style.display = 'none';
+    // הוספת הטבלה המשוכפלת ממש מתחת לטבלה המקורית
+    wrapper.parentNode.insertBefore(clonedWrapper, wrapper.nextSibling);
+    updateBoxNumbers(); // עדכון מספרי BOX לאחר שכפול
+    updateAllRowNumbers(); // עדכון מספרי שורה לאחר שכפול
+    updateQtyValues(); // עדכון ערכי Qty לאחר שכפול
+}
+
+// עדכון ערכי Qty בכל הטבלאות הנראות לפי קבוצות
+function updateQtyValues() {
+    // מציאת כל הטבלאות הנראות (לא מעומעמות)
+    const allWrappers = Array.from(document.querySelectorAll('.box-table-wrapper:not(.dimmed)'));
+    
+    if (allWrappers.length === 0) return; // אין טבלאות נראות, אין מה לעדכן
+    
+    // קיבוץ הטבלאות לפי data-group-id
+    const groups = {};
+    allWrappers.forEach(wrapper => {
+        const groupId = wrapper.getAttribute('data-group-id') || 'default'; // ברירת מחדל אם אין מזהה
+        if (!groups[groupId]) {
+            groups[groupId] = [];
+        }
+        groups[groupId].push(wrapper);
+    });
+    // הוספת מאזינים לאירועים לפני ואחרי הדפסה להסתרת טבלאות ריקות
+window.addEventListener('beforeprint', function() {
+    const wrappers = document.querySelectorAll('.box-table-wrapper:not(.dimmed)');
+    wrappers.forEach(wrapper => {
+        const visibleRows = wrapper.querySelectorAll('.data-row:not(.row-dimmed)');
+        if (visibleRows.length === 0) {
+            // אם אין שורות נראות בטבלה, הוסף מחלקה להסתרת הכותרת
+            wrapper.classList.add('empty-table');
+        }
+    });
+});
+
+// הסתרת טבלה
+function dimTable(btn) {
+    const wrapper = btn.closest('.box-table-wrapper');
+    wrapper.classList.add('dimmed'); // ודא שהמחלקה dimmed מוחלת
+    btn.style.display = 'none';
+    wrapper.querySelector('.undoBtn').style.display = 'block';
+    updateBoxNumbers(); // עדכון מספרי BOX לאחר הסתרה
+    const groupId = wrapper.getAttribute('data-group-id') || 'default';
+    if (groupId === 'type3') {
+        updateQtyValuesForType3(); // עדכון ערכי Qty לאחר הסתרה
+    }
+}
+
+window.addEventListener('afterprint', function() {
+    const wrappers = document.querySelectorAll('.box-table-wrapper.empty-table');
+    wrappers.forEach(wrapper => {
+        wrapper.classList.remove('empty-table');
+    });
+});
+    // עדכון ערכי Qty לכל קבוצה בנפרד
+    for (const groupId in groups) {
+        const groupWrappers = groups[groupId];
+        const totalVisibleInGroup = groupWrappers.length;
+        
+        if (totalVisibleInGroup === 1) {
+            // אם יש רק טבלה אחת נראית בקבוצה, הכמות תהיה "1/1"
+            const wrapper = groupWrappers[0];
+            const qtyInputs = wrapper.querySelectorAll('.qty-col input[type="text"]');
+            qtyInputs.forEach(input => {
+                input.value = '1/1';
+            });
+        } else {
+            // אם יש יותר מטבלה אחת נראית בקבוצה, עדכן את הכמות לפי הסדר
+            groupWrappers.forEach((wrapper, index) => {
+                const qtyInputs = wrapper.querySelectorAll('.qty-col input[type="text"]');
+                qtyInputs.forEach(input => {
+                    input.value = `${index + 1}/${totalVisibleInGroup}`;
+                });
+            });
+        }
+    }
+}
+
+
+
 
     </script>
 
