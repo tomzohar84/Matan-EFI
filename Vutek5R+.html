@@ -1,5 +1,6 @@
 
 
+
 <!DOCTYPE html>
 <html lang="he">
 <head>
@@ -519,15 +520,9 @@ hr.air {
 	
 <!---------------------------- BOX 1 ---------------------------->
 <div class="box-table-wrapper">
-  
     <button class="icon-btn undoBtn" title="החזר טבלה" style="display:none;" onclick="restoreTable(this)">
         <img src="https://cdn-icons-png.flaticon.com/512/109/109618.png" alt="Undo">
     </button>
-
-    <!-- כפתור חדש לשכפול הטבלה 
-    <button class="icon-btn cloneBtn" title="שכפל טבלה" onclick="cloneTable(this)">
-        <img src="https://cdn-icons-png.flaticon.com/512/2983/2983067.png" alt="Clone">
-    </button>-->
     <table class="box-table">
         <tr>
             <th class="box-header">BOX<br><span class="box-current"></span>/<span class="box-total"></span></th>
@@ -556,7 +551,7 @@ hr.air {
             </td>
         </tr>
 		 <tr class="data-row">
-            <td class="row-num-cell">2</td>
+            <td class="row-num-cell">3</td>
             <td class="desc-col">BALL LOCK PINS D=12 L=70</td>
             <td class="pn-col">77700657</td>
             <td class="qty-col">4</td>
@@ -564,13 +559,11 @@ hr.air {
             <td class="action-col">
             </td>
         </tr>
-        <!-- שורות נוספות כפי שמופיעות בקוד שלך -->
     </table>
 </div>
-
-
 <!----------------------------BOX 1 END ---------------------------->
-	
+<!-- קו מפריד בין טבלאות, לא יופיע בהדפסה -->
+<hr class="noPrint air">	
 	<!---------------------------- BOX 2 ---------------------------->
 <div class="box-table-wrapper">
    
@@ -578,10 +571,6 @@ hr.air {
         <img src="https://cdn-icons-png.flaticon.com/512/109/109618.png" alt="Undo">
     </button>
  
-    <!-- כפתור חדש לשכפול הטבלה 
-    <button class="icon-btn cloneBtn" title="שכפל טבלה" onclick="cloneTable(this)">
-        <img src="https://cdn-icons-png.flaticon.com/512/2983/2983067.png" alt="Clone">
-    </button>-->
     <table class="box-table">
         <tr>
             <th class="box-header">BOX<br><span class="box-current"></span>/<span class="box-total"></span></th>
@@ -610,7 +599,7 @@ hr.air {
             </td>
         </tr>
 		 <tr class="data-row">
-            <td class="row-num-cell">2</td>
+            <td class="row-num-cell">3</td>
             <td class="desc-col">COLLECTOR LEFT LIMITER A.S. VERSION</td>
             <td class="pn-col">11101945</td>
             <td class="qty-col">2</td>
@@ -618,14 +607,11 @@ hr.air {
             <td class="action-col">
             </td>
         </tr>
-        <!-- שורות נוספות כפי שמופיעות בקוד שלך -->
     </table>
 </div>
-
-
 <!----------------------------BOX 2 END ---------------------------->
-	
-		<!---------------------------- BOX 4 ---------------------------->
+<!-- קו מפריד בין טבלאות, לא יופיע בהדפסה -->	
+		<!---------------------------- BOX 3 ---------------------------->
 <div class="box-table-wrapper">
     <button class="icon-btn trashBtn" title="הסר טבלה" onclick="dimTable(this)">
         <img src="https://cdn-icons-png.flaticon.com/512/1214/1214428.png" alt="Delete">
@@ -633,11 +619,7 @@ hr.air {
     <button class="icon-btn undoBtn" title="החזר טבלה" style="display:none;" onclick="restoreTable(this)">
         <img src="https://cdn-icons-png.flaticon.com/512/109/109618.png" alt="Undo">
     </button>
- 
-    <!-- כפתור חדש לשכפול הטבלה 
-    <button class="icon-btn cloneBtn" title="שכפל טבלה" onclick="cloneTable(this)">
-        <img src="https://cdn-icons-png.flaticon.com/512/2983/2983067.png" alt="Clone">
-    </button>-->
+    
     <table class="box-table">
         <tr>
             <th class="box-header">BOX<br><span class="box-current"></span>/<span class="box-total"></span></th>
@@ -666,7 +648,7 @@ hr.air {
             </td>
         </tr>
 		 <tr class="data-row">
-            <td class="row-num-cell">2</td>
+            <td class="row-num-cell">3</td>
             <td class="desc-col">COLLECTOR LEFT LIMITER A.S. VERSION</td>
             <td class="pn-col">11101945</td>
             <td class="qty-col">2</td>
@@ -674,76 +656,64 @@ hr.air {
             <td class="action-col">
             </td>
         </tr>
-        <!-- שורות נוספות כפי שמופיעות בקוד שלך -->
     </table>
 </div>
+<!----------------------------BOX 3 END ---------------------------->
 
-
+	<!---------------------------- BOX 4 ---------------------------->
+<div class="box-table-wrapper">
+    <button class="icon-btn trashBtn" title="הסר טבלה" onclick="dimTable(this)">
+        <img src="https://cdn-icons-png.flaticon.com/512/1214/1214428.png" alt="Delete">
+    </button>
+    <button class="icon-btn undoBtn" title="החזר טבלה" style="display:none;" onclick="restoreTable(this)">
+        <img src="https://cdn-icons-png.flaticon.com/512/109/109618.png" alt="Undo">
+    </button>
+   
+    <table class="box-table">
+        <tr>
+            <th class="box-header">BOX<br><span class="box-current"></span>/<span class="box-total"></span></th>
+            <th>DESCRIPTION</th>
+            <th>P/N</th>
+            <th>Qty</th>
+            <th>CHECK LIST</th>
+            <th class="action-col">Del</th>
+        </tr>
+        <tr class="data-row">
+            <td class="row-num-cell">1</td>
+            <td class="desc-col">feeder limiter arm assy</td>
+            <td class="pn-col">11101907</td>
+            <td class="qty-col">2</td>
+            <td class="check-col"><input type="checkbox"></td>
+            <td class="action-col">
+            </td>
+        </tr>
+        <tr class="data-row">
+            <td class="row-num-cell">2</td>
+            <td class="desc-col">COLLECTOR RIGHT LIMITER A.S. VERSION</td>
+            <td class="pn-col">11101944</td>
+            <td class="qty-col">1</td>
+            <td class="check-col"><input type="checkbox"></td>
+            <td class="action-col">
+            </td>
+        </tr>
+		 <tr class="data-row">
+            <td class="row-num-cell">3</td>
+            <td class="desc-col">COLLECTOR LEFT LIMITER A.S. VERSION</td>
+            <td class="pn-col">11101945</td>
+            <td class="qty-col">2</td>
+            <td class="check-col"><input type="checkbox"></td>
+            <td class="action-col">
+            </td>
+        </tr>
+    </table>
+</div>
 <!----------------------------BOX 4 END ---------------------------->
-
-	<!---------------------------- BOX 5 ---------------------------->
-<div class="box-table-wrapper">
-    <button class="icon-btn trashBtn" title="הסר טבלה" onclick="dimTable(this)">
-        <img src="https://cdn-icons-png.flaticon.com/512/1214/1214428.png" alt="Delete">
-    </button>
-    <button class="icon-btn undoBtn" title="החזר טבלה" style="display:none;" onclick="restoreTable(this)">
-        <img src="https://cdn-icons-png.flaticon.com/512/109/109618.png" alt="Undo">
-    </button>
- 
-    <!-- כפתור חדש לשכפול הטבלה 
-    <button class="icon-btn cloneBtn" title="שכפל טבלה" onclick="cloneTable(this)">
-        <img src="https://cdn-icons-png.flaticon.com/512/2983/2983067.png" alt="Clone">
-    </button>-->
-    <table class="box-table">
-        <tr>
-            <th class="box-header">BOX<br><span class="box-current"></span>/<span class="box-total"></span></th>
-            <th>DESCRIPTION</th>
-            <th>P/N</th>
-            <th>Qty</th>
-            <th>CHECK LIST</th>
-            <th class="action-col">Del</th>
-        </tr>
-        <tr class="data-row">
-            <td class="row-num-cell">1</td>
-            <td class="desc-col">feeder limiter arm assy</td>
-            <td class="pn-col">11101907</td>
-            <td class="qty-col">2</td>
-            <td class="check-col"><input type="checkbox"></td>
-            <td class="action-col">
-            </td>
-        </tr>
-        <tr class="data-row">
-            <td class="row-num-cell">2</td>
-            <td class="desc-col">COLLECTOR RIGHT LIMITER A.S. VERSION</td>
-            <td class="pn-col">11101944</td>
-            <td class="qty-col">1</td>
-            <td class="check-col"><input type="checkbox"></td>
-            <td class="action-col">
-            </td>
-        </tr>
-		 <tr class="data-row">
-            <td class="row-num-cell">2</td>
-            <td class="desc-col">COLLECTOR LEFT LIMITER A.S. VERSION</td>
-            <td class="pn-col">11101945</td>
-            <td class="qty-col">2</td>
-            <td class="check-col"><input type="checkbox"></td>
-            <td class="action-col">
-            </td>
-        </tr>
-        <!-- שורות נוספות כפי שמופיעות בקוד שלך -->
-    </table>
-</div>
-
-
-<!----------------------------BOX 5 END ---------------------------->
-	<!-------------------------- BOX 6 ------------------>
+<!-- קו מפריד בין טבלאות, לא יופיע בהדפסה -->
+<hr class="noPrint air">
+	<!-------------------------- BOX 5 ------------------>
 
 <div class="box-table-wrapper">
-  
-    <button class="icon-btn undoBtn" title="החזר טבלה" style="display:none;" onclick="restoreTable(this)">
-        <img src="https://cdn-icons-png.flaticon.com/512/109/109618.png" alt="Undo">
-    </button>
-  
+       
     <table class="box-table">
         <tr>
             <th class="box-header">BOX<br><span class="box-current">5</span>/<span class="box-total">41</span></th>
@@ -766,34 +736,15 @@ hr.air {
             </td>
             <td class="check-col"><input type="checkbox"></td>
             <td class="action-col">
-                <button class="del-row-btn" onclick="hideRow(this)">✖</button>
-                <button class="undo-row-btn" onclick="restoreRow(this)">↩</button>
-            </td>
-        </tr>
+                     </tr>
     </table>
 </div>
-<!----------------------------BOX 6 END ---------------------------->
-	
-	
+<!----------------------------BOX 5 END ---------------------------->
 <!-- קו מפריד בין טבלאות, לא יופיע בהדפסה -->
 <hr class="noPrint air">
-
-
-
-
- <!-------------------------- BOX 7 ------------------>
+ <!-------------------------- BOX 6 ------------------>
 <div class="box-table-wrapper">
-    <button class="icon-btn trashBtn" title="הסר טבלה" onclick="dimTable(this)">
-        <img src="https://cdn-icons-png.flaticon.com/512/1214/1214428.png" alt="Delete">
-    </button>
-    <button class="icon-btn undoBtn" title="החזר טבלה" style="display:none;" onclick="restoreTable(this)">
-        <img src="https://cdn-icons-png.flaticon.com/512/109/109618.png" alt="Undo">
-    </button>
- 
-    <!-- כפתור חדש לשכפול הטבלה 
-    <button class="icon-btn cloneBtn" title="שכפל טבלה" onclick="cloneTable(this)">
-        <img src="https://cdn-icons-png.flaticon.com/512/2983/2983067.png" alt="Clone">
-    </button>-->
+    
     <table class="box-table">
         <tr>
             <th class="box-header">BOX<br><span class="box-current"></span>/<span class="box-total"></span></th>
@@ -812,29 +763,14 @@ hr.air {
             <td class="action-col">
             </td>
         </tr>
- 
-        <!-- שורות נוספות כפי שמופיעות בקוד שלך -->
     </table>
 </div>
-
-<!----------------------------BOX 7 END ---------------------------->
-	
+<!----------------------------BOX 6 END ---------------------------->
 <!-- קו מפריד בין טבלאות, לא יופיע בהדפסה -->
 <hr class="noPrint air">
-<!---------------------------- BOX 8 ---------------------------->
+<!---------------------------- BOX 7 ---------------------------->
 <div class="box-table-wrapper">
-    <button class="icon-btn trashBtn" title="הסר טבלה" onclick="dimTable(this)">
-        <img src="https://cdn-icons-png.flaticon.com/512/1214/1214428.png" alt="Delete">
-    </button>
-    <button class="icon-btn undoBtn" title="החזר טבלה" style="display:none;" onclick="restoreTable(this)">
-        <img src="https://cdn-icons-png.flaticon.com/512/109/109618.png" alt="Undo">
-    </button>
- 
-    <!-- כפתור חדש לשכפול הטבלה 
-    <button class="icon-btn cloneBtn" title="שכפל טבלה" onclick="cloneTable(this)">
-        <img src="https://cdn-icons-png.flaticon.com/512/2983/2983067.png" alt="Clone">
-    </button>-->
-    <table class="box-table">
+        <table class="box-table">
         <tr>
             <th class="box-header">BOX<br><span class="box-current"></span>/<span class="box-total"></span></th>
             <th>DESCRIPTION</th>
@@ -862,7 +798,7 @@ hr.air {
             </td>
         </tr>
 		 <tr class="data-row">
-            <td class="row-num-cell">2</td>
+            <td class="row-num-cell">3</td>
             <td class="desc-col">Screw 6x16</td>
             <td class="pn-col">55500176</td>
             <td class="qty-col">4</td>
@@ -870,22 +806,14 @@ hr.air {
             <td class="action-col">
             </td>
         </tr>
-        <!-- שורות נוספות כפי שמופיעות בקוד שלך -->
     </table>
 </div>
-
-<!----------------------------BOX 8 END ---------------------------->
-
-<!---------------------------- BOX 9 ---------------------------->
+<!----------------------------BOX 7 END ---------------------------->
+<!-- קו מפריד בין טבלאות, לא יופיע בהדפסה -->
+<hr class="noPrint air">
+<!---------------------------- BOX 8 ---------------------------->
 <div class="box-table-wrapper">
-    <button class="icon-btn undoBtn" title="החזר טבלה" style="display:none;" onclick="restoreTable(this)">
-        <img src="https://cdn-icons-png.flaticon.com/512/109/109618.png" alt="Undo">
-    </button>
- 
-    <!-- כפתור חדש לשכפול הטבלה 
-    <button class="icon-btn cloneBtn" title="שכפל טבלה" onclick="cloneTable(this)">
-        <img src="https://cdn-icons-png.flaticon.com/512/2983/2983067.png" alt="Clone">
-    </button>-->
+   
     <table class="box-table">
         <tr>
             <th class="box-header">BOX<br><span class="box-current"></span>/<span class="box-total"></span></th>
@@ -914,7 +842,7 @@ hr.air {
             </td>
         </tr>
 		 <tr class="data-row">
-            <td class="row-num-cell">2</td>
+            <td class="row-num-cell">3</td>
             <td class="desc-col">Screw D-912 6x10	</td>
             <td class="pn-col">55500138</td>
             <td class="qty-col">2</td>
@@ -923,7 +851,7 @@ hr.air {
             </td>
         </tr>
 				 <tr class="data-row">
-            <td class="row-num-cell">2</td>
+            <td class="row-num-cell">4</td>
             <td class="desc-col">Tnut M6 small</td>
             <td class="pn-col">55500237</td>
             <td class="qty-col">2</td>
@@ -931,7 +859,7 @@ hr.air {
             <td class="action-col">
             </td>
         </tr>		 <tr class="data-row">
-            <td class="row-num-cell">2</td>
+            <td class="row-num-cell">5</td>
             <td class="desc-col">Plastic cover</td>
             <td class="pn-col">77700457</td>
             <td class="qty-col">1</td>
@@ -939,7 +867,7 @@ hr.air {
             <td class="action-col">
             </td>
         </tr>		 <tr class="data-row">
-            <td class="row-num-cell">2</td>
+            <td class="row-num-cell">6</td>
             <td class="desc-col">Small Plastic cover</td>
             <td class="pn-col">77700061</td>
             <td class="qty-col">2</td>
@@ -947,64 +875,14 @@ hr.air {
             <td class="action-col">
             </td>
         </tr>
-        <!-- שורות נוספות כפי שמופיעות בקוד שלך -->
     </table>
 </div>
-
-<!----------------------------BOX 9 END ---------------------------->
-
- <!-------------------------- BOX 10 ------------------>
+<!----------------------------BOX 8 END ---------------------------->
+<!-- קו מפריד בין טבלאות, לא יופיע בהדפסה -->
+<hr class="noPrint air">
+<!---------------------------- BOX 9 ---------------------------->
 <div class="box-table-wrapper">
-    <button class="icon-btn trashBtn" title="הסר טבלה" onclick="dimTable(this)">
-        <img src="https://cdn-icons-png.flaticon.com/512/1214/1214428.png" alt="Delete">
-    </button>
-    <button class="icon-btn undoBtn" title="החזר טבלה" style="display:none;" onclick="restoreTable(this)">
-        <img src="https://cdn-icons-png.flaticon.com/512/109/109618.png" alt="Undo">
-    </button>
- 
-    <!-- כפתור חדש לשכפול הטבלה 
-    <button class="icon-btn cloneBtn" title="שכפל טבלה" onclick="cloneTable(this)">
-        <img src="https://cdn-icons-png.flaticon.com/512/2983/2983067.png" alt="Clone">
-    </button>-->
-    <table class="box-table">
-        <tr>
-            <th class="box-header">BOX<br><span class="box-current"></span>/<span class="box-total"></span></th>
-            <th>DESCRIPTION</th>
-            <th>P/N</th>
-            <th>Qty</th>
-            <th>CHECK LIST</th>
-            <th class="action-col">Del</th>
-        </tr>
-        <tr class="data-row">
-            <td class="row-num-cell">1</td>
-            <td class="desc-col">Computer Base Assy</td>
-            <td class="pn-col">11100491</td>
-            <td class="qty-col">1</td>
-            <td class="check-col"><input type="checkbox"></td>
-            <td class="action-col">
-            </td>
-        </tr>
- 
-        <!-- שורות נוספות כפי שמופיעות בקוד שלך -->
-    </table>
-</div>
-
-<!----------------------------BOX 10 END ---------------------------->
-
-<!---------------------------- BOX 8 ---------------------------->
-<div class="box-table-wrapper">
-    <button class="icon-btn trashBtn" title="הסר טבלה" onclick="dimTable(this)">
-        <img src="https://cdn-icons-png.flaticon.com/512/1214/1214428.png" alt="Delete">
-    </button>
-    <button class="icon-btn undoBtn" title="החזר טבלה" style="display:none;" onclick="restoreTable(this)">
-        <img src="https://cdn-icons-png.flaticon.com/512/109/109618.png" alt="Undo">
-    </button>
- 
-    <!-- כפתור חדש לשכפול הטבלה 
-    <button class="icon-btn cloneBtn" title="שכפל טבלה" onclick="cloneTable(this)">
-        <img src="https://cdn-icons-png.flaticon.com/512/2983/2983067.png" alt="Clone">
-    </button>-->
-    <table class="box-table">
+          <table class="box-table">
         <tr>
             <th class="box-header">BOX<br><span class="box-current"></span>/<span class="box-total"></span></th>
             <th>DESCRIPTION</th>
@@ -1032,7 +910,7 @@ hr.air {
             </td>
         </tr>
 		 <tr class="data-row">
-            <td class="row-num-cell">2</td>
+            <td class="row-num-cell">3</td>
             <td class="desc-col">Keyboard + MOUSE</td>
             <td class="pn-col">88801291</td>
             <td class="qty-col">1</td>
@@ -1041,7 +919,7 @@ hr.air {
             </td>
         </tr>
 		 <tr class="data-row">
-            <td class="row-num-cell">2</td>
+            <td class="row-num-cell">4</td>
             <td class="desc-col">Computer Driver Box</td>
             <td class="pn-col">999</td>
             <td class="qty-col">1</td>
@@ -1049,23 +927,14 @@ hr.air {
             <td class="action-col">
             </td>
         </tr>
-		
-		
-        <!-- שורות נוספות כפי שמופיעות בקוד שלך -->
     </table>
 </div>
-
-<!----------------------------BOX 8 END ---------------------------->
+<!----------------------------BOX 9 END ---------------------------->
+<!-- קו מפריד בין טבלאות, לא יופיע בהדפסה -->
+<hr class="noPrint air">
  <!-------------------------- BOX 10 ------------------>
 <div class="box-table-wrapper">
-    <button class="icon-btn undoBtn" title="החזר טבלה" style="display:none;" onclick="restoreTable(this)">
-        <img src="https://cdn-icons-png.flaticon.com/512/109/109618.png" alt="Undo">
-    </button>
- 
-    <!-- כפתור חדש לשכפול הטבלה 
-    <button class="icon-btn cloneBtn" title="שכפל טבלה" onclick="cloneTable(this)">
-        <img src="https://cdn-icons-png.flaticon.com/512/2983/2983067.png" alt="Clone">
-    </button>-->
+    
     <table class="box-table">
         <tr>
             <th class="box-header">BOX<br><span class="box-current"></span>/<span class="box-total"></span></th>
@@ -1084,22 +953,13 @@ hr.air {
             <td class="action-col">
             </td>
         </tr>
- 
-        <!-- שורות נוספות כפי שמופיעות בקוד שלך -->
     </table>
 </div>
+<!----------------------------BOX 10 END -------------->
 
-<!----------------------------BOX 10 END ---------------------------->
- <!-------------------------- BOX 10 ------------------>
+ <!-------------------------- BOX 11 ------------------>
 <div class="box-table-wrapper">
-    <button class="icon-btn undoBtn" title="החזר טבלה" style="display:none;" onclick="restoreTable(this)">
-        <img src="https://cdn-icons-png.flaticon.com/512/109/109618.png" alt="Undo">
-    </button>
- 
-    <!-- כפתור חדש לשכפול הטבלה 
-    <button class="icon-btn cloneBtn" title="שכפל טבלה" onclick="cloneTable(this)">
-        <img src="https://cdn-icons-png.flaticon.com/512/2983/2983067.png" alt="Clone">
-    </button>-->
+   
     <table class="box-table">
         <tr>
             <th class="box-header">BOX<br><span class="box-current"></span>/<span class="box-total"></span></th>
@@ -1118,23 +978,13 @@ hr.air {
             <td class="action-col">
             </td>
         </tr>
- 
-        <!-- שורות נוספות כפי שמופיעות בקוד שלך -->
     </table>
 </div>
+<!----------------------------BOX 11 END -------------->
 
-<!----------------------------BOX 10 END ---------------------------->
- <!-------------------------- BOX 10 ------------------>
+ <!-------------------------- BOX 12 ------------------>
 <div class="box-table-wrapper">
   
-    <button class="icon-btn undoBtn" title="החזר טבלה" style="display:none;" onclick="restoreTable(this)">
-        <img src="https://cdn-icons-png.flaticon.com/512/109/109618.png" alt="Undo">
-    </button>
- 
-    <!-- כפתור חדש לשכפול הטבלה 
-    <button class="icon-btn cloneBtn" title="שכפל טבלה" onclick="cloneTable(this)">
-        <img src="https://cdn-icons-png.flaticon.com/512/2983/2983067.png" alt="Clone">
-    </button>-->
     <table class="box-table">
         <tr>
             <th class="box-header">BOX<br><span class="box-current"></span>/<span class="box-total"></span></th>
@@ -1153,22 +1003,14 @@ hr.air {
             <td class="action-col">
             </td>
         </tr>
- 
-        <!-- שורות נוספות כפי שמופיעות בקוד שלך -->
     </table>
 </div>
-
-<!----------------------------BOX 10 END ---------------------------->
- <!-------------------------- BOX 10 ------------------>
+<!----------------------------BOX 12 END -------------->
+<!-- קו מפריד בין טבלאות, לא יופיע בהדפסה -->
+<hr class="noPrint air">
+ <!-------------------------- BOX 13 ------------------>
 <div class="box-table-wrapper">
-    <button class="icon-btn undoBtn" title="החזר טבלה" style="display:none;" onclick="restoreTable(this)">
-        <img src="https://cdn-icons-png.flaticon.com/512/109/109618.png" alt="Undo">
-    </button>
- 
-    <!-- כפתור חדש לשכפול הטבלה 
-    <button class="icon-btn cloneBtn" title="שכפל טבלה" onclick="cloneTable(this)">
-        <img src="https://cdn-icons-png.flaticon.com/512/2983/2983067.png" alt="Clone">
-    </button>-->
+    
     <table class="box-table">
         <tr>
             <th class="box-header">BOX<br><span class="box-current"></span>/<span class="box-total"></span></th>
@@ -1187,23 +1029,14 @@ hr.air {
             <td class="action-col">
             </td>
         </tr>
- 
-        <!-- שורות נוספות כפי שמופיעות בקוד שלך -->
     </table>
 </div>
-
-<!----------------------------BOX 10 END ----------------------------> 
-
-<!-------------------------- BOX 11 ------------------>
+<!----------------------------BOX 13 END -------------> 
+<!-- קו מפריד בין טבלאות, לא יופיע בהדפסה -->
+<hr class="noPrint air">
+<!-------------------------- BOX 14 ------------------>
 <div class="box-table-wrapper">
-    <button class="icon-btn undoBtn" title="החזר טבלה" style="display:none;" onclick="restoreTable(this)">
-        <img src="https://cdn-icons-png.flaticon.com/512/109/109618.png" alt="Undo">
-    </button>
- 
-    <!-- כפתור חדש לשכפול הטבלה 
-    <button class="icon-btn cloneBtn" title="שכפל טבלה" onclick="cloneTable(this)">
-        <img src="https://cdn-icons-png.flaticon.com/512/2983/2983067.png" alt="Clone">
-    </button>-->
+    
     <table class="box-table">
         <tr>
             <th class="box-header">BOX<br><span class="box-current"></span>/<span class="box-total"></span></th>
@@ -1222,23 +1055,13 @@ hr.air {
             <td class="action-col">
             </td>
         </tr>
- 
-        <!-- שורות נוספות כפי שמופיעות בקוד שלך -->
     </table>
 </div>
-
-<!----------------------------BOX 10 END ---------------------------->
-
-<!---------------------------- BOX 9 ---------------------------->
+<!----------------------------BOX 14 END ------------>
+<!-- קו מפריד בין טבלאות, לא יופיע בהדפסה -->
+<hr class="noPrint air">
+<!---------------------------- BOX 15 ---------------->
 <div class="box-table-wrapper">
-    <button class="icon-btn undoBtn" title="החזר טבלה" style="display:none;" onclick="restoreTable(this)">
-        <img src="https://cdn-icons-png.flaticon.com/512/109/109618.png" alt="Undo">
-    </button>
- 
-    <!-- כפתור חדש לשכפול הטבלה 
-    <button class="icon-btn cloneBtn" title="שכפל טבלה" onclick="cloneTable(this)">
-        <img src="https://cdn-icons-png.flaticon.com/512/2983/2983067.png" alt="Clone">
-    </button>-->
     <table class="box-table">
         <tr>
             <th class="box-header">BOX<br><span class="box-current"></span>/<span class="box-total"></span></th>
@@ -1340,8 +1163,17 @@ hr.air {
             <td class="check-col"><input type="checkbox"></td>
             <td class="action-col">
             </td>
-        </tr>		<tr class="data-row">
+			</td>
+                </tr> 	 <tr class="data-row">
             <td class="row-num-cell">12</td>
+            <td class="desc-col">FILTER CUTTED OUTLET FAN BAG OF 10</td>
+            <td class="pn-col">22201882</td>
+            <td class="qty-col">1</td>
+            <td class="check-col"><input type="checkbox"></td>
+            <td class="action-col">
+            </td>
+        </tr>		<tr class="data-row">
+            <td class="row-num-cell">13</td>
             <td class="desc-col">ID back printer cartridge</td>
             <td class="pn-col">88800910</td>
             <td class="qty-col">2</td>
@@ -1351,7 +1183,7 @@ hr.air {
                 <button class="undo-row-btn" onclick="restoreRow(this)">↩</button>
             </td>	
    		</tr>		<tr class="data-row">
-            <td class="row-num-cell">13</td>
+            <td class="row-num-cell">14</td>
             <td class="desc-col">BACKLIT JIG, CAMERA</td>
             <td class="pn-col">11101435</td>
             <td class="qty-col">1</td>
@@ -1360,25 +1192,15 @@ hr.air {
 			<button class="del-row-btn" onclick="hideRow(this)">✖</button>
                 <button class="undo-row-btn" onclick="restoreRow(this)">↩</button>
             </td>	
-        <!-- שורות נוספות כפי שמופיעות בקוד שלך -->
     </table>
 </div>
 
-<!----------------------------BOX 9 END ---------------------------->
-
-
-
-
-<!---------------------------- BOX 9 ---------------------------->
+<!----------------------------BOX 15 END ---------------------------->
+<!-- קו מפריד בין טבלאות, לא יופיע בהדפסה -->
+<hr class="noPrint air">
+<!---------------------------- BOX 16 ---------------------------->
 <div class="box-table-wrapper">
-    <button class="icon-btn undoBtn" title="החזר טבלה" style="display:none;" onclick="restoreTable(this)">
-        <img src="https://cdn-icons-png.flaticon.com/512/109/109618.png" alt="Undo">
-    </button>
- 
-    <!-- כפתור חדש לשכפול הטבלה 
-    <button class="icon-btn cloneBtn" title="שכפל טבלה" onclick="cloneTable(this)">
-        <img src="https://cdn-icons-png.flaticon.com/512/2983/2983067.png" alt="Clone">
-    </button>-->
+    
     <table class="box-table">
         <tr>
             <th class="box-header">BOX<br><span class="box-current"></span>/<span class="box-total"></span></th>
@@ -1529,14 +1351,13 @@ hr.air {
             <td class="action-col">
             </td>
         </tr>
-        <!-- שורות נוספות כפי שמופיעות בקוד שלך -->
     </table>
 </div>
 
-<!----------------------------BOX 9 END ---------------------------->
-
+<!----------------------------BOX 16 END ------------->
 <!-- קו מפריד בין טבלאות, לא יופיע בהדפסה -->
-<!-------------------------- BOX 11 ------------------>
+<hr class="noPrint air">
+<!-------------------------- BOX 17 ----------------->
 <div class="box-table-wrapper">
     <button class="icon-btn undoBtn" title="החזר טבלה" style="display:none;" onclick="restoreTable(this)">
         <img src="https://cdn-icons-png.flaticon.com/512/109/109618.png" alt="Undo">
@@ -1564,15 +1385,13 @@ hr.air {
             <td class="action-col">
             </td>
         </tr>
- 
-        <!-- שורות נוספות כפי שמופיעות בקוד שלך -->
     </table>
 </div>
 
-<!----------------------------BOX 10 END ---------------------------->
+<!----------------------------BOX 17 END ---------------------------->
 <!-- קו מפריד בין טבלאות, לא יופיע בהדפסה -->
-
-<!-------------------------- BOX 11 ------------------>
+<hr class="noPrint air">
+<!-------------------------- BOX 18 ------------------>
 <div class="box-table-wrapper">
     <button class="icon-btn undoBtn" title="החזר טבלה" style="display:none;" onclick="restoreTable(this)">
         <img src="https://cdn-icons-png.flaticon.com/512/109/109618.png" alt="Undo">
@@ -1600,22 +1419,20 @@ hr.air {
             <td class="action-col">
             </td>
         </tr>
- 
-        <!-- שורות נוספות כפי שמופיעות בקוד שלך -->
     </table>
 </div>
 
-<!----------------------------BOX 10 END ---------------------------->
-<!-------------------------- BOX 11 ------------------>
+<!---------------------------BOX 18 END -------------->
+<!-- קו מפריד בין טבלאות, לא יופיע בהדפסה -->
+<hr class="noPrint air">
+<!-------------------------- BOX 19 ------------------>
 <div class="box-table-wrapper">
+    <button class="icon-btn trashBtn" title="הסר טבלה" onclick="dimTable(this)">
+        <img src="https://cdn-icons-png.flaticon.com/512/1214/1214428.png" alt="Delete">
+    </button>
     <button class="icon-btn undoBtn" title="החזר טבלה" style="display:none;" onclick="restoreTable(this)">
         <img src="https://cdn-icons-png.flaticon.com/512/109/109618.png" alt="Undo">
-    </button>
- 
-    <!-- כפתור חדש לשכפול הטבלה 
-    <button class="icon-btn cloneBtn" title="שכפל טבלה" onclick="cloneTable(this)">
-        <img src="https://cdn-icons-png.flaticon.com/512/2983/2983067.png" alt="Clone">
-    </button>-->
+    </button>     
     <table class="box-table">
         <tr>
             <th class="box-header">BOX<br><span class="box-current"></span>/<span class="box-total"></span></th>
@@ -1634,27 +1451,23 @@ hr.air {
             <td class="action-col">
             </td>
         </tr>
- 
-        <!-- שורות נוספות כפי שמופיעות בקוד שלך -->
     </table>
 </div>
 
-<!----------------------------BOX 10 END ---------------------------->
+<!----------------------------BOX 19 END ---------------->
 <!-- קו מפריד בין טבלאות, לא יופיע בהדפסה -->
-   <!-------------------------- טבלה אחרונה - BOX 42 עם מחיקת שורות ------------------>
+<hr class="noPrint air">
+<!-------------------------- BOX 20 ------------------>
 <div class="box-table-wrapper">
     <button class="icon-btn trashBtn" title="הסר טבלה" onclick="dimTable(this)">
         <img src="https://cdn-icons-png.flaticon.com/512/1214/1214428.png" alt="Delete">
     </button>
     <button class="icon-btn undoBtn" title="החזר טבלה" style="display:none;" onclick="restoreTable(this)">
         <img src="https://cdn-icons-png.flaticon.com/512/109/109618.png" alt="Undo">
-    </button>
-    <button class="icon-btn addRowBtn" title="הוסף שורה" onclick="addRowToTable(this)">
-        <img src="https://cdn-icons-png.flaticon.com/512/992/992651.png" alt="Add Row">
-    </button>
+    </button>    
     <table class="box-table">
         <tr>
-            <th class="box-header">BOX<br><span class="box-current"></span><br>מתוך<br><span class="box-total"></span></th>
+            <th class="box-header">BOX<br><span class="box-current"></span>/<span class="box-total"></span></th>
             <th>DESCRIPTION</th>
             <th>P/N</th>
             <th>Qty</th>
@@ -1665,29 +1478,41 @@ hr.air {
             <td class="row-num-cell">1</td>
             <td class="desc-col">ASSY SLITTER WITH STRIP COLLECTING</td>
             <td class="pn-col">10102120</td>
-            <td class="qty-col"><input type="text" placeholder="Qty" ></td>
+            <td class="qty-col">			
+           <select>
+               <option>1</option>
+               <option>2</option>
+			   <option>3</option>
+			   <option>4</option>
+               <option>5</option>
+			   <option>6</option>
+               <option>7</option>
+			   <option>8</option>
+			   <option>9</option>
+			   <option>10</option>
+	    	   <option>11</option>
+			   <option>12</option>
+           </select>
             <td class="check-col"><input type="checkbox"></td>
             <td class="action-col">
                 <button class="del-row-btn" onclick="hideRow(this)">✖</button>
                 <button class="undo-row-btn" onclick="restoreRow(this)">↩</button>
             </td>
         </tr>
-        <!-- אפשר להוסיף עוד שורות באותו פורמט -->
     </table>
 </div>
 
- <!-------------------------- טבלה אחרונה - BOX 42 עם מחיקת שורות ------------------>
-
-<!-------------------------- BOX 11 ------------------>
+<!----------------------------BOX 20 END ---------------->
+<!-- קו מפריד בין טבלאות, לא יופיע בהדפסה -->
+<hr class="noPrint air">
+<!-------------------------- BOX 21 ------------------>
 <div class="box-table-wrapper">
+    <button class="icon-btn trashBtn" title="הסר טבלה" onclick="dimTable(this)">
+        <img src="https://cdn-icons-png.flaticon.com/512/1214/1214428.png" alt="Delete">
+    </button>
     <button class="icon-btn undoBtn" title="החזר טבלה" style="display:none;" onclick="restoreTable(this)">
         <img src="https://cdn-icons-png.flaticon.com/512/109/109618.png" alt="Undo">
-    </button>
- 
-    <!-- כפתור חדש לשכפול הטבלה 
-    <button class="icon-btn cloneBtn" title="שכפל טבלה" onclick="cloneTable(this)">
-        <img src="https://cdn-icons-png.flaticon.com/512/2983/2983067.png" alt="Clone">
-    </button>-->
+    </button>    
     <table class="box-table">
         <tr>
             <th class="box-header">BOX<br><span class="box-current"></span>/<span class="box-total"></span></th>
@@ -1706,29 +1531,19 @@ hr.air {
             <td class="action-col">
             </td>
         </tr>
- 
-        <!-- שורות נוספות כפי שמופיעות בקוד שלך -->
     </table>
 </div>
 
-<!----------------------------BOX 10 END ---------------------------->
+<!----------------------------BOX 21 END ---------------------------->
 <!-- קו מפריד בין טבלאות, לא יופיע בהדפסה -->
-
-
- <!-------------------------- BOX 5 ------------------>
+<hr class="noPrint air">
+ <!-------------------------- BOX 22 ------------------>
 <div class="box-table-wrapper" data-group-id="ink-cyan">
     <button class="icon-btn trashBtn" title="הסר טבלה" onclick="dimTable(this)">
         <img src="https://cdn-icons-png.flaticon.com/512/1214/1214428.png" alt="Delete">
     </button>
     <button class="icon-btn undoBtn" title="החזר טבלה" style="display:none;" onclick="restoreTable(this)">
         <img src="https://cdn-icons-png.flaticon.com/512/109/109618.png" alt="Undo">
-    </button>
-	
-	<button class="icon-btn addRowBtn" title="הוסף שורה" onclick="addRowToTable(this)">
-        <img src="https://cdn-icons-png.flaticon.com/512/992/992651.png" alt="Add Row">
-    </button>
-    <!--<button class="icon-btn addRowBtn" title="הוסף שורה" onclick="addRowToTable(this)">
-        <img src="https://cdn-icons-png.flaticon.com/512/992/992651.png" alt="Add Row">
     </button>
     <!-- כפתור חדש לשכפול הטבלה -->
     <button class="icon-btn cloneBtn" title="שכפל טבלה" onclick="cloneTable(this)">
@@ -1752,32 +1567,19 @@ hr.air {
             <td class="action-col">
             </td>
         </tr>
-		
-		
-        <!-- אפשר להוסיף עוד שורות באותו פורמט -->
     </table>
 </div>
-
-	
-
 <hr class="noPrint air">
 
-<!----------------------------BOX 5 END ---------------------------->
-<!-- קו מפריד בין טבלאות, לא יופיע בהדפסה -->
- <!-------------------------- BOX 5 ------------------>
+<!----------------------------BOX 22 END ---------------------------->
+
+ <!-------------------------- BOX 23 ------------------>
 <div class="box-table-wrapper" data-group-id="ink-cyan">
     <button class="icon-btn trashBtn" title="הסר טבלה" onclick="dimTable(this)">
         <img src="https://cdn-icons-png.flaticon.com/512/1214/1214428.png" alt="Delete">
     </button>
     <button class="icon-btn undoBtn" title="החזר טבלה" style="display:none;" onclick="restoreTable(this)">
         <img src="https://cdn-icons-png.flaticon.com/512/109/109618.png" alt="Undo">
-    </button>
-	
-	<button class="icon-btn addRowBtn" title="הוסף שורה" onclick="addRowToTable(this)">
-        <img src="https://cdn-icons-png.flaticon.com/512/992/992651.png" alt="Add Row">
-    </button>
-    <!--<button class="icon-btn addRowBtn" title="הוסף שורה" onclick="addRowToTable(this)">
-        <img src="https://cdn-icons-png.flaticon.com/512/992/992651.png" alt="Add Row">
     </button>
     <!-- כפתור חדש לשכפול הטבלה -->
     <button class="icon-btn cloneBtn" title="שכפל טבלה" onclick="cloneTable(this)">
@@ -1795,38 +1597,24 @@ hr.air {
         <tr class="data-row">
             <td class="row-num-cell">1</td>
             <td class="desc-col">Air Shaft 2.38m</td>
-            <td class="pn-col">XXX</td>
+            <td class="pn-col">11102432</td>
             <td class="qty-col"><input type="text" value="1/1"></td>
             <td class="check-col"><input type="checkbox"></td>
             <td class="action-col">
             </td>
         </tr>
-		
-		
-        <!-- אפשר להוסיף עוד שורות באותו פורמט -->
     </table>
 </div>
-
-	
-
-<hr class="noPrint air">
-
-<!----------------------------BOX 5 END ---------------------------->
+<!----------------------------BOX 23 END ---------------------------->
 <!-- קו מפריד בין טבלאות, לא יופיע בהדפסה -->
- <!-------------------------- BOX 5 ------------------>
+<hr class="noPrint air">
+ <!-------------------------- BOX 24 ------------------>
 <div class="box-table-wrapper" data-group-id="ink-cyan">
     <button class="icon-btn trashBtn" title="הסר טבלה" onclick="dimTable(this)">
         <img src="https://cdn-icons-png.flaticon.com/512/1214/1214428.png" alt="Delete">
     </button>
     <button class="icon-btn undoBtn" title="החזר טבלה" style="display:none;" onclick="restoreTable(this)">
         <img src="https://cdn-icons-png.flaticon.com/512/109/109618.png" alt="Undo">
-    </button>
-	
-	<button class="icon-btn addRowBtn" title="הוסף שורה" onclick="addRowToTable(this)">
-        <img src="https://cdn-icons-png.flaticon.com/512/992/992651.png" alt="Add Row">
-    </button>
-    <!--<button class="icon-btn addRowBtn" title="הוסף שורה" onclick="addRowToTable(this)">
-        <img src="https://cdn-icons-png.flaticon.com/512/992/992651.png" alt="Add Row">
     </button>
     <!-- כפתור חדש לשכפול הטבלה -->
     <button class="icon-btn cloneBtn" title="שכפל טבלה" onclick="cloneTable(this)">
@@ -1851,31 +1639,18 @@ hr.air {
             </td>
         </tr>
 		
-		
-        <!-- אפשר להוסיף עוד שורות באותו פורמט -->
     </table>
 </div>
-
-	
-
-<hr class="noPrint air">
-
-<!----------------------------BOX 5 END ---------------------------->
+<!----------------------------BOX 24 END ---------------------------->
 <!-- קו מפריד בין טבלאות, לא יופיע בהדפסה -->
- <!-------------------------- BOX 5 ------------------>
+<hr class="noPrint air">
+ <!-------------------------- BOX 25 ------------------>
 <div class="box-table-wrapper" data-group-id="ink-cyan">
     <button class="icon-btn trashBtn" title="הסר טבלה" onclick="dimTable(this)">
         <img src="https://cdn-icons-png.flaticon.com/512/1214/1214428.png" alt="Delete">
     </button>
     <button class="icon-btn undoBtn" title="החזר טבלה" style="display:none;" onclick="restoreTable(this)">
         <img src="https://cdn-icons-png.flaticon.com/512/109/109618.png" alt="Undo">
-    </button>
-	
-	<button class="icon-btn addRowBtn" title="הוסף שורה" onclick="addRowToTable(this)">
-        <img src="https://cdn-icons-png.flaticon.com/512/992/992651.png" alt="Add Row">
-    </button>
-    <!--<button class="icon-btn addRowBtn" title="הוסף שורה" onclick="addRowToTable(this)">
-        <img src="https://cdn-icons-png.flaticon.com/512/992/992651.png" alt="Add Row">
     </button>
     <!-- כפתור חדש לשכפול הטבלה -->
     <button class="icon-btn cloneBtn" title="שכפל טבלה" onclick="cloneTable(this)">
@@ -1899,33 +1674,19 @@ hr.air {
             <td class="action-col">
             </td>
         </tr>
-		
-		
-        <!-- אפשר להוסיף עוד שורות באותו פורמט -->
     </table>
 </div>
-
-	
+<!----------------------------BOX 25 END ---------------------------->
 <!-- קו מפריד בין טבלאות, לא יופיע בהדפסה -->
 <hr class="noPrint air">
-
-<!----------------------------BOX 5 END ---------------------------->
-
- <!-------------------------- BOX 5 ------------------>
+ <!-------------------------- BOX 26 ------------------>
 <div class="box-table-wrapper" data-group-id="ink-cyan">
     <button class="icon-btn trashBtn" title="הסר טבלה" onclick="dimTable(this)">
         <img src="https://cdn-icons-png.flaticon.com/512/1214/1214428.png" alt="Delete">
     </button>
     <button class="icon-btn undoBtn" title="החזר טבלה" style="display:none;" onclick="restoreTable(this)">
         <img src="https://cdn-icons-png.flaticon.com/512/109/109618.png" alt="Undo">
-    </button>
-	
-	<button class="icon-btn addRowBtn" title="הוסף שורה" onclick="addRowToTable(this)">
-        <img src="https://cdn-icons-png.flaticon.com/512/992/992651.png" alt="Add Row">
-    </button>
-    <!--<button class="icon-btn addRowBtn" title="הוסף שורה" onclick="addRowToTable(this)">
-        <img src="https://cdn-icons-png.flaticon.com/512/992/992651.png" alt="Add Row">
-    </button>
+    </button>   
     <!-- כפתור חדש לשכפול הטבלה -->
     <button class="icon-btn cloneBtn" title="שכפל טבלה" onclick="cloneTable(this)">
         <img src="https://cdn-icons-png.flaticon.com/512/2983/2983067.png" alt="Clone">
@@ -1947,35 +1708,20 @@ hr.air {
             <td class="check-col"><input type="checkbox"></td>
             <td class="action-col">
             </td>
-        </tr>
-		
-		
-        <!-- אפשר להוסיף עוד שורות באותו פורמט -->
+        </tr>	
     </table>
 </div>
-
-	
-
-<hr class="noPrint air">
-
-<!----------------------------BOX 5 END ---------------------------->
+<!----------------------------BOX 26 END ---------------------------->
 <!-- קו מפריד בין טבלאות, לא יופיע בהדפסה -->
- <!-------------------------- BOX 5 ------------------>
+<hr class="noPrint air">
+ <!-------------------------- BOX 27 ------------------>
 <div class="box-table-wrapper" data-group-id="ink-cyan">
     <button class="icon-btn trashBtn" title="הסר טבלה" onclick="dimTable(this)">
         <img src="https://cdn-icons-png.flaticon.com/512/1214/1214428.png" alt="Delete">
     </button>
     <button class="icon-btn undoBtn" title="החזר טבלה" style="display:none;" onclick="restoreTable(this)">
         <img src="https://cdn-icons-png.flaticon.com/512/109/109618.png" alt="Undo">
-    </button>
-	
-	<button class="icon-btn addRowBtn" title="הוסף שורה" onclick="addRowToTable(this)">
-        <img src="https://cdn-icons-png.flaticon.com/512/992/992651.png" alt="Add Row">
-    </button>
-    <!--<button class="icon-btn addRowBtn" title="הוסף שורה" onclick="addRowToTable(this)">
-        <img src="https://cdn-icons-png.flaticon.com/512/992/992651.png" alt="Add Row">
-    </button>
-    <!-- כפתור חדש לשכפול הטבלה -->
+    </button>	       <!-- כפתור חדש לשכפול הטבלה -->
     <button class="icon-btn cloneBtn" title="שכפל טבלה" onclick="cloneTable(this)">
         <img src="https://cdn-icons-png.flaticon.com/512/2983/2983067.png" alt="Clone">
     </button>
@@ -1997,35 +1743,15 @@ hr.air {
             <td class="action-col">
             </td>
         </tr>
-		
-		
-        <!-- אפשר להוסיף עוד שורות באותו פורמט -->
     </table>
 </div>
-
-	
-
+<!----------------------------BOX 27 END ---------------------------->
+<!-- קו מפריד בין טבלאות, לא יופיע בהדפסה -->
 <hr class="noPrint air">
-
-<!----------------------------BOX 5 END ---------------------------->
- <!-------------------------- BOX 5 ------------------>
-<div class="box-table-wrapper" data-group-id="ink-cyan">
-    <button class="icon-btn trashBtn" title="הסר טבלה" onclick="dimTable(this)">
-        <img src="https://cdn-icons-png.flaticon.com/512/1214/1214428.png" alt="Delete">
-    </button>
+<!---------------------------- BOX 28 ---------------------------->
+<div class="box-table-wrapper">
     <button class="icon-btn undoBtn" title="החזר טבלה" style="display:none;" onclick="restoreTable(this)">
         <img src="https://cdn-icons-png.flaticon.com/512/109/109618.png" alt="Undo">
-    </button>
-	
-	<button class="icon-btn addRowBtn" title="הוסף שורה" onclick="addRowToTable(this)">
-        <img src="https://cdn-icons-png.flaticon.com/512/992/992651.png" alt="Add Row">
-    </button>
-    <!--<button class="icon-btn addRowBtn" title="הוסף שורה" onclick="addRowToTable(this)">
-        <img src="https://cdn-icons-png.flaticon.com/512/992/992651.png" alt="Add Row">
-    </button>
-    <!-- כפתור חדש לשכפול הטבלה -->
-    <button class="icon-btn cloneBtn" title="שכפל טבלה" onclick="cloneTable(this)">
-        <img src="https://cdn-icons-png.flaticon.com/512/2983/2983067.png" alt="Clone">
     </button>
     <table class="box-table">
         <tr>
@@ -2038,172 +1764,614 @@ hr.air {
         </tr>
         <tr class="data-row">
             <td class="row-num-cell">1</td>
-            <td class="desc-col">INK EFI MATAN SUPERRANGE XF V3 CYAN</td>
-            <td class="pn-col">45190876</td>
-            <td class="qty-col"><input type="text" value="1/1"></td>
+            <td class="desc-col">Static Support Right FRONT</td>
+            <td class="pn-col">11102041</td>
+		    <td class="qty-col">			
+           <select>
+               <option>1</option>
+               <option>2</option>
+           </select>		
+            <td class="check-col"><input type="checkbox"></td>
+            <td class="action-col">
+			    <button class="del-row-btn" onclick="hideRow(this)">✖</button>
+                <button class="undo-row-btn" onclick="restoreRow(this)">↩</button>
+            </td>
+            </td>
+        </tr>
+        <tr class="data-row">
+            <td class="row-num-cell">2</td>
+            <td class="desc-col">Static Support Right for air shaft REAR</td>
+            <td class="pn-col">11102041</td>
+            <td class="qty-col">1</td>
+            <td class="check-col"><input type="checkbox"></td>
+            <td class="action-col">
+			<button class="del-row-btn" onclick="hideRow(this)">✖</button>
+            <button class="undo-row-btn" onclick="restoreRow(this)">↩</button>
+            </td>
+            </td>
+        </tr>
+		 <tr class="data-row">
+            <td class="row-num-cell">3</td>
+            <td class="desc-col">Media Bracket Stand + DIN M8X20</td>
+            <td class="pn-col">33301901</td>
+            <td class="qty-col">			
+           <select>
+               <option>1</option>
+               <option>2</option>
+			   <option>3</option>
+			   <option>4</option>
+               <option>5</option>
+			   <option>6</option>
+               <option>7</option>
+			   <option>8</option>
+			   <option>9</option>
+			   <option>10</option>
+	    	   <option>11</option>
+			   <option>12</option>
+           </select>
+            <td class="check-col"><input type="checkbox"></td>
+            <td class="action-col">
+            </td>
+        </tr> <tr class="data-row">
+            <td class="row-num-cell">4</td>
+            <td class="desc-col">Inflator Tool For Air</td>
+            <td class="pn-col">11102033</td>
+			 <td class="qty-col">
+           <select>
+               <option>1</option>
+               <option>2</option>
+           </select>
+            <td class="check-col"><input type="checkbox"></td>
+            <td class="action-col">
+            </td>
+        </tr><tr class="data-row">
+            <td class="row-num-cell">5</td>
+            <td class="desc-col">BALL LOCK PINS D=12 L=70</td>
+            <td class="pn-col">77700657</td>
+             <td class="qty-col">			
+           <select>
+               <option>1</option>
+               <option>2</option>
+			   <option>3</option>
+			   <option>4</option>
+			   <option>5</option>
+			   <option>6</option>
+			  <select> 
             <td class="check-col"><input type="checkbox"></td>
             <td class="action-col">
             </td>
         </tr>
-		
-		
-        <!-- אפשר להוסיף עוד שורות באותו פורמט -->
+    </table>
+</div>
+<!----------------------------BOX 28 END ---------------------------->
+<!-- קו מפריד בין טבלאות, לא יופיע בהדפסה -->
+<hr class="noPrint air">
+ <!-------------------------- BOX 29 ------------------>
+<div class="box-table-wrapper" data-group-id="ink-cyan">
+    
+    <table class="box-table">
+        <tr>
+            <th class="box-header">BOX<br><span class="box-current"></span>/<span class="box-total"></span></th>
+            <th>DESCRIPTION</th>
+            <th>P/N</th>
+            <th>Qty</th>
+            <th>CHECK LIST</th>
+            <th class="action-col">Del</th>
+        </tr>
+        <tr class="data-row">
+            <td class="row-num-cell">1</td>
+            <td class="desc-col">Banner 5M</td>
+            <td class="pn-col">MED034</td>
+            <td class="qty-col">1</td>
+            <td class="check-col"><input type="checkbox"></td>
+            <td class="action-col">
+            </td>
+        </tr>
+    </table>
+</div>
+<!----------------------------BOX 29 END ---------------------------->
+<!-- קו מפריד בין טבלאות, לא יופיע בהדפסה -->
+<hr class="noPrint air">
+ <!-------------------------- BOX 30 ------------------>
+<div class="box-table-wrapper" data-group-id="ink-cyan">
+    
+    <table class="box-table">
+        <tr>
+            <th class="box-header">BOX<br><span class="box-current"></span>/<span class="box-total"></span></th>
+            <th>DESCRIPTION</th>
+            <th>P/N</th>
+            <th>Qty</th>
+            <th>CHECK LIST</th>
+            <th class="action-col">Del</th>
+        </tr>
+        <tr class="data-row">
+            <td class="row-num-cell">1</td>
+            <td class="desc-col">Media 1.6</td>
+            <td class="pn-col">10101001</td>
+            <td class="qty-col">1</td>
+            <td class="check-col"><input type="checkbox"></td>
+            <td class="action-col">
+            </td>
+        </tr>
+    </table>
+</div>
+<!----------------------------BOX 30 END ---------------------------->
+<!-- קו מפריד בין טבלאות, לא יופיע בהדפסה -->
+<hr class="noPrint air">
+ <!-------------------------- BOX 31 ------------------>
+<div class="box-table-wrapper" data-group-id="ink-cyan">
+    
+    <table class="box-table">
+        <tr>
+            <th class="box-header">BOX<br><span class="box-current"></span>/<span class="box-total"></span></th>
+            <th>DESCRIPTION</th>
+            <th>P/N</th>
+            <th>Qty</th>
+            <th>CHECK LIST</th>
+            <th class="action-col">Del</th>
+        </tr>
+        <tr class="data-row">
+            <td class="row-num-cell">1</td>
+            <td class="desc-col">Chiller</td>
+            <td class="pn-col">88801086</td>
+            <td class="qty-col">1</td>
+            <td class="check-col"><input type="checkbox"></td>
+            <td class="action-col">
+            </td>
+        </tr>
+    </table>
+</div>
+<!----------------------------BOX 31 END ---------------------------->
+<!-- קו מפריד בין טבלאות, לא יופיע בהדפסה -->
+<hr class="noPrint air">
+ <!-------------------------- BOX 32 ------------------>
+<div class="box-table-wrapper" data-group-id="ink-cyan">
+    
+    <table class="box-table">
+        <tr>
+            <th class="box-header">BOX<br><span class="box-current"></span>/<span class="box-total"></span></th>
+            <th>DESCRIPTION</th>
+            <th>P/N</th>
+            <th>Qty</th>
+            <th>CHECK LIST</th>
+            <th class="action-col">Del</th>
+        </tr>
+        <tr class="data-row">
+            <td class="row-num-cell">1</td>
+            <td class="desc-col">ASSY FAN SLEEVE BACK COVER</td>
+            <td class="pn-col">11101656</td>
+           <td class="qty-col">1/3</td>
+            <td class="check-col"><input type="checkbox"></td>
+            <td class="action-col">
+            </td>
+        </tr>
+    </table>
+</div>
+<!----------------------------BOX 32 END ---------------------------->
+
+ <!-------------------------- BOX 33 ------------------>
+<div class="box-table-wrapper" data-group-id="ink-cyan">
+    
+    <table class="box-table">
+        <tr>
+            <th class="box-header">BOX<br><span class="box-current"></span>/<span class="box-total"></span></th>
+            <th>DESCRIPTION</th>
+            <th>P/N</th>
+            <th>Qty</th>
+            <th>CHECK LIST</th>
+            <th class="action-col">Del</th>
+        </tr>
+        <tr class="data-row">
+            <td class="row-num-cell">1</td>
+            <td class="desc-col">ASSY FAN SLEEVE BACK COVER</td>
+            <td class="pn-col">11101656</td>
+           <td class="qty-col">2/3</td>
+            <td class="check-col"><input type="checkbox"></td>
+            <td class="action-col">
+            </td>
+        </tr>
+    </table>
+</div>
+<!----------------------------BOX 33 END ---------------------------->
+
+ <!-------------------------- BOX 34 ------------------>
+<div class="box-table-wrapper" data-group-id="ink-cyan">
+    
+    <table class="box-table">
+        <tr>
+            <th class="box-header">BOX<br><span class="box-current"></span>/<span class="box-total"></span></th>
+            <th>DESCRIPTION</th>
+            <th>P/N</th>
+            <th>Qty</th>
+            <th>CHECK LIST</th>
+            <th class="action-col">Del</th>
+        </tr>
+        <tr class="data-row">
+            <td class="row-num-cell">1</td>
+            <td class="desc-col">ASSY FAN SLEEVE BACK COVER</td>
+            <td class="pn-col">11101656</td>
+            <td class="qty-col">3/3</td>
+            <td class="check-col"><input type="checkbox"></td>
+            <td class="action-col">
+            </td>
+        </tr>
+    </table>
+</div>
+<!----------------------------BOX 34 END ---------------------------->
+<!-- קו מפריד בין טבלאות, לא יופיע בהדפסה -->
+<hr class="noPrint air">
+ <!-------------------------- BOX 35 ------------------>
+<div class="box-table-wrapper" data-group-id="ink-cyan">
+    
+    <table class="box-table">
+        <tr>
+            <th class="box-header">BOX<br><span class="box-current"></span>/<span class="box-total"></span></th>
+            <th>DESCRIPTION</th>
+            <th>P/N</th>
+            <th>Qty</th>
+            <th>CHECK LIST</th>
+            <th class="action-col">Del</th>
+        </tr>
+        <tr class="data-row">
+            <td class="row-num-cell">1</td>
+            <td class="desc-col">RIGHT DOOR ASSY</td>
+            <td class="pn-col">11101211</td>
+			<td class="qty-col">1</td>
+            <td class="check-col"><input type="checkbox"></td>
+            <td class="action-col">
+            </td>
+            </td>
+        </tr>
+    </table>
+</div>
+<!----------------------------BOX 35 END ---------------------------->
+<!-- קו מפריד בין טבלאות, לא יופיע בהדפסה -->
+<hr class="noPrint air">
+ <!-------------------------- BOX 36 ------------------>
+<div class="box-table-wrapper" data-group-id="ink-cyan">
+    
+    <table class="box-table">
+        <tr>
+            <th class="box-header">BOX<br><span class="box-current"></span>/<span class="box-total"></span></th>
+            <th>DESCRIPTION</th>
+            <th>P/N</th>
+            <th>Qty</th>
+            <th>CHECK LIST</th>
+            <th class="action-col">Del</th>
+        </tr>
+        <tr class="data-row">
+            <td class="row-num-cell">1</td>
+            <td class="desc-col">SIDE COVERS ASSY</td>
+            <td class="pn-col">11101372</td>
+             <td class="qty-col">1</td>
+            <td class="check-col"><input type="checkbox"></td>
+            <td class="action-col">
+            </td>
+        </tr>
+    </table>
+</div>
+<!----------------------------BOX 36 END ---------------------------->
+<!-- קו מפריד בין טבלאות, לא יופיע בהדפסה -->
+<hr class="noPrint air">
+ <!-------------------------- BOX 37 ------------------>
+<div class="box-table-wrapper" data-group-id="ink-cyan">
+    
+    <table class="box-table">
+        <tr>
+            <th class="box-header">BOX<br><span class="box-current"></span>/<span class="box-total"></span></th>
+            <th>DESCRIPTION</th>
+            <th>P/N</th>
+            <th>Qty</th>
+            <th>CHECK LIST</th>
+            <th class="action-col">Del</th>
+        </tr>
+        <tr class="data-row">
+            <td class="row-num-cell">1</td>
+            <td class="desc-col">RIGHT SIDE COVER ASSY</td>
+            <td class="pn-col">11101374</td>
+             <td class="qty-col">1</td>
+            <td class="check-col"><input type="checkbox"></td>
+            <td class="action-col">
+            </td>
+        </tr>
+    </table>
+</div>
+<!----------------------------BOX 37 END ---------------------------->
+<!-- קו מפריד בין טבלאות, לא יופיע בהדפסה -->
+<hr class="noPrint air">
+ <!-------------------------- BOX 38 ------------------>
+<div class="box-table-wrapper" data-group-id="ink-cyan">
+    
+    <table class="box-table">
+        <tr>
+            <th class="box-header">BOX<br><span class="box-current"></span>/<span class="box-total"></span></th>
+            <th>DESCRIPTION</th>
+            <th>P/N</th>
+            <th>Qty</th>
+            <th>CHECK LIST</th>
+            <th class="action-col">Del</th>
+        </tr>
+        <tr class="data-row">
+            <td class="row-num-cell">1</td>
+            <td class="desc-col">BOTTOM BACK COVER ASSY</td>
+            <td class="pn-col">1111375</td>
+            <td class="qty-col">1</td>
+            <td class="check-col"><input type="checkbox"></td>
+            <td class="action-col">
+            </td>
+        </tr>
+    </table>
+</div>
+<!----------------------------BOX 38 END ---------------------------->
+<!-- קו מפריד בין טבלאות, לא יופיע בהדפסה -->
+<hr class="noPrint air">
+ <!-------------------------- BOX 39 ------------------>
+<div class="box-table-wrapper" data-group-id="ink-cyan">
+    <button class="icon-btn trashBtn" title="הסר טבלה" onclick="dimTable(this)">
+        <img src="https://cdn-icons-png.flaticon.com/512/1214/1214428.png" alt="Delete">
+    </button>
+    <button class="icon-btn undoBtn" title="החזר טבלה" style="display:none;" onclick="restoreTable(this)">
+        <img src="https://cdn-icons-png.flaticon.com/512/109/109618.png" alt="Undo">
+    </button>
+    <table class="box-table">
+        <tr>
+            <th class="box-header">BOX<br><span class="box-current"></span>/<span class="box-total"></span></th>
+            <th>DESCRIPTION</th>
+            <th>P/N</th>
+            <th>Qty</th>
+            <th>CHECK LIST</th>
+            <th class="action-col">Del</th>
+        </tr>
+        <tr class="data-row">
+            <td class="row-num-cell">1</td>
+            <td class="desc-col">QUALITY & CALIBRATION MAINTENANCE KIT</td>
+            <td class="pn-col">10102102</td>
+            <td class="qty-col">1</td>
+            <td class="check-col"><input type="checkbox"></td>
+            <td class="action-col">
+            </td>
+        </tr>
+    </table>
+</div>
+<!----------------------------BOX 39 END ---------------------------->
+<!-- קו מפריד בין טבלאות, לא יופיע בהדפסה -->
+<hr class="noPrint air">
+ <!-------------------------- BOX 40 ------------------>
+<div class="box-table-wrapper" data-group-id="ink-cyan">
+   <button class="icon-btn trashBtn" title="הסר טבלה" onclick="dimTable(this)">
+        <img src="https://cdn-icons-png.flaticon.com/512/1214/1214428.png" alt="Delete">
+    </button>
+    <button class="icon-btn undoBtn" title="החזר טבלה" style="display:none;" onclick="restoreTable(this)">
+        <img src="https://cdn-icons-png.flaticon.com/512/109/109618.png" alt="Undo">
+    </button>
+    <table class="box-table">
+        <tr>
+            <th class="box-header">BOX<br><span class="box-current"></span>/<span class="box-total"></span></th>
+            <th>DESCRIPTION</th>
+            <th>P/N</th>
+            <th>Qty</th>
+            <th>CHECK LIST</th>
+            <th class="action-col">Del</th>
+        </tr>
+        <tr class="data-row">
+            <td class="row-num-cell">1</td>
+            <td class="desc-col">MEDIA EDGE GUARD VUTEK 3/5R D3/5R SINGLE</td>
+            <td class="pn-col">10102099</td>
+            <td class="qty-col">1</td>
+            <td class="check-col"><input type="checkbox"></td>
+            <td class="action-col">
+            </td>
+        </tr>
+    </table>
+</div>
+<!----------------------------BOX 40 END ---------------------------->
+<!-- קו מפריד בין טבלאות, לא יופיע בהדפסה -->
+<hr class="noPrint air">
+ <!-------------------------- BOX 41 ------------------>
+<div class="box-table-wrapper" data-group-id="ink-cyan">
+ 
+    <table class="box-table">
+        <tr>
+            <th class="box-header">BOX<br><span class="box-current"></span>/<span class="box-total"></span></th>
+            <th>DESCRIPTION</th>
+            <th>P/N</th>
+            <th>Qty</th>
+            <th>CHECK LIST</th>
+            <th class="action-col">Del</th>
+        </tr>
+        <tr class="data-row">
+            <td class="row-num-cell">1</td>
+            <td class="desc-col">chiller kit</td>
+            <td class="pn-col">10103227</td>
+            <td class="qty-col">1</td>
+            <td class="check-col"><input type="checkbox"></td>
+            <td class="action-col">
+            </td>
+        </tr>
+    </table>
+</div>
+<!----------------------------BOX 41 END ---------------------------->
+<!-- קו מפריד בין טבלאות, לא יופיע בהדפסה -->
+<hr class="noPrint air">
+ <!-------------------------- BOX 42 ------------------>
+
+<div
+ class="box-table-wrapper" data-group-id="ink-cyan">
+       
+    <!-- כפתור חדש לשכפול הטבלה -->
+       <table class="box-table">
+        <tr>
+            <th class="box-header">BOX<br><span class="box-current"></span>/<span class="box-total"></span></th>
+            <th>DESCRIPTION</th>
+            <th>P/N</th>
+            <th>Qty</th>
+            <th>CHECK LIST</th>
+            <th class="action-col">Del</th>
+        </tr>
+        <tr class="data-row">
+            <td class="row-num-cell">1</td>
+            <td class="desc-col">KIT SERVICE HONEYCOMB PLATE VUTEK R DR ANTI MIST</td>
+            <td class="pn-col">10103353</td>
+            <td class="qty-col">1</td>
+            <td class="check-col"><input type="checkbox"></td>
+            <td class="action-col">
+        </tr>
+    </table>
+</div>
+<!----------------------------BOX 42 END ---------------------------->
+<!-- קו מפריד בין טבלאות, לא יופיע בהדפסה -->
+<hr class="noPrint air">	
+<!---------------------------- BOX 43 ---------------------------->
+<div class="box-table-wrapper">
+    <button class="icon-btn trashBtn" title="הסר טבלה" onclick="dimTable(this)">
+        <img src="https://cdn-icons-png.flaticon.com/512/1214/1214428.png" alt="Delete">
+    </button>
+    <button class="icon-btn undoBtn" title="החזר טבלה" style="display:none;" onclick="restoreTable(this)">
+        <img src="https://cdn-icons-png.flaticon.com/512/109/109618.png" alt="Undo">
+    </button>
+    <table class="box-table">
+        <tr>
+            <th class="box-header">BOX<br><span class="box-current"></span>/<span class="box-total"></span></th>
+            <th>DESCRIPTION</th>
+            <th>P/N</th>
+            <th>Qty</th>
+            <th>CHECK LIST</th>
+            <th class="action-col">Del</th>
+        </tr>
+        <tr class="data-row">
+            <td class="row-num-cell">1</td>
+            <td class="desc-col">HD WINDER FRONT</td>
+            <td class="pn-col">10102117</td>
+            <td class="qty-col">1</td>
+            <td class="check-col"><input type="checkbox"></td>
+            <td class="action-col">
+            </td>
+        </tr>
+        <tr class="data-row">
+            <td class="row-num-cell">2</td>
+            <td class="desc-col">ADAPTER FOR HD WINDER FOR VUTEK 3/5 R</td>
+            <td class="pn-col">11101585</td>
+            <td class="qty-col">2</td>
+            <td class="check-col"><input type="checkbox"></td>
+            <td class="action-col">
+            </td>
+        </tr>
+		 <tr class="data-row">
+            <td class="row-num-cell">3</td>
+            <td class="desc-col">ALIGNMENT JIG FOR ADAPTER FOR HD WINDER</td>
+            <td class="pn-col">11101586</td>
+            <td class="qty-col">1</td>
+            <td class="check-col"><input type="checkbox"></td>
+            <td class="action-col">
+            </td>
+        </tr> <tr class="data-row">
+            <td class="row-num-cell">4</td>
+            <td class="desc-col">CABLE COMMUNICATION 1M TAURO TO MAXWELL</td>
+            <td class="pn-col">88801226</td>
+            <td class="qty-col">1</td>
+            <td class="check-col"><input type="checkbox"></td>
+            <td class="action-col">
+            </td>
+        </tr><tr class="data-row">
+            <td class="row-num-cell">5</td>
+            <td class="desc-col">TUBE PU 8X6 BLUE</td>
+            <td class="pn-col">66600056</td>
+            <td class="qty-col">1</td>
+            <td class="check-col"><input type="checkbox"></td>
+            <td class="action-col">
+            </td>
+        </tr>		 <tr class="data-row">
+            <td class="row-num-cell">6</td>
+            <td class="desc-col">CABLE EMERGENCY STOP HD WINDER TO PRINTER 24VDC</td>
+            <td class="pn-col">88801354</td>
+            <td class="qty-col">1</td>
+            <td class="check-col"><input type="checkbox"></td>
+            <td class="action-col">
+            </td>
+         </tr>
     </table>
 </div>
 
-	
+<!----------------------------BOX 43 END ------------->
 <!-- קו מפריד בין טבלאות, לא יופיע בהדפסה -->
-<hr class="noPrint air">
+<hr class="noPrint air">	
+<!---------------------------- BOX 44 ---------------------------->
+<div class="box-table-wrapper">
+    <button class="icon-btn trashBtn" title="הסר טבלה" onclick="dimTable(this)">
+        <img src="https://cdn-icons-png.flaticon.com/512/1214/1214428.png" alt="Delete">
+    </button>
+    <button class="icon-btn undoBtn" title="החזר טבלה" style="display:none;" onclick="restoreTable(this)">
+        <img src="https://cdn-icons-png.flaticon.com/512/109/109618.png" alt="Undo">
+    </button>
+    <table class="box-table">
+        <tr>
+            <th class="box-header">BOX<br><span class="box-current"></span>/<span class="box-total"></span></th>
+            <th>DESCRIPTION</th>
+            <th>P/N</th>
+            <th>Qty</th>
+            <th>CHECK LIST</th>
+            <th class="action-col">Del</th>
+        </tr>
+        <tr class="data-row">
+            <td class="row-num-cell">1</td>
+            <td class="desc-col">HD WINDER BACK</td>
+            <td class="pn-col">10102033</td>
+            <td class="qty-col">1</td>
+            <td class="check-col"><input type="checkbox"></td>
+            <td class="action-col">
+            </td>
+        </tr>
+        <tr class="data-row">
+            <td class="row-num-cell">2</td>
+            <td class="desc-col">ADAPTER FOR HD WINDER FOR VUTEK 3/5 R</td>
+            <td class="pn-col">11101585</td>
+            <td class="qty-col">2</td>
+            <td class="check-col"><input type="checkbox"></td>
+            <td class="action-col">
+            </td>
+        </tr>
+		 <tr class="data-row">
+            <td class="row-num-cell">3</td>
+            <td class="desc-col">ALIGNMENT JIG FOR ADAPTER FOR HD WINDER</td>
+            <td class="pn-col">11101586</td>
+            <td class="qty-col">1</td>
+            <td class="check-col"><input type="checkbox"></td>
+            <td class="action-col">
+            </td>
+        </tr> <tr class="data-row">
+            <td class="row-num-cell">4</td>
+            <td class="desc-col">CABLE COMMUNICATION 1M TAURO TO MAXWELL</td>
+            <td class="pn-col">88801226</td>
+            <td class="qty-col">1</td>
+            <td class="check-col"><input type="checkbox"></td>
+            <td class="action-col">
+            </td>
+        </tr><tr class="data-row">
+            <td class="row-num-cell">5</td>
+            <td class="desc-col">TUBE PU 8X6 BLUE</td>
+            <td class="pn-col">66600056</td>
+            <td class="qty-col">1</td>
+            <td class="check-col"><input type="checkbox"></td>
+            <td class="action-col">
+            </td>
+        </tr>		 <tr class="data-row">
+            <td class="row-num-cell">6</td>
+            <td class="desc-col">CABLE EMERGENCY STOP HD WINDER TO PRINTER 24VDC</td>
+            <td class="pn-col">88801345</td>
+            <td class="qty-col">1</td>
+            <td class="check-col"><input type="checkbox"></td>
+            <td class="action-col">
+            </td>
+         </tr>
+    </table>
+</div>
 
-<!----------------------------BOX 5 END ---------------------------->
-
-
-<hr class="noPrint air">
-
-<!---------------------------- BOX 5 ---------------------------->
-
-<!----------------------------BOX 5 END ---------------------------->
+<!----------------------------BOX 44 END ------------->
 <!-- קו מפריד בין טבלאות, לא יופיע בהדפסה -->
-<hr class="noPrint air">
-
-
-<!---------------------------- BOX 6 ---------------------------->
-
-<!----------------------------BOX 6 END ---------------------------->
-
-<!-- קו מפריד בין טבלאות, לא יופיע בהדפסה -->
-<hr class="noPrint air">
-
-
-<!---------------------------- BOX 7 ---------------------------->
-
-<!----------------------------BOX 7 END ---------------------------->
-
-<!-- קו מפריד בין טבלאות, לא יופיע בהדפסה -->
-<hr class="noPrint air">
-
-
-<!---------------------------- BOX 8 ---------------------------->
-
-<!----------------------------BOX 8 END ---------------------------->
-
-<!-- קו מפריד בין טבלאות, לא יופיע בהדפסה -->
-<hr class="noPrint air">
-
-
-<!---------------------------- BOX 9 ---------------------------->
-
-<!----------------------------BOX 9 END ---------------------------->
-
-<!-- קו מפריד בין טבלאות, לא יופיע בהדפסה -->
-<hr class="noPrint air">
-
-
-
-
-<!---------------------------- BOX 10 ---------------------------->
-
-<!----------------------------BOX 10 END ---------------------------->
-
-<!-- קו מפריד בין טבלאות, לא יופיע בהדפסה -->
-<hr class="noPrint air">
-
-
-
-<!---------------------------- BOX 11 ---------------------------->
-
-<!----------------------------BOX 11 END ---------------------------->
-<!-- קו מפריד בין טבלאות, לא יופיע בהדפסה -->
-<hr class="noPrint air">
-
-
-<!---------------------------- BOX 12 ---------------------------->
-
-<!----------------------------BOX 12 END ---------------------------->
-
-<!-- קו מפריד בין טבלאות, לא יופיע בהדפסה -->
-<hr class="noPrint air">
-
-
-<!---------------------------- BOX 13 ---------------------------->
-
-<!----------------------------BOX 13 END ---------------------------->
-
-<!-- קו מפריד בין טבלאות, לא יופיע בהדפסה -->
-<hr class="noPrint air">
-
-
-<!---------------------------- BOX 14 ---------------------------->
-
-<!----------------------------BOX 14 END ---------------------------->
-<!-- קו מפריד בין טבלאות, לא יופיע בהדפסה -->
-<hr class="noPrint air">
-
-
-
-<!---------------------------- BOX 15 ---------------------------->
-
-<!----------------------------BOX 15 END ---------------------------->
-<!-- קו מפריד בין טבלאות, לא יופיע בהדפסה -->
-<hr class="noPrint air">
-
-
-<!---------------------------- BOX 16 ---------------------------->
-
-<!----------------------------BOX 16 END ---------------------------->
-<!-- קו מפריד בין טבלאות, לא יופיע בהדפסה -->
-<hr class="noPrint air">
-
-
-
-<!---------------------------- BOX 17 ---------------------------->
-
-<!----------------------------BOX 17 END ---------------------------->
-
-<!-- קו מפריד בין טבלאות, לא יופיע בהדפסה -->
-<hr class="noPrint air">
-
-
-
-<!---------------------------- BOX 18 ---------------------------->
-
-<!----------------------------BOX 18 END ---------------------------->
-
-<!-- קו מפריד בין טבלאות, לא יופיע בהדפסה -->
-<hr class="noPrint air">
-
-
-
-<!---------------------------- BOX 19 ---------------------------->
-
-<!----------------------------BOX 19 END ---------------------------->
-<!-- קו מפריד בין טבלאות, לא יופיע בהדפסה -->
-<hr class="noPrint air">
-
-
-
-<!---------------------------- BOX 20 ---------------------------->
-
-<!----------------------------BOX 20 END ---------------------------->
-
-<!-- קו מפריד בין טבלאות, לא יופיע בהדפסה -->
-<hr class="noPrint air">
-
-
-
-
-
- <!-------------------------- טבלה אחרונה - BOX 42 עם מחיקת שורות ------------------>
-	
-	
-<!-- קו מפריד בין טבלאות, לא יופיע בהדפסה -->
-<hr class="noPrint air">
-
-	
-	
+<hr class="noPrint air">	
 <!---------------------- אזור הערות בסוף הדף, מתחת לכל הטבלאות ---------------------->
 <div class="notes-section">
-    <h2>הערות</h2>
+    <h2>comments</h2>
     <textarea id="notes-area" placeholder="..." rows="5"></textarea>
     
 </div>
@@ -2212,280 +2380,239 @@ hr.air {
     <script>
 
  <!----------------------JavaScript  ----------------------> 
-	   
+// פונקציה שמחזירה את כל ה־box-table-wrapper שבאותה קבוצה (בין <hr class="noPrint air">)
+function getGroupTables(wrapper) {
+  const allElements = Array.from(document.querySelectorAll('.box-table-wrapper, hr.noPrint.air'));
+  const idx = allElements.indexOf(wrapper);
+  if (idx === -1) return [];
+  // חפש אחורה עד ל-<hr> או לתחילת הדף
+  let start = idx;
+  while (start > 0 && !allElements[start - 1].matches('hr.noPrint.air')) {
+    start--;
+  }
+  // חפש קדימה עד ל-<hr> הבא או לסוף הדף
+  let end = idx;
+  while (end < allElements.length - 1 && !allElements[end + 1].matches('hr.noPrint.air')) {
+    end++;
+  }
+  // תחום הקבוצה: כל box-table-wrapper מ-start עד end (כולל)
+  return allElements.slice(start, end + 1).filter(el => el.classList && el.classList.contains('box-table-wrapper'));
+}
+
 // עדכון מספור BOX רק לטבלאות גלויות
 function updateBoxNumbers() {
-    const visibleWrappers = Array.from(document.querySelectorAll('.box-table-wrapper:not(.dimmed)'));
-    visibleWrappers.forEach((wrapper, index) => {
-        const currentSpan = wrapper.querySelector('.box-current');
-        const totalSpan = wrapper.querySelector('.box-total');
-        if (currentSpan) currentSpan.textContent = index + 1;
-        if (totalSpan) totalSpan.textContent = visibleWrappers.length;
-    });
+  const visibleWrappers = Array.from(document.querySelectorAll('.box-table-wrapper:not(.dimmed)'));
+  visibleWrappers.forEach((wrapper, index) => {
+    const currentSpan = wrapper.querySelector('.box-current');
+    const totalSpan = wrapper.querySelector('.box-total');
+    if (currentSpan) currentSpan.textContent = index + 1;
+    if (totalSpan) totalSpan.textContent = visibleWrappers.length;
+  });
 }
 
 // עדכון מספרי שורה בטבלה
 function updateRowNumbers(table) {
-    const rows = table.querySelectorAll('tr.data-row:not(.row-dimmed)'); // שורות הנתונים הגלויות בלבד
-    rows.forEach((row, index) => {
-        const rowNumCell = row.querySelector('.row-num-cell');
-        if (rowNumCell) {
-            rowNumCell.textContent = index + 1;
-        }
-    });
+  const rows = table.querySelectorAll('tr.data-row:not(.row-dimmed)');
+  rows.forEach((row, index) => {
+    const rowNumCell = row.querySelector('.row-num-cell');
+    if (rowNumCell) {
+      rowNumCell.textContent = index + 1;
+    }
+  });
 }
 
 // הפעלת העדכון עבור כל הטבלאות בדף
 function updateAllRowNumbers() {
-    const tables = document.querySelectorAll('.box-table');
-    tables.forEach(table => updateRowNumbers(table));
+  const tables = document.querySelectorAll('.box-table');
+  tables.forEach(table => updateRowNumbers(table));
 }
 
 // הוספת טבלה חדשה לפני אזור ההערות
 function addEmptyTable() {
-    const wrapper = document.createElement('div');
-    wrapper.className = 'box-table-wrapper';
-    wrapper.innerHTML = `
-        <button class="icon-btn trashBtn" title="הסר טבלה" onclick="dimTable(this)">
-            <img src="https://cdn-icons-png.flaticon.com/512/1214/1214428.png" alt="Delete">
-        </button>
-        <button class="icon-btn undoBtn" title="החזר טבלה" style="display:none;" onclick="restoreTable(this)">
-            <img src="https://cdn-icons-png.flaticon.com/512/109/109618.png" alt="Undo">
-        </button>
-        <button class="icon-btn addRowBtn" title="הוסף שורה" onclick="addRowToTable(this)">
-            <img src="https://cdn-icons-png.flaticon.com/512/992/992651.png" alt="Add Row">
-        </button>
-        <table class="box-table">
-            <tr>
-                <th class="box-header">BOX<br><span class="box-current"></span>/<span class="box-total"></span></th>
-                <th>DESCRIPTION</th>
-                <th>P/N</th>
-                <th>Qty</th>
-                <th>CHECK LIST</th>
-                <th class="action-col">Del</th>
-            </tr>
-            <tr class="data-row">
-                <td class="row-num-cell"></td>
-                <td class="desc-col"><input type="text" placeholder=""></td>
-                <td class="pn-col"><input type="text" placeholder=""></td>
-                <td class="qty-col"><input type="text" placeholder=""></td>
-                <td class="check-col"><input type="checkbox"></td>
-                <td class="action-col">
-                    <button class="del-row-btn" onclick="hideRow(this)">✖</button>
-                    <button class="undo-row-btn" onclick="restoreRow(this)">↩</button>
-                </td>
-            </tr>
-        </table>
-    `;
-    // הוספת הטבלה החדשה לפני אזור ההערות
-    const notesSection = document.querySelector('.notes-section');
-    if (notesSection) {
-        document.body.insertBefore(wrapper, notesSection);
-    } else {
-        document.body.appendChild(wrapper);
-    }
-    updateBoxNumbers(); // עדכון מספרי BOX לאחר הוספת טבלה
-    updateAllRowNumbers(); // עדכון מספרי שורה
+  const wrapper = document.createElement('div');
+  wrapper.className = 'box-table-wrapper';
+  wrapper.innerHTML = `
+<button class="icon-btn trashBtn" title="הסר טבלה" onclick="dimTable(this)">
+<img src="https://cdn-icons-png.flaticon.com/512/1214/1214428.png" alt="Delete">
+</button>
+<button class="icon-btn undoBtn" title="החזר טבלה" style="display:none;" onclick="restoreTable(this)">
+<img src="https://cdn-icons-png.flaticon.com/512/109/109618.png" alt="Undo">
+</button>
+<button class="icon-btn addRowBtn" title="הוסף שורה" onclick="addRowToTable(this)">
+<img src="https://cdn-icons-png.flaticon.com/512/992/992651.png" alt="Add Row">
+</button>
+ <button class="icon-btn cloneBtn" title="שכפל טבלה" onclick="cloneTable(this)">
+        <img src="https://cdn-icons-png.flaticon.com/512/2983/2983067.png" alt="Clone">
+ </button>
+<table class="box-table">
+<tr>
+<th class="box-header">BOX<br><span class="box-current"></span>/<span class="box-total"></span></th>
+<th>DESCRIPTION</th>
+<th>P/N</th>
+<th>Qty</th>
+<th>CHECK LIST</th>
+<th class="action-col">Del</th>
+</tr>
+<tr class="data-row">
+<td class="row-num-cell"></td>
+<td class="desc-col"><input type="text" placeholder=""></td>
+<td class="pn-col"><input type="text" placeholder=""></td>
+<td class="qty-col"><input type="text" placeholder=""></td>
+<td class="check-col"><input type="checkbox"></td>
+<td class="action-col">
+<button class="del-row-btn" onclick="hideRow(this)">✖</button>
+<button class="undo-row-btn" onclick="restoreRow(this)">↩</button>
+</td>
+</tr>
+</table>
+<!-- קו מפריד בין טבלאות, לא יופיע בהדפסה -->
+<hr class="noPrint air">
+  `;
+  // הוספת הטבלה החדשה לפני אזור ההערות
+  const notesSection = document.querySelector('.notes-section');
+  if (notesSection) {
+    document.body.insertBefore(wrapper, notesSection);
+  } else {
+    document.body.appendChild(wrapper);
+  }
+  updateBoxNumbers();
+  updateAllRowNumbers();
+  updateQtyValues(wrapper);
 }
 
 // הוספת שורה חדשה לטבלה
 function addRowToTable(btn) {
-    const wrapper = btn.closest('.box-table-wrapper');
-    const table = wrapper.querySelector('.box-table');
-    const newRow = document.createElement('tr');
-    newRow.className = 'data-row';
-    newRow.innerHTML = `
-        <td class="row-num-cell"></td>
-        <td class="desc-col"><input type="text" placeholder=""></td>
-        <td class="pn-col"><input type="text" placeholder=""></td>
-        <td class="qty-col"><input type="text" placeholder=""></td>
-        <td class="check-col"><input type="checkbox"></td>
-        <td class="action-col">
-            <button class="del-row-btn" onclick="hideRow(this)">✖</button>
-            <button class="undo-row-btn" onclick="restoreRow(this)">↩</button>
-        </td>
-    `;
-    table.appendChild(newRow);
-    updateRowNumbers(table); // עדכון מספרי שורה לאחר הוספה
+  const wrapper = btn.closest('.box-table-wrapper');
+  const table = wrapper.querySelector('.box-table');
+  const newRow = document.createElement('tr');
+  newRow.className = 'data-row';
+  newRow.innerHTML = `
+<td class="row-num-cell"></td>
+<td class="desc-col"><input type="text" placeholder=""></td>
+<td class="pn-col"><input type="text" placeholder=""></td>
+<td class="qty-col"><input type="text" placeholder=""></td>
+<td class="check-col"><input type="checkbox"></td>
+<td class="action-col">
+<button class="del-row-btn" onclick="hideRow(this)">✖</button>
+<button class="undo-row-btn" onclick="restoreRow(this)">↩</button>
+</td>
+  `;
+  table.appendChild(newRow);
+  updateRowNumbers(table);
 }
 
 // הסתרת שורה
 function hideRow(btn) {
-    const tr = btn.closest('tr');
-    tr.classList.add('row-dimmed');
-    tr.querySelector('.del-row-btn').style.display = 'none';
-    tr.querySelector('.undo-row-btn').style.display = 'inline';
-    updateRowNumbers(tr.closest('.box-table')); // עדכון מספרי שורה לאחר הסתרה
+  const tr = btn.closest('tr');
+  tr.classList.add('row-dimmed');
+  tr.querySelector('.del-row-btn').style.display = 'none';
+  tr.querySelector('.undo-row-btn').style.display = 'inline';
+  updateRowNumbers(tr.closest('.box-table'));
 }
 
 // שחזור שורה
 function restoreRow(btn) {
-    const tr = btn.closest('tr');
-    tr.classList.remove('row-dimmed');
-    tr.querySelector('.del-row-btn').style.display = 'inline';
-    tr.querySelector('.undo-row-btn').style.display = 'none';
-    updateRowNumbers(tr.closest('.box-table')); // עדכון מספרי שורה לאחר שחזור
+  const tr = btn.closest('tr');
+  tr.classList.remove('row-dimmed');
+  tr.querySelector('.del-row-btn').style.display = 'inline';
+  tr.querySelector('.undo-row-btn').style.display = 'none';
+  updateRowNumbers(tr.closest('.box-table'));
 }
 
-// הסתרת טבלה
+// הסתרת טבלה (עמעום בלבד)
 function dimTable(btn) {
-    const wrapper = btn.closest('.box-table-wrapper');
-    wrapper.classList.add('dimmed');
-    wrapper.querySelector('.trashBtn').style.display = 'none';
-    wrapper.querySelector('.undoBtn').style.display = 'block';
-    updateBoxNumbers(); // עדכון מספרי BOX לאחר הסתרה
+  const wrapper = btn.closest('.box-table-wrapper');
+  wrapper.classList.add('dimmed');
+  wrapper.querySelector('.trashBtn').style.display = 'none';
+  wrapper.querySelector('.undoBtn').style.display = 'block';
+  updateBoxNumbers();
+  updateQtyValues(wrapper);
 }
 
-// שחזור טבלה
+// שחזור טבלה מעומעמת
 function restoreTable(btn) {
-    const wrapper = btn.closest('.box-table-wrapper');
-    wrapper.classList.remove('dimmed');
-    wrapper.querySelector('.trashBtn').style.display = 'block';
-    wrapper.querySelector('.undoBtn').style.display = 'none';
-    updateBoxNumbers(); // עדכון מספרי BOX לאחר שחזור
+  const wrapper = btn.closest('.box-table-wrapper');
+  wrapper.classList.remove('dimmed');
+  wrapper.querySelector('.trashBtn').style.display = 'block';
+  wrapper.querySelector('.undoBtn').style.display = 'none';
+  updateBoxNumbers();
+  updateQtyValues(wrapper);
+}
+
+// פונקציה לשכפול טבלה
+function cloneTable(btn) {
+  const wrapper = btn.closest('.box-table-wrapper');
+  const clonedWrapper = wrapper.cloneNode(true);
+  clonedWrapper.classList.remove('dimmed');
+  clonedWrapper.querySelector('.trashBtn').style.display = 'block';
+  clonedWrapper.querySelector('.undoBtn').style.display = 'none';
+  wrapper.parentNode.insertBefore(clonedWrapper, wrapper.nextSibling);
+  updateBoxNumbers();
+  updateAllRowNumbers();
+  updateQtyValues(clonedWrapper);
+}
+
+// עדכון ערכי ה־Qty עבור קבוצה + אשכולות עם אותו Description
+function updateQtyValues(wrapper) {
+  // תחילה מביאים את כל הקבוצה
+  const groupWrappers = getGroupTables(wrapper).filter(w => !w.classList.contains('dimmed'));
+  // מחלקים לאשכולות לפי ערך DESCRIPTION (input/text או span)
+  const clusters = {};
+  groupWrappers.forEach(wrap => {
+    let desc = '';
+    // חיפוש הערך של התיאור: תא ראשון מסוג input, אם קיים, אחרת טקסט ישיר
+    const descCell = wrap.querySelector('.desc-col input') 
+      ? wrap.querySelector('.desc-col input') 
+      : wrap.querySelector('.desc-col');
+    if (descCell) {
+      desc = descCell.value !== undefined ? descCell.value : descCell.textContent.trim();
+    }
+    // להגדיר מפתח ריק תמיד כ"ריק"
+    if (!desc) desc = 'ריק';
+    if (!clusters[desc]) clusters[desc] = [];
+    clusters[desc].push(wrap);
+  });
+  // לכל אשכול (עם אותו Description), עדכן Qty בסדרה משלו
+  Object.values(clusters).forEach(wrappersArr => {
+    const totalVisible = wrappersArr.length;
+    wrappersArr.forEach((w, idx) => {
+      const qtyInputs = w.querySelectorAll('.qty-col input[type="text"]');
+      qtyInputs.forEach(input => {
+        input.value = `${idx + 1}/${totalVisible}`;
+      });
+    });
+  });
 }
 
 // שמירת הערות (פונקציה בסיסית, ניתן להרחיב)
 function saveNotes() {
-    const notes = document.getElementById('notes-area').value;
-    localStorage.setItem('notes', notes); // שמירה ב-localStorage
-    alert('ההערות נשמרו בהצלחה!');
+  const notes = document.getElementById('notes-area').value;
+  localStorage.setItem('notes', notes);
+  alert('ההערות נשמרו בהצלחה!');
 }
 
 // טעינת הערות משמירה קודמת בעת טעינת הדף
 window.onload = function() {
-    const savedNotes = localStorage.getItem('notes');
-    if (savedNotes) {
-        document.getElementById('notes-area').value = savedNotes;
-    }
-    updateBoxNumbers(); // עדכון מספרי BOX בעת טעינה
-    updateAllRowNumbers(); // עדכון מספרי שורה בעת טעינה
-}
-// הסרת טבלה (עמעום בלבד)
-function dimTable(btn) {
-    const wrapper = btn.closest('.box-table-wrapper');
-    wrapper.classList.add('dimmed');
-    btn.style.display = 'none';
-    wrapper.querySelector('.undoBtn').style.display = 'block';
-    updateBoxNumbers(); // עדכון מספרי BOX לאחר הסרה
-    // אין צורך לשנות את ערכי Qty, הם נשארים כפי שהם
-}
-
-// שחזור טבלה מעומעמת
-function restoreTable(btn) {
-    const wrapper = btn.closest('.box-table-wrapper');
-    wrapper.classList.remove('dimmed');
-    btn.style.display = 'none';
-    wrapper.querySelector('.trashBtn').style.display = 'block';
-    updateBoxNumbers(); // עדכון מספרי BOX לאחר שחזור
-    // אין צורך לשנות את ערכי Qty, הם נשארים כפי שהם
-}
-
-// הסרת טבלה (עמעום בלבד)
-function dimTable(btn) {
-    const wrapper = btn.closest('.box-table-wrapper');
-    wrapper.classList.add('dimmed');
-    btn.style.display = 'none';
-    wrapper.querySelector('.undoBtn').style.display = 'block';
-    updateBoxNumbers(); // עדכון מספרי BOX לאחר הסרה
-    updateQtyValues(); // עדכון ערכי Qty לאחר הסרה
-}
-
-// שחזור טבלה מעומעמת
-function restoreTable(btn) {
-    const wrapper = btn.closest('.box-table-wrapper');
-    wrapper.classList.remove('dimmed');
-    btn.style.display = 'none';
-    wrapper.querySelector('.trashBtn').style.display = 'block';
-    updateBoxNumbers(); // עדכון מספרי BOX לאחר שחזור
-    updateQtyValues(); // עדכון ערכי Qty לאחר שחזור
-}
-
-// שכפול טבלה והוספת העותק מתחתיה
-function cloneTable(btn) {
-    const wrapper = btn.closest('.box-table-wrapper');
-    const clonedWrapper = wrapper.cloneNode(true); // שכפול הטבלה כולל כל התוכן
-    // איפוס מצב הכפתורים בטבלה המשוכפלת
-    clonedWrapper.classList.remove('dimmed');
-    clonedWrapper.querySelector('.trashBtn').style.display = 'block';
-    clonedWrapper.querySelector('.undoBtn').style.display = 'none';
-    // הוספת הטבלה המשוכפלת ממש מתחת לטבלה המקורית
-    wrapper.parentNode.insertBefore(clonedWrapper, wrapper.nextSibling);
-    updateBoxNumbers(); // עדכון מספרי BOX לאחר שכפול
-    updateAllRowNumbers(); // עדכון מספרי שורה לאחר שכפול
-    updateQtyValues(); // עדכון ערכי Qty לאחר שכפול
-}
-
-// עדכון ערכי Qty בכל הטבלאות הנראות לפי קבוצות
-function updateQtyValues() {
-    // מציאת כל הטבלאות הנראות (לא מעומעמות)
-    const allWrappers = Array.from(document.querySelectorAll('.box-table-wrapper:not(.dimmed)'));
-    
-    if (allWrappers.length === 0) return; // אין טבלאות נראות, אין מה לעדכן
-    
-    // קיבוץ הטבלאות לפי data-group-id
-    const groups = {};
-    allWrappers.forEach(wrapper => {
-        const groupId = wrapper.getAttribute('data-group-id') || 'default'; // ברירת מחדל אם אין מזהה
-        if (!groups[groupId]) {
-            groups[groupId] = [];
-        }
-        groups[groupId].push(wrapper);
-    });
-    // הוספת מאזינים לאירועים לפני ואחרי הדפסה להסתרת טבלאות ריקות
-window.addEventListener('beforeprint', function() {
-    const wrappers = document.querySelectorAll('.box-table-wrapper:not(.dimmed)');
-    wrappers.forEach(wrapper => {
-        const visibleRows = wrapper.querySelectorAll('.data-row:not(.row-dimmed)');
-        if (visibleRows.length === 0) {
-            // אם אין שורות נראות בטבלה, הוסף מחלקה להסתרת הכותרת
-            wrapper.classList.add('empty-table');
-        }
-    });
+  const savedNotes = localStorage.getItem('notes');
+  if (savedNotes) {
+    document.getElementById('notes-area').value = savedNotes;
+  }
+  updateBoxNumbers();
+  updateAllRowNumbers();
+  // עדכון כל קבוצה בנפרד (וגם לכל אשכול Description בקבוצה)
+  document.querySelectorAll('.box-table-wrapper').forEach(wrapper => {
+    updateQtyValues(wrapper);
+  });
+  
+  window.addEventListener("beforeunload", function (e) {
+  var confirmationMessage = "האם אתה בטוח שברצונך לאפס את כל המידע בדף?";
+  (e || window.event).returnValue = confirmationMessage; // עבור דפדפנים ישנים
+  return confirmationMessage; // עבור דפדפנים חדשים
 });
 
-// הסתרת טבלה
-function dimTable(btn) {
-    const wrapper = btn.closest('.box-table-wrapper');
-    wrapper.classList.add('dimmed'); // ודא שהמחלקה dimmed מוחלת
-    btn.style.display = 'none';
-    wrapper.querySelector('.undoBtn').style.display = 'block';
-    updateBoxNumbers(); // עדכון מספרי BOX לאחר הסתרה
-    const groupId = wrapper.getAttribute('data-group-id') || 'default';
-    if (groupId === 'type3') {
-        updateQtyValuesForType3(); // עדכון ערכי Qty לאחר הסתרה
-    }
 }
 
-window.addEventListener('afterprint', function() {
-    const wrappers = document.querySelectorAll('.box-table-wrapper.empty-table');
-    wrappers.forEach(wrapper => {
-        wrapper.classList.remove('empty-table');
-    });
-});
-    // עדכון ערכי Qty לכל קבוצה בנפרד
-    for (const groupId in groups) {
-        const groupWrappers = groups[groupId];
-        const totalVisibleInGroup = groupWrappers.length;
-        
-        if (totalVisibleInGroup === 1) {
-            // אם יש רק טבלה אחת נראית בקבוצה, הכמות תהיה "1/1"
-            const wrapper = groupWrappers[0];
-            const qtyInputs = wrapper.querySelectorAll('.qty-col input[type="text"]');
-            qtyInputs.forEach(input => {
-                input.value = '1/1';
-            });
-        } else {
-            // אם יש יותר מטבלה אחת נראית בקבוצה, עדכן את הכמות לפי הסדר
-            groupWrappers.forEach((wrapper, index) => {
-                const qtyInputs = wrapper.querySelectorAll('.qty-col input[type="text"]');
-                qtyInputs.forEach(input => {
-                    input.value = `${index + 1}/${totalVisibleInGroup}`;
-                });
-            });
-        }
-    }
-}
+
 
 
 
