@@ -489,6 +489,12 @@
       floatWin.style.top  = (e.clientY - startY) + 'px';
     });
     document.addEventListener('mouseup', () => { isDragging = false; });
+	  
+  window.addEventListener("beforeunload", function (e) {
+  var confirmationMessage = "האם אתה בטוח שברצונך לאפס את כל המידע בדף?";
+  (e || window.event).returnValue = confirmationMessage; // עבור דפדפנים ישנים
+  return confirmationMessage; // עבור דפדפנים חדשים
+});
   </script>
 </body>
 </html>
