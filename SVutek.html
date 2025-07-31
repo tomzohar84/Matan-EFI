@@ -265,7 +265,7 @@
     </button>
   </div>
   <!-- כותרת גלויה בראש הדף -->
-  <h1>STATUS Vutek</h1>
+  <h1>STATUS </h1>
   <div class="customer-row">
     Customer name: <input type="text">
   </div>
@@ -281,14 +281,14 @@
               <option></option>
               <option>Matan 3</option>
               <option>Matan 5</option>
-              <option>Vutek D3R</option>
-              <option>Vutek D5R</option>
-              <option>Vutek 3R+</option>
-			  <option>Vutek 5R+</option>
-			  <option>Vutek Q3R</option>
-			  <option>Vutek Q5R</option>
-			  <option>Vutek X3R</option>
-			  <option>Vutek X5R</option>
+              <option>Vutek D3r</option>
+              <option>Vutek D5r</option>
+              <option>Vutek 3r+</option>
+			  <option>Vutek 5r+</option>
+			  <option>Vutek Q3r</option>
+			  <option>Vutek Q5r</option>
+			  <option>Vutek X3r</option>
+			  <option>Vutek X5r</option>
             </select> 
 					 
 		  		  <tr><td>Type</td><td>
@@ -377,42 +377,59 @@
           <tr><td>X MOTOR SUPPORT</td><td><input type="checkbox"></td></tr>
           <tr><td>MEDIA SHAFT 5.20M</td><td><input type="checkbox"></td></tr>
           <tr><td>PHOTO INTERRUPTER</td><td><input type="checkbox"></td></tr>
-          <tr><td>PULS</td><td><input type="text" value=""></td></tr>
           <tr><td>CUTTER</td><td><input type="checkbox"></td></tr>
           <tr>
-            <td class="airshaft-title" rowspan="3">AIR SHAFT FRONT</td>
-            <td class="airshaft-cell">5.20M <input type="checkbox"></td>
-          </tr>
+  <td class="airshaft-title" rowspan="4">AIR SHAFT REAR</td>
+  <td class="airshaft-cell">5.20M <input type="checkbox"></td>
+</tr>
+<tr>
+  <td class="airshaft-cell">3.20M <input type="checkbox"></td>
+</tr>
+<tr>
+  <td class="airshaft-cell">2.50M
+    <select>
+      <option></option>
+      <option>x1</option>
+      <option>x2</option>
+      <option>x3</option>
+    </select>
+  </td>
+</tr>
+<tr>
+  <td class="airshaft-cell">1.60M
+    <select>
+      <option></option>
+      <option>x1</option>
+      <option>x2</option>
+      <option>x3</option>
+    </select>
+  </td>
+</tr>
           <tr>
-            <td class="airshaft-cell">3.20M <input type="checkbox"></td>
-          </tr>
-          <tr>
-            <td class="airshaft-cell">1.60M
-              <select>
-                <option></option>
-                <option>x1</option>
-                <option>x2</option>
-                <option>x3</option>
-              </select>
-            </td>
-          </tr>
-          <tr>
-            <td class="airshaft-title" rowspan="3">AIR SHAFT REAR</td>
-            <td class="airshaft-cell">5.20M <input type="checkbox"></td>
-          </tr>
-          <tr>
-            <td class="airshaft-cell">3.20M <input type="checkbox"></td>
-          </tr>
-          <tr>
-            <td class="airshaft-cell">1.60M
-              <select>
-                <option></option>
-                <option>x1</option>
-                <option>x2</option>
-                <option>x3</option>
-              </select>
-            </td>
-          </tr>
+  <td class="airshaft-title" rowspan="4">AIR SHAFT REAR</td>
+  <td class="airshaft-cell">5.20M <input type="checkbox"></td>
+</tr>
+<tr>
+  <td class="airshaft-cell">3.20M <input type="checkbox"></td>
+</tr>
+<tr>
+  <td class="airshaft-cell">2.50M
+    <select>
+      <option></option>
+      <option>x1</option>
+      <option>x2</option>
+        </select>
+  </td>
+</tr>
+<tr>
+  <td class="airshaft-cell">1.60M
+    <select>
+      <option></option>
+      <option>x1</option>
+      <option>x2</option>
+       </select>
+  </td>
+</tr>
           <tr><td>AUTO MESH</td><td><input type="checkbox"></td></tr>
 		  <tr><td>HD WINDER REAR</td><td><input type="checkbox"></td></tr> 
 		  <tr><td>HD WINDER FRONT</td><td><input type="checkbox"></td></tr>
@@ -456,7 +473,6 @@
           </tr>
           <tr><td>CHILLER</td><td><input type="checkbox"></td></tr>
           <tr><td>ORANGE CABLES 110V</td><td><input type="checkbox"></td></tr>
-          <tr><td>ROLL & TYPE</td><td><input type="checkbox"></td></tr>
           <tr><td>INSPECTION </td><td><input type="checkbox"></td></tr>
           <tr><td>SCANNER KIT</td><td><input type="checkbox"></td></tr>
           <tr><td>EDGE MEDIA GUARD</td><td><input type="checkbox"></td></tr>
@@ -480,6 +496,12 @@
       floatWin.style.top  = (e.clientY - startY) + 'px';
     });
     document.addEventListener('mouseup', () => { isDragging = false; });
+	  
+  window.addEventListener("beforeunload", function (e) {
+  var confirmationMessage = "האם אתה בטוח שברצונך לאפס את כל המידע בדף?";
+  (e || window.event).returnValue = confirmationMessage; // עבור דפדפנים ישנים
+  return confirmationMessage; // עבור דפדפנים חדשים
+});
   </script>
 </body>
 </html>
