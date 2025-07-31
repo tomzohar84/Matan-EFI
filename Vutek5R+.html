@@ -25,7 +25,7 @@ h1 {
 }
 
 /* סגנונות לטבלה ולמסגרת סביבה */
-.box-table-wrapper {
+.box-table-wrapper ,desc {
     position: relative; /* מיקום יחסי כדי לאפשר מיקום מוחלט של כפתורים בתוכו */
     width: 900px; /* רוחב מוגדל לטבלה במסכים גדולים */
     max-width: 98vw; /* רוחב מקסימלי למניעת גלישה במסכים קטנים */
@@ -33,7 +33,7 @@ h1 {
     page-break-inside: avoid; /* מניעת שבירת טבלה בהדפסה */
 }
 
-.box-table {
+.box-table , desc{
     width: 100%; /* רוחב מלא של המסגרת */
     border-collapse: collapse; /* איחוד גבולות התאים */
     background: #fff; /* רקע לבן לטבלה */
@@ -49,7 +49,7 @@ body, body * {
 }
 
 
-.box-table th, .box-table td {
+.box-table th, .box-table td   {
     border: 1px solid #176c4c; /* גבול ירוק כהה סביב כל תא */
     padding: 8px; /* ריווח פנימי בתוך התאים */
     text-align: center; /* מיקום טקסט במרכז התא */
@@ -60,7 +60,7 @@ body, body * {
     word-wrap: break-word; /* שבירת מילים ארוכות */
 }
 
-.box-table th {
+.box-table th  {
     background: #e6f2ef; /* רקע ירוק בהיר לכותרות */
     font-weight: bold; /* טקסט מודגש */
 }
@@ -95,12 +95,12 @@ body, body * {
 }
 
 .pn-col {
-    width: 10%; /* רוחב מוקטן מאוד לתא מק"ט */
+    width: 13%; /* רוחב מוקטן מאוד לתא מק"ט */
     font-weight: bold; /* טקסט מודגש */
 }
 
 .qty-col {
-    width: 15%; /* רוחב מוקטן מאוד לתא כמות */
+    width: 17%; /* רוחב מוקטן מאוד לתא כמות */
     font-weight: bold; /* טקסט מודגש */
 }
 
@@ -893,14 +893,18 @@ hr.air {
         </tr>
         <tr class="data-row">
             <td class="row-num-cell">1</td>
-            <td class="desc-col">COMPUTER W/IMAGE FOR VUTEK/DR	</td>
-            <td class="pn-col">88801150</td>
-            <td class="qty-col">1</td>
+            <td class="desc-col">PC QR	</td>
+			            <td class="pn-col" style="min-width:100px;">   <!-- הגודל של התא -->
+                <select onchange="updateDescription(this)">
+                    <option value="88801150">88801150</option>
+                    <option value="10103067">10103067</option>
+                </select>
+		            <td class="qty-col">1</td>
             <td class="check-col"><input type="checkbox"></td>
             <td class="action-col">
             </td>
         </tr>
-        <tr class="data-row">
+		        <tr class="data-row">
             <td class="row-num-cell">2</td>
             <td class="desc-col">HASP</td>
             <td class="pn-col">88801185</td>
@@ -2396,7 +2400,28 @@ hr.air {
     </table>
 </div>
 
-<!----------------------------BOX 44 END ------------->
+<!-- קו מפריד בין טבלאות, לא יופיע בהדפסה -->
+<hr class="noPrint air">
+
+
+<script>
+const pnDescription = {
+    "88801150": "PC QR",
+	"10103067": "PC VUTEK",
+
+};
+
+function updateDescription(selectElem) {
+    const val = selectElem.value;
+const descCell = selectElem.closest('tr').querySelector('.desc, .desc-col');
+    descCell.textContent = pnDescription[val] || "";
+}
+</script>
+
+
+<!----------------------------טבלה מסוג 4 - גלילה למטה  ------------->
+
+<!----------------------------BOX 45 END ------------->
 <!-- קו מפריד בין טבלאות, לא יופיע בהדפסה -->
 <hr class="noPrint air">	
 <!---------------------- אזור הערות בסוף הדף, מתחת לכל הטבלאות ---------------------->
@@ -2457,6 +2482,8 @@ function updateAllRowNumbers() {
   tables.forEach(table => updateRowNumbers(table));
 }
 
+
+
 // הוספת טבלה חדשה לפני אזור ההערות
 function addEmptyTable() {
   const wrapper = document.createElement('div');
@@ -2507,7 +2534,7 @@ function addEmptyTable() {
   }
   updateBoxNumbers();
   updateAllRowNumbers();
-  updateQtyValues(wrapper);
+  updateQtyValues();
 }
 
 // הוספת שורה חדשה לטבלה
