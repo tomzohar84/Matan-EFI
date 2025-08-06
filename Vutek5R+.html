@@ -1760,7 +1760,10 @@ hr.air {
     <button class="icon-btn undoBtn" title="החזר טבלה" style="display:none;" onclick="restoreTable(this)">
         <img src="https://cdn-icons-png.flaticon.com/512/109/109618.png" alt="Undo">
     </button>
-    <table class="box-table">
+	<button class="icon-btn trashBtn" title="הסר טבלה" onclick="dimTable(this)">
+        <img src="https://cdn-icons-png.flaticon.com/512/1214/1214428.png" alt="Delete">
+    </button>
+       <table class="box-table">
         <tr>
             <th class="box-header">BOX<br><span class="box-current"></span>/<span class="box-total"></span></th>
             <th>DESCRIPTION</th>
@@ -1846,6 +1849,8 @@ hr.air {
 			  <select> 
             <td class="check-col"><input type="checkbox"></td>
             <td class="action-col">
+			<button class="del-row-btn" onclick="hideRow(this)">✖</button>
+            <button class="undo-row-btn" onclick="restoreRow(this)">↩</button>
             </td>
         </tr>
     </table>
