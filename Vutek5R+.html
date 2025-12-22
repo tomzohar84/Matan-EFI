@@ -880,6 +880,38 @@ hr.air {
 <!----------------------------BOX 8 END ---------------------------->
 <!-- קו מפריד בין טבלאות, לא יופיע בהדפסה -->
 <hr class="noPrint air">
+ <!-------------------------- BOX 10 ------------------>
+<div class="box-table-wrapper">
+    <div class="box-table-wrapper">
+    <button class="icon-btn trashBtn" title="הסר טבלה" onclick="dimTable(this)">
+        <img src="https://cdn-icons-png.flaticon.com/512/1214/1214428.png" alt="Delete">
+    </button>
+    <button class="icon-btn undoBtn" title="החזר טבלה" style="display:none;" onclick="restoreTable(this)">
+        <img src="https://cdn-icons-png.flaticon.com/512/109/109618.png" alt="Undo">
+    </button>
+    <table class="box-table">
+        <tr>
+            <th class="box-header">BOX<br><span class="box-current"></span>/<span class="box-total"></span></th>
+            <th>DESCRIPTION</th>
+            <th>P/N</th>
+            <th>Qty</th>
+            <th>CHECK LIST</th>
+            <th class="action-col">Del</th>
+        </tr>
+        <tr class="data-row">
+            <td class="row-num-cell">1</td>
+            <td class="desc-col">Computer Base Assy</td>
+            <td class="pn-col">11100491</td>
+            <td class="qty-col">1</td>
+            <td class="check-col"><input type="checkbox"></td>
+            <td class="action-col">
+            </td>
+        </tr>
+    </table>
+</div>
+<!----------------------------BOX 10 END -------------->
+<!-- קו מפריד בין טבלאות, לא יופיע בהדפסה -->
+<hr class="noPrint air">
 <!---------------------------- BOX 9 ---------------------------->
 <div class="box-table-wrapper">
           <table class="box-table">
@@ -2136,7 +2168,7 @@ hr.air {
         <tr class="data-row">
             <td class="row-num-cell">1</td>
             <td class="desc-col">BOTTOM BACK COVER ASSY</td>
-            <td class="pn-col">1111375</td>
+            <td class="pn-col">11101375</td>
             <td class="qty-col">1</td>
             <td class="check-col"><input type="checkbox"></td>
             <td class="action-col">
