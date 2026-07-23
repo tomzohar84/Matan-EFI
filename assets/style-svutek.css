@@ -1,0 +1,325 @@
+body {
+      background: #fff;
+      font-family: Arial, sans-serif;
+      color: #111;
+      margin: 0;
+      padding: 0;
+    }
+    /* הצעה לסובב את המכשיר לרוחב במסכים צרים ובמצב Portrait - נעלמת אוטומטית עם סיבוב */
+    @media (max-width: 700px) and (orientation: portrait) {
+      body::before {
+        content: "📱 מומלץ לסובב את המכשיר לרוחב לתצוגה נוחה יותר";
+        display: block;
+        position: sticky;
+        top: 0;
+        z-index: 9999;
+        background: #23b6d8;
+        color: #fff;
+        text-align: center;
+        padding: 8px 10px;
+        font-size: 14px;
+        font-weight: bold;
+      }
+    }
+    @media print {
+      body::before { content: none !important; display: none !important; }
+    }
+    h1 {
+      text-align: center;
+      color: #006699;
+      margin: 6px auto 4px auto;
+    }
+    .customer-row {
+      max-width: 1000px;
+      margin: 6px auto 10px auto;
+      font-size: 1.07rem;
+      font-weight: bold;
+      text-align: left;
+      color: #006699;
+    }
+    .customer-row input[type="text"] {
+      border: 2px solid #ff9900;
+      border-radius: 4px;
+      width: 600px;
+      margin-left: 10px;
+      padding: 2px 8px;
+      font-size: 1rem;
+      background: #fafafa;
+    }
+    .main-container {
+      max-width: 1000px;
+      margin: 0 auto;
+      display: flex;
+      gap: 18px;
+      justify-content: center;
+      align-items: flex-start;
+    }
+    .col {
+      width: 49.5%;
+      min-width: 0;
+      box-sizing: border-box;
+      background: #fff;
+      border: 1px solid #bdbdbd;
+      border-radius: 4px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+      padding: 0 0 8px 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+    .section-title {
+      font-weight: bold;
+      font-size: 1.00rem;
+      text-align: center;
+      border-bottom: 2px solid #ff9900;
+      margin: 0;
+      padding: 3px 0 1px 0;
+      background: #fff;
+      color: #ff9900;
+    }
+    .section-title.burn { color: #e86b1c; border-bottom: 2px solid #e86b1c; }
+    .section-title.computers { color: #1c7be8; border-bottom: 2px solid #1c7be8; }
+    .section-title.new { color: #1cae3a; border-bottom: 2px solid #1cae3a; }
+    .section-title.old { color: #e86b1c; border-bottom: 2px solid #e86b1c; }
+    .section-title.custom { color: #ff5500; border-bottom: 2px solid #ff5500; }
+    .custom-table {
+      width: 100%;
+      border-collapse: collapse;
+      background: #fff;
+      font-size: 1em;
+      margin-bottom: 0;
+    }
+    .custom-table th, .custom-table td {
+      border: 1px solid #bbb;
+      padding: 3px 6px;
+      color: #222;
+      font-family: Arial, sans-serif;
+      font-size: 1em;
+      vertical-align: middle;
+      text-align: left;
+      background: #fff;
+      height: 22px;
+    }
+    .custom-table input[type="text"], .custom-table select {
+      width: 98%;
+      font-size: 1em;
+      border: 1px solid #bbb;
+      border-radius: 2px;
+      padding: 1px 2px;
+      background: #fff;
+      box-sizing: border-box;
+    }
+    .notes-area {
+      display: block;
+      width: 100%;
+      box-sizing: border-box;
+      margin: 4px 0 0 0;
+      border: 1px solid #bbb;
+      border-radius: 3px;
+      padding: 4px 6px;
+      font-size: 1em;
+      font-family: Arial, sans-serif;
+      background: #fff;
+      resize: vertical;
+    }
+    .notes-area:focus {
+      border: 1.5px solid #ff5500;
+      outline: none;
+      background: #fffbe8;
+    }
+    .custom-table input[type="checkbox"] {
+      margin: 0 0 0 8px;
+      vertical-align: middle;
+      width: 16px;
+      height: 16px;
+      accent-color: #ff6600;
+    }
+    /* מירכוז תא הערך (העמודה הימנית ביותר) בטבלת OPTIONS INCLUDET */
+    .options-table td:last-child {
+      text-align: center;
+    }
+    .options-table td:last-child input[type="checkbox"] {
+      margin: 0;
+    }
+    .options-table td:last-child select {
+      text-align: center;
+      text-align-last: center;
+    }
+    .airshaft-table {
+      width: 100%;
+      border-collapse: collapse;
+      background: #fff;
+      table-layout: fixed;
+    }
+    /* מסירים את המסגרת החיצונית של הטבלה המקוננת - כדי שהיא תיראה כהמשך טבעי של שורות הטבלה החיצונית ולא כ"טבלה בתוך טבלה", ומשאירים רק את הקווים הפנימיים */
+    .airshaft-table tr:first-child th,
+    .airshaft-table tr:first-child td {
+      border-top: none;
+    }
+    .airshaft-table tr:last-child th,
+    .airshaft-table tr:last-child td {
+      border-bottom: none;
+    }
+    .airshaft-table tr > *:first-child {
+      border-left: none;
+    }
+    .airshaft-table tr > *:last-child {
+      border-right: none;
+    }
+    .airshaft-table th {
+      border: 1px solid #bbb;
+      background: #fff5ea;
+      color: #e86b1c;
+      font-weight: bold;
+      text-align: center;
+      padding: 3px 6px;
+      font-size: 1em;
+    }
+    .airshaft-table td {
+      border: 1px solid #bbb;
+      text-align: center;
+      vertical-align: middle;
+      padding: 3px 4px;
+      font-size: 0.95em;
+    }
+    .airshaft-table select {
+      width: 95%;
+      font-size: 0.95em;
+      border: 1px solid #bbb;
+      border-radius: 2px;
+      padding: 1px 2px;
+      box-sizing: border-box;
+      text-align: center;
+      text-align-last: center;
+    }
+    .airshaft-table input[type="checkbox"] {
+      width: 16px;
+      height: 16px;
+      accent-color: #ff6600;
+      margin: 0;
+    }
+    /* חלון צף */
+    .floating-window {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px;
+      background: #ffffff;
+      border: 1px solid rgba(23,108,76,0.16);
+      border-radius: 16px;
+      box-shadow: 0 10px 28px rgba(15,23,42,0.12);
+      z-index: 2000;
+      cursor: move;
+      user-select: none;
+    }
+    .floating-window .fw-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 44px;
+      height: 44px;
+      border: none;
+      border-radius: 12px;
+      background: transparent;
+      color: #176c4c;
+      cursor: pointer;
+      pointer-events: auto;
+      transition: background 0.15s ease, color 0.15s ease, transform 0.15s ease;
+    }
+    .floating-window .fw-btn svg {
+      width: 22px;
+      height: 22px;
+    }
+    .floating-window .fw-btn:hover,
+    .floating-window .fw-btn:focus-visible {
+      background: #eaf6f1;
+      color: #0f4d35;
+      transform: translateY(-1px);
+    }
+    .floating-window .fw-btn:focus-visible {
+      outline: 2px solid #23b6d8;
+      outline-offset: 2px;
+    }
+    .floating-window .fw-btn:active {
+      transform: scale(0.96);
+    }
+    /* רספונסיביות למסכים קטנים */
+    @media (max-width: 900px) {
+      .main-container {
+        flex-direction: column;
+        align-items: stretch;
+        padding: 8px 2vw;
+        max-width: 99vw;
+        gap: 0;
+      }
+      .col {
+        min-width: 0;
+        max-width: 100%;
+        margin-bottom: 16px;
+      }
+      .customer-row {
+        max-width: 99vw;
+      }
+      .floating-window {
+        left: 8px;
+        top: 8px;
+        padding: 6px;
+        gap: 4px;
+      }
+      .floating-window .fw-btn {
+        width: 38px;
+        height: 38px;
+      }
+      .floating-window .fw-btn svg {
+        width: 18px;
+        height: 18px;
+      }
+    }
+    /* הדפסה - עמוד אחד, כתב קריא */
+    @media print {
+      @page { size: A4 portrait; margin: 0.5cm; }
+      html, body {
+        font-size: 10.5pt !important;
+        line-height: 1.2 !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        background: #fff !important;
+        color: #111 !important;
+      }
+      .main-container {
+        display: flex !important;
+        flex-direction: row !important;
+        justify-content: space-between;
+        align-items: flex-start;
+        width: 100vw;
+        max-width: 100vw !important;
+        gap: 6px !important;
+        margin: 0 !important;
+        padding: 0 !important;
+      }
+      .col {
+        width: 49.5% !important;
+        min-width: 0 !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        box-sizing: border-box !important;
+        border-width: 1px !important;
+        box-shadow: none !important;
+      }
+      .section-title { font-size: 1em !important; padding: 2px 0 !important; margin: 0 !important; border-width: 1px !important;}
+      .custom-table, .custom-table th, .custom-table td { font-size: 0.92em !important; padding: 1px 4px !important; border-width: 1px !important;}
+      .airshaft-table th, .airshaft-table td { padding: 1px 3px !important; }
+      input, select { font-size: 0.92em !important; padding: 2px 4px !important; margin: 0 !important; width: 98% !important; box-sizing: border-box !important;}
+      .notes-area { font-size: 0.92em !important; padding: 2px 4px !important; margin: 4px 0 0 0 !important; width: 100% !important; box-sizing: border-box !important; min-height: 40px !important;}
+      .customer-row { margin: 2px 0 4px 0 !important; font-size: 1em !important; max-width: 100vw !important; padding: 0 !important;}
+      .customer-row input[type="text"] { border-width: 1.5px !important; padding: 1px 6px !important; }
+      .floating-window { display: none !important; }
+      h1 {
+        text-align: center !important; /* מרכוז הכותרת בהדפסה */
+        margin: 2px auto !important; /* מיקום במרכז */
+        font-size: 1.2em !important;
+      }
+    }

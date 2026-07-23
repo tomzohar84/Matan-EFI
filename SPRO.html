@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="he" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>STATUS Pro</title>
+  <link rel="stylesheet" href="assets/style-spro.css">
+</head>
+<body>
+ <!-----------------------------------------  סיום CSS עיצוב דף -------------------------------->
+
+
+  <!-- חלון צף עם שני אייקונים (PDF וחזרה) -->
+  <div class="floating-window" id="floatWin">
+    <button class="fw-btn" type="button" title="הצג כ-PDF" aria-label="הצג כ-PDF" onclick="window.print()">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 3h7l5 5v12a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1Z"/><path d="M14 3v5h5"/><path d="M9 13h6M9 16.5h6M9 9.5h1.5"/></svg>
+    </button>
+    <button class="fw-btn" type="button" title="חזרה לדף הבית" aria-label="חזרה לדף הבית" onclick="window.location.href='index.html'">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11.5 12 4l9 7.5"/><path d="M5.5 10v9a1 1 0 0 0 1 1H9a1 1 0 0 0 1-1v-4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v4a1 1 0 0 0 1 1h2.5a1 1 0 0 0 1-1v-9"/></svg>
+    </button>
+  </div>
+
+  <!----------------------------------------- כותרת ראשית -------------------------------->
+  <h1>STATUS Pro 32/33r </h1>
+    <!----------------------------------------- כותרת ראשית סיום -------------------------------->
+  
+  <!-- שדה לקוח -->
+  <div class="customer-row">
+    <label class="form-label" for="customerName">Customer name:</label>
+    <input type="text" class="customer-input" id="customerName" name="customerName" placeholder="">
+  </div>
+  <!-- שתי עמודות של טבלאות -->
+  <div class="main-container">
+    <!-- עמודה שמאלית -->
+    <div class="col">
+      <!-- טבלת קונפיגורציה -->
+      <div>
+        <div class="section-title">Configuration</div>
+        <table class="custom-table">
+          <tr>
+            <td>Serial Number <!-- מספר סידורי --></td>
+            <td><input type="text" placeholder=""></td>
+          </tr>
+		  
+		  <tr><td>Model</td><td>
+            <select>
+              <option></option>
+              <option> PRO 32r+ </option>
+              <option>PRO 33r</option>
+            </select> 
+</td></tr>			
+          <tr>
+            <td>White options <!-- אפשרות צבע לבן --></td>
+            <td><input type="checkbox"></td>
+          </tr>
+          <tr>
+            <td>S/W front end <!-- גרסת תוכנה --></td>
+            <td><input type="text"></td>
+          </tr>
+        </table>
+      </div>
+      <!-- טבלת מחשבים ותקעים -->
+      <div>
+        <div class="section-title">Computers & Plugs</div>
+        <table class="custom-table">
+          <tr>
+            <td>S/N Computer <!-- מספר מחשב --></td>
+            <td><input type="text"></td>
+          </tr>
+          <tr>
+            <td>Plug ID <!-- מזהה תקע --></td>
+            <td><input type="text"></td>
+          </tr>
+        </table>
+      </div>
+      <!-- טבלת נתוני FPGA -->
+      <div>
+        <div class="section-title">For NEW data pass options</div>
+        <table class="custom-table">
+          <tr>
+            <td>Video card FPGA <!-- כרטיס וידאו FPGA --></td>
+            <td><input type="text" value="0x"></td>
+          </tr>
+          <tr>
+            <td>Carriage FPGA  <!-- FPGA מנוע --></td>
+            <td><input type="text" value="0x"></td>
+          </tr>
+          <tr>
+            <td>Id Card FPGA  <!-- FPGA מזהה --></td>
+            <td><input type="text" value="0x"></td>
+          </tr>
+          <tr>
+            <td>DP SW Ver <!-- גרסת תוכנה DP --></td>
+            <td><input type="text"></td>
+          </tr>
+        </table>
+		  <!-- טבלת גרסאות BURN -->
+      <div>
+        <div class="section-title">Burn Version</div>
+        <table class="custom-table">
+          <tr>
+            <td>Controller <!-- בקר --></td>
+            <td><input type="text"></td>
+          </tr>
+          <tr>
+            <td>PLC Block <!-- בלוק PLC --></td>
+            <td><input type="text"></td>
+          </tr>
+          <tr>
+            <td>PLC Machine <!-- PLC מכונה --></td>
+            <td><input type="text"></td>
+          </tr>
+        </table>
+      </div>
+      </div>
+    </div>
+    <!-- עמודה ימנית -->
+    <div class="col">
+            <!-- טבלת אופציות -->
+      <div>
+        <div class="section-title">OPTIONS INCLUDET</div>
+        <table class="custom-table options-table">
+          <tr>
+            <td>BLOCK OUT <!-- חסימת יציאה --></td>
+            <td><input type="checkbox"></td>
+          </tr>
+          <tr>
+            <td>AUTOMATIC BACKLIT  <!-- תאורה אחורית אוטומטית --></td>
+            <td><input type="checkbox"></td>
+          </tr>
+		  <tr>
+            <td>AUTO MESH PRO 33  <!-- תאורה אחורית אוטומטית --></td>
+            <td><input type="checkbox"></td>
+          </tr>
+          <tr>
+            <td>EDGE GUARD <!-- מגן קצה --></td>
+            <td><input type="text" placeholder=""></td>
+          </tr>
+          <tr>
+            <td>DUAL ROLL 1.6M*2 SPLIT SHAFTS – LOADING   <!-- גלילים כפולים טעינה --></td>
+            <td><input type="checkbox"></td>
+          </tr>
+          <tr>
+            <td>DUAL ROLL 1.6M*2 SPLIT SHAFTS – COLLECTION  <!-- גלילים כפולים איסוף --></td>
+            <td><input type="checkbox"></td>
+          </tr>
+          <tr>
+            <td>SLITTER   <!-- חותך --></td>
+            <td><input type="text"></td>
+          </tr>
+          <tr>
+            <td>H-DETECTOR <!-- גלאי H --></td>
+            <td><input type="checkbox"></td>
+          </tr>
+          <tr>
+            <td>CHILLER <!-- צ'ילר --></td>
+            <td><input type="checkbox"></td>
+          </tr>
+          <tr>
+            <td>ON SITE REPAIR KIT <!-- ערכת תיקון --></td>
+            <td><input type="checkbox"></td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+  <!-- אזור להערות חופשיות -->
+  <div class="notes-section">
+    <label for="notes">COMMENTS:</label>
+    <textarea id="notes" name="notes" placeholder="..."></textarea>
+  </div>
+   <!----------------------------------------- java -------------------------------->
+  
+  <script>
+    // פונקציה לגרירת החלון הצף עם העכבר
+    const floatWin = document.getElementById('floatWin');
+    let isDragging = false, startX, startY;
+    floatWin.addEventListener('mousedown', e => {
+      // לא לגרור אם לוחצים על כפתור או תמונה (כדי לא להפריע ללחיצה)
+      if (e.target.closest('button')) return;
+      isDragging = true;
+      startX = e.clientX - floatWin.offsetLeft;
+      startY = e.clientY - floatWin.offsetTop;
+    });
+    document.addEventListener('mousemove', e => {
+      if (!isDragging) return;
+      floatWin.style.left = (e.clientX - startX) + 'px';
+      floatWin.style.top  = (e.clientY - startY) + 'px';
+    });
+    document.addEventListener('mouseup', () => { isDragging = false; });
+	  
+  document.addEventListener('input', function (e) {
+    if (e.target.matches('input, select, textarea')) window.__pageDirty = true;
+  });
+  document.addEventListener('change', function (e) {
+    if (e.target.matches('input, select, textarea')) window.__pageDirty = true;
+  });
+
+  window.addEventListener("beforeunload", function (e) {
+  if (!window.__pageDirty) return;
+  var confirmationMessage = "האם אתה בטוח שברצונך לאפס את כל המידע בדף?";
+  (e || window.event).returnValue = confirmationMessage; // עבור דפדפנים ישנים
+  return confirmationMessage; // עבור דפדפנים חדשים
+});
+  </script>
+</body>
+</html>

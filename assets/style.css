@@ -1,0 +1,530 @@
+/* סגנונות כלליים לדף */
+body {
+    font-family: Arial, sans-serif; /* הגדרת גופן ברירת מחדל */
+    background: #fff; /* צבע רקע לבן */
+    margin: 0; /* הסרת שוליים חיצוניים */
+    padding: 0; /* הסרת ריווח פנימי */
+}
+
+/* הצעה לסובב את המכשיר לרוחב במסכים צרים ובמצב Portrait - נעלמת אוטומטית עם סיבוב */
+@media (max-width: 700px) and (orientation: portrait) {
+    body::before {
+        content: "📱 מומלץ לסובב את המכשיר לרוחב לתצוגה נוחה יותר";
+        display: block;
+        position: sticky;
+        top: 0;
+        z-index: 9999;
+        background: #23b6d8;
+        color: #fff;
+        text-align: center;
+        padding: 8px 10px;
+        font-size: 14px;
+        font-weight: bold;
+    }
+}
+@media print {
+    body::before { content: none !important; display: none !important; }
+}
+
+h1 {
+    text-align: center; /* מיקום הכותרת במרכז */
+    color: #176c4c; /* צבע ירוק כהה לכותרת */
+    margin: 18px 0 10px 0; /* שוליים חיצוניים סביב הכותרת */
+    font-size: 1em; /* גודל גופן קטן יחסית */
+    letter-spacing: 1px; /* ריווח בין אותיות */
+}
+
+/* סגנונות לטבלה ולמסגרת סביבה */
+.box-table-wrapper {
+    position: relative; /* מיקום יחסי כדי לאפשר מיקום מוחלט של כפתורים בתוכו */
+    width: 900px; /* רוחב מוגדל לטבלה במסכים גדולים */
+    max-width: 98vw; /* רוחב מקסימלי למניעת גלישה במסכים קטנים */
+    margin: 18px auto 0 auto; /* מיקום במרכז הדף עם שוליים עליונים */
+    page-break-inside: avoid; /* מניעת שבירת טבלה בהדפסה */
+}
+
+.box-table {
+    width: 100%; /* רוחב מלא של המסגרת */
+    border-collapse: collapse; /* איחוד גבולות התאים */
+    background: #fff; /* רקע לבן לטבלה */
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04); /* צל קל סביב הטבלה לעומק */
+    font-size: 0.93em; /* גודל גופן קטן יחסית */
+}
+
+/* הפיכת כל הכתב בדף למודגש */
+body, body * {
+    font-weight: bold !important;
+	text-transform: uppercase !important;
+
+}
+
+
+.box-table th, .box-table td {
+    border: 1px solid #176c4c; /* גבול ירוק כהה סביב כל תא */
+    padding: 8px; /* ריווח פנימי בתוך התאים */
+    text-align: center; /* מיקום טקסט במרכז התא */
+    color: #176c4c; /* צבע טקסט ירוק כהה */
+    overflow: visible; /* מניעת חיתוך טקסט */
+    text-overflow: unset; /* מניעת קיצור טקסט */
+    white-space: normal; /* אפשרות לשבירת שורות */
+    word-wrap: break-word; /* שבירת מילים ארוכות */
+}
+
+.box-table th {
+    background: #e6f2ef; /* רקע ירוק בהיר לכותרות */
+    font-weight: bold; /* טקסט מודגש */
+}
+
+.box-table th.box-header {
+    background: #e6f2ef; /* רקע ירוק בהיר לתא BOX */
+    color: #176c4c; /* צבע טקסט ירוק כהה */
+    width: 7%; /* רוחב מוקטן לתא BOX */
+    padding: 0; /* ללא ריווח פנימי */
+    white-space: normal; /* אפשרות לשבירת שורות */
+    line-height: 1.2; /* גובה שורה קטן למראה צפוף */
+}
+
+/* סגנונות לתאים ספציפיים בטבלה */
+.row-num-cell {
+    width: 5%; /* רוחב מוקטן מאוד לתא מספר שורה */
+    font-weight: bold; /* טקסט מודגש */
+    color: #176c4c; /* צבע ירוק כהה */
+    text-align: center; /* מיקום טקסט במרכז */
+    background: #fff; /* ללא צבע רקע */
+    border: 1px solid #176c4c; /* מסגרת ירוקה תואמת */
+}
+
+.desc-col {
+    text-align: left; /* מיקום טקסט בצד שמאל לתיאור */
+    font-weight: bold; /* טקסט מודגש */
+    color: #176c4c; /* צבע ירוק כהה */
+    width: 73%; /* רוחב מוגדל מאוד לתא תיאור כדי שיהיה דומיננטי */
+    white-space: normal; /* אפשרות לשבירת שורות */
+    word-break: break-all; /* שבירת מילים ארוכות */
+    font-size: 1.1em; /* גודל גופן מעט גדול יותר לקריאות */
+}
+
+.pn-col {
+    width: 10%; /* רוחב מוקטן מאוד לתא מק"ט */
+    font-weight: bold; /* טקסט מודגש */
+}
+
+.qty-col {
+    width: 15%; /* רוחב מוקטן מאוד לתא כמות */
+    font-weight: bold; /* טקסט מודגש */
+}
+
+.check-col {
+    width: 5%; /* רוחב מוקטן מאוד לתא צ'קבוקס */
+    font-weight: bold; /* טקסט מודגש */
+}
+
+.action-col {
+    width: 5%; /* רוחב מוקטן מאוד לתא פעולות (הסרה/שחזור) */
+}
+
+/* סגנונות לצ'קבוקס */
+input[type="checkbox"] {
+    width: 16px; /* רוחב הצ'קבוקס */
+    height: 16px; /* גובה הצ'קבוקס */
+    cursor: pointer; /* סמן עכבר בצורת יד ללחיצה */
+}
+
+/* סגנונות לשדות קלט (תיבות טקסט) בשורות חדשות */
+input[type="text"], input[type="number"] {
+    border: none; /* הסרת מסגרת סביב שדות הקלט */
+    background: transparent; /* רקע שקוף כדי שלא ייראה כמו ריבוע */
+    width: 100%; /* רוחב מלא של התא */
+    height: 100%; /* גובה מלא של התא */
+    padding: 0; /* הסרת ריווח פנימי */
+    margin: 0; /* הסרת שוליים */
+    outline: none; /* הסרת מסגרת פוקוס בעת לחיצה */
+    text-align: inherit; /* ירושת מיקום טקסט מהתא (שמאל לתיאור, מרכז לאחרים) */
+    color: #176c4c; /* צבע טקסט ירוק כהה, תואם לטבלה */
+    font-size: 1em; /* גודל גופן תואם לטבלה */
+    font-family: Arial, sans-serif; /* גופן תואם לטבלה */
+}
+
+/* סגנונות לתפריט נפתח (select) */
+select {
+    border: none; /* הסרת מסגרת סביב התפריט הנפתח */
+    background: transparent; /* רקע שקוף */
+    width: 100%; /* רוחב מלא של התא */
+    padding: 0; /* הסרת ריווח פנימי */
+    margin: 0; /* הסרת שוליים */
+    outline: none; /* הסרת מסגרת פוקוס */
+    color: #176c4c; /* צבע טקסט ירוק כהה */
+    font-size: 1em; /* גודל גופן תואם לטבלה */
+    cursor: pointer; /* סמן עכבר בצורת יד */
+}
+
+/* סגנונות לכפתורים בצד הימני של הטבלה */
+.icon-btn {
+    position: absolute; /* מיקום מוחלט ביחס למסגרת הטבלה */
+    right: -35px; /* מרחיק את הכפתורים מהטבלה כדי למנוע חפיפה */
+    background: none; /* ללא רקע */
+    border: none; /* ללא מסגרת */
+    cursor: pointer; /* סמן עכבר בצורת יד */
+    z-index: 10; /* שכבה עליונה כדי שיהיה מעל אלמנטים אחרים */
+    padding: 0; /* ללא ריווח פנימי */
+    margin-bottom: 10px; /* מרווח אנכי בין כפתורים */
+}
+
+.icon-btn img {
+    width: 24px; /* גודל אייקון מוגדל לבהירות */
+    height: 24px; /* גודל אייקון מוגדל */
+    display: block; /* תצוגה כבלוק */
+}
+
+.trashBtn {
+    top: 0px; /* כפתור הפח בראש, קרוב לשורת הכותרת */
+}
+
+.undoBtn {
+    top: 0px; /* כפתור השחזור של הטבלה באותו מקום כמו הפח (מופיע רק כשהפח מוסתר) */
+}
+
+.addRowBtn {
+    top: 34px; /* כפתור הוספת שורה מתחת לפח, עם מרווח אנכי ברור */
+}
+
+.cloneBtn {
+    top: 74px; /* כפתור שכפול מתחת לכפתור הוספת שורה, עם מרווח אנכי גדול יותר */
+}
+
+/* סגנונות למצב מוסתר (טבלה או שורה) */
+.dimmed {
+    opacity: 0.34; /* שקיפות לטבלה מוסתרת */
+    pointer-events: none; /* מניעת לחיצה */
+    filter: grayscale(0.7) blur(1px); /* אפקט אפור וטשטוש */
+    user-select: none; /* מניעת בחירת טקסט */
+}
+
+.dimmed * {
+    pointer-events: none !important; /* מניעת לחיצה על כל האלמנטים בתוך הטבלה המוסתרת */
+    user-select: none !important; /* מניעת בחירת טקסט */
+}
+
+.box-table-wrapper.dimmed .undoBtn {
+    pointer-events: auto !important; /* אפשרות ללחוץ על כפתור השחזור בטבלה מוסתרת */
+    filter: none !important; /* הסרת טשטוש */
+    opacity: 1 !important; /* שקיפות מלאה */
+}
+
+/* סגנונות לחלון הכפתורים הצף */
+.floating-window {
+    position: fixed; /* מיקום קבוע בצד שמאל למעלה */
+    top: 16px;
+    left: 16px;
+    background: #fff;
+    border: 1px solid rgba(23,108,76,0.16);
+    border-radius: 18px;
+    box-shadow: 0 10px 28px rgba(15,23,42,0.12);
+    z-index: 2000;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    align-items: center;
+    padding: 10px;
+    user-select: none;
+}
+
+.floating-window .fw-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border: none;
+    border-radius: 12px;
+    background: transparent;
+    color: #176c4c;
+    cursor: pointer;
+    transition: background 0.15s ease, color 0.15s ease, transform 0.15s ease;
+}
+
+.floating-window .fw-btn svg {
+    width: 22px;
+    height: 22px;
+}
+
+.floating-window .fw-btn:hover,
+.floating-window .fw-btn:focus-visible {
+    background: #eaf6f1;
+    color: #0f4d35;
+    transform: translateY(-1px);
+}
+
+.floating-window .fw-btn:focus-visible {
+    outline: 2px solid #23b6d8;
+    outline-offset: 2px;
+}
+
+.floating-window .fw-btn:active {
+    transform: scale(0.96);
+}
+
+.floating-window .add-btn {
+    width: 40px;
+    height: 40px;
+    border: none;
+    border-radius: 12px;
+    background: #23b6d8;
+    color: #fff;
+    font-size: 1.6em;
+    line-height: 0.8;
+    box-shadow: 0 4px 12px rgba(35,182,216,0.35);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background 0.15s ease, transform 0.15s ease;
+}
+
+.floating-window .add-btn:hover,
+.floating-window .add-btn:focus-visible {
+    background: #176c4c;
+    transform: translateY(-1px);
+}
+
+.floating-window .add-btn:focus-visible {
+    outline: 2px solid #176c4c;
+    outline-offset: 2px;
+}
+
+/* סגנונות לשורות מוסתרות */
+.row-dimmed td, .row-dimmed input, .row-dimmed select {
+    color: #aaa !important; /* צבע אפור לטקסט בשורות מוסתרות */
+    background: #f5f5f5 !important; /* רקע אפור בהיר */
+}
+
+.row-dimmed input, .row-dimmed select {
+    pointer-events: none; /* מניעת לחיצה על צ'קבוקס או תפריט נפתח בשורות מוסתרות */
+}
+
+.row-dimmed .del-row-btn {
+    display: none; /* הסתרת כפתור הסרה בשורות מוסתרות */
+}
+
+.row-dimmed .undo-row-btn {
+    display: inline; /* הצגת כפתור שחזור בשורות מוסתרות */
+}
+
+.undo-row-btn {
+    display: none; /* כפתור שחזור מוסתר כברירת מחדל */
+}
+/* סגנונות לתיבת בחירה בעמודה Qty */
+.qty-col select {
+    text-align: center; /* מרכוז הטקסט בתיבת הבחירה */
+    text-align-last: center; /* מרכוז הטקסט הנבחר בדפדפנים כמו Chrome */
+    -ms-text-align-last: center; /* תמיכה ב-Edge ו-IE */
+    -moz-text-align-last: center; /* תמיכה ב-Firefox */
+    width: 100%; /* ודא שהתיבה תופסת את כל רוחב התא */
+    border: none; /* הסרת מסגרת */
+    background: transparent; /* רקע שקוף */
+    padding: 0; /* הסרת ריווח פנימי */
+    margin: 0; /* הסרת שוליים */
+    outline: none; /* הסרת מסגרת פוקוס */
+    color: #176c4c; /* צבע טקסט ירוק כהה */
+    font-size: 1em; /* גודל גופן תואם לטבלה */
+    cursor: pointer; /* סמן עכבר בצורת יד */
+}
+/* מרכוז אפשרויות בתוך תיבת הבחירה (עבור דפדפנים שתומכים) */
+.qty-col select option {
+    text-align: center; /* ניסיון למרכז את האפשרויות עצמן, אם הדפדפן תומך */
+}
+
+
+/* סגנונות לכפתורי פעולה בתוך הטבלה */
+.del-row-btn, .undo-row-btn {
+    background: none; /* ללא רקע */
+    border: none; /* ללא מסגרת */
+    cursor: pointer; /* סמן עכבר בצורת יד */
+    color: #176c4c; /* צבע ירוק כהה */
+    font-size: 1em; /* גודל גופן רגיל */
+}
+
+/* סגנונות לאזור הערות בסוף הדף */
+.notes-section {
+    width: 876px; /* רוחב תואם לטבלאות */
+    max-width: 98vw; /* רוחב מקסימלי למניעת גלישה */
+    margin: 20px auto; /* מיקום במרכז הדף עם שוליים עליונים */
+    padding: 10px; /* ריווח פנימי */
+    background: #fff; /* רקע לבן */
+    border: 1px solid #176c4c; /* מסגרת ירוקה תואמת לטבלאות */
+    border-radius: 5px; /* פינות מעוגלות קלות */
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04); /* צל קל לעומק, תואם לטבלאות */
+}
+
+.notes-section h2 {
+    color: #176c4c; /* צבע ירוק כהה לכותרת, תואם לטבלאות */
+    font-size: 1.2em; /* גודל גופן מעט גדול */
+    margin: 0 0 10px 0; /* שוליים תחתונים */
+    text-align: center; /* מיקום במרכז */
+    background: #e6f2ef; /* רקע ירוק בהיר, תואם לכותרות הטבלאות */
+    padding: 5px; /* ריווח פנימי */
+    border-radius: 3px; /* פינות מעוגלות קלות */
+}
+
+#notes-area {
+    width: 100%; /* רוחב מלא של האזור */
+    border: 1px solid #176c4c; /* מסגרת ירוקה דקה, תואמת לטבלאות */
+    border-radius: 5px; /* פינות מעוגלות */
+    padding: 10px; /* ריווח פנימי */
+    font-family: Arial, sans-serif; /* גופן תואם לטבלה */
+    font-size: 1em; /* גודל גופן רגיל */
+    color: #176c4c; /* צבע טקסט ירוק כהה, תואם לטבלאות */
+    resize: vertical; /* אפשרות לשנות גובה בלבד */
+    box-sizing: border-box; /* כולל את המסגרת והריווח בחישוב הרוחב */
+    background: #fff; /* רקע לבן, תואם לטבלאות */
+}
+
+#notes-area:focus {
+    outline: none; /* הסרת מסגרת פוקוס */
+    border-color: #176c4c; /* שמירה על צבע מסגרת בעת פוקוס */
+    box-shadow: 0 0 3px rgba(23, 108, 76, 0.3); /* צל קל בעת פוקוס */
+}
+
+.save-notes-btn {
+    display: block; /* תצוגה כבלוק */
+    margin: 10px auto 0 auto; /* מיקום במרכז עם שוליים עליונים */
+    padding: 8px 15px; /* ריווח פנימי */
+    background: #23b6d8; /* רקע כחול, תואם לכפתורי הוספה */
+    color: #fff; /* צבע טקסט לבן */
+    border: none; /* ללא מסגרת */
+    border-radius: 5px; /* פינות מעוגלות */
+    cursor: pointer; /* סמן עכבר בצורת יד */
+    font-size: 1em; /* גודל גופן רגיל */
+    transition: background 0.2s; /* אנימציה לשינוי צבע */
+}
+
+.save-notes-btn:hover {
+    background: #176c4c; /* שינוי צבע לירוק כהה בעת ריחוף, תואם לכפתורים אחרים */
+}
+
+/* סגנונות לקו מפריד */
+hr.air {
+    width: 950px; /* רוחב תואם לטבלאות */
+    max-width: 98vw; /* רוחב מקסימלי למניעת גלישה */
+    margin: 15px auto; /* מיקום במרכז עם שוליים עליונים ותחתונים */
+    border: 0; /* הסרת גבול ברירת מחדל */
+    border-top: 5px solid #ff0000; /* קו אדום, עובי ניתן לשינוי */
+    height: 0; /* גובה אפס כדי להציג רק את הקו */
+}
+/* סגנונות להדפסה */
+@media print {
+    .floating-window {
+        display: none !important; /* הסתרת חלון הכפתורים הצף */
+    }
+    .icon-btn, .trashBtn, .undoBtn, .addRowBtn, .cloneBtn {
+        display: none !important; /* הסתרת כל הכפתורים בצד הטבלאות */
+    }
+    .save-notes-btn {
+        display: none !important; /* הסתרת כפתור שמירת הערות */
+    }
+    hr.air, .noPrint {
+        display: none !important; /* הסתרת אלמנטים נוספים שלא צריכים להופיע */
+    }
+    .action-col {
+        display: none !important; /* הסתרת עמודת DEL (עם כפתורי מחיקה ושחזור) */
+    }
+    .row-dimmed {
+        display: none !important; /* הסתרת שורות מחוקות (עם המחלקה row-dimmed) */
+    }
+    .dimmed {
+        display: none !important; /* הסתרת טבלאות מחוקות (עם המחלקה dimmed) */
+    }
+    .box-table-wrapper.empty-table {
+        display: none !important; /* הסתרת טבלאות ריקות (ללא שורות גלויות) */
+    }
+    /* התאמת רוחב העמודות כדי לפצות על הסרת עמודת DEL */
+    .desc-col {
+        width: 50% !important; /* התאמת רוחב עמודת התיאור - ניתן לשנות לפי הצורך */
+    }
+    .pn-col {
+        width: 20% !important; /* התאמת רוחב עמודת P/N */
+    }
+    .qty-col {
+        width: 15% !important; /* התאמת רוחב עמודת Qty */
+    }
+    .check-col {
+        width: 15% !important; /* התאמת רוחב עמודת Check List */
+    }
+    /* שאר הסגנונות להדפסה כפי שהיו */
+    @page {
+        size: A4 portrait;
+        margin: 1cm;
+    }
+    html, body {
+        font-size: 12pt !important;
+        line-height: 1.3 !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        background: #fff !important;
+        color: #111 !important;
+    }
+    .main-container {
+        display: flex !important;
+        flex-direction: row !important;
+        justify-content: space-between;
+        align-items: flex-start;
+        width: 100vw;
+        max-width: 100vw !important;
+        gap: 0 !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+    .col {
+        width: 49.5% !important;
+        min-width: 0 !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        box-sizing: border-box !important;
+        border-width: 1px !important;
+        box-shadow: none !important;
+    }
+    .section-title {
+        font-size: 1.05em !important;
+        padding: 3px 0 !important;
+        margin: 0 !important;
+        border-width: 1px !important;
+    }
+    .custom-table, .custom-table th, .custom-table td {
+        font-size: 1em !important;
+        padding: 3px 5px !important;
+        border-width: 1px !important;
+    }
+    input, select {
+        font-size: 1em !important;
+        padding: 3px 5px !important;
+        margin: 0 !important;
+        width: 98% !important;
+        box-sizing: border-box !important;
+        border: none !important; /* הסרת מסגרות משדות קלט */
+        background: transparent !important; /* רקע שקוף לשדות קלט */
+    }
+    .customer-row {
+        margin: 4cm 0 4px 0 !important;
+        font-size: 1em !important;
+        max-width: 100vw !important;
+        padding: 0 !important;
+    }
+    h1 {
+        text-align: center !important; /* מרכוז הכותרת בהדפסה */
+        margin: 10px auto !important; /* מיקום במרכז */
+    }
+    /* הוספת סגנון לתא BOX בהדפסה */
+    .box-header {
+        background: #e6f2ef !important; /* רקע ירוק בהיר */
+        color: #176c4c !important; /* צבע טקסט ירוק כהה */
+        font-size: 1em !important;
+        text-align: center !important; /* מרכוז הטקסט */
+    }
+    .box-fraction {
+        font-weight: bold !important; /* הדגשת המספר השבר */
+        color: #0d3d2c !important; /* צבע כהה יותר למספר השבר */
+    }
+}
+
+
+/*------------------------------- לא לגעת   סיום סגנונות כלליים לדף ----------------------------------------*/

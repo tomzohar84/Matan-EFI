@@ -1,0 +1,316 @@
+ 
+ <!DOCTYPE html>
+<html lang="he">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>STATUS Vutek</title>
+  <link rel="stylesheet" href="assets/style-svutek.css">
+</head>
+<body>
+  <!-- חלון צף -->
+  <div class="floating-window" id="floatWin">
+    <button class="fw-btn" type="button" title="הצג כ-PDF" aria-label="הצג כ-PDF" onclick="window.print()">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 3h7l5 5v12a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1Z"/><path d="M14 3v5h5"/><path d="M9 13h6M9 16.5h6M9 9.5h1.5"/></svg>
+    </button>
+    <button class="fw-btn" type="button" title="חזרה לדף הבית" aria-label="חזרה לדף הבית" onclick="window.location.href='index.html'">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11.5 12 4l9 7.5"/><path d="M5.5 10v9a1 1 0 0 0 1 1H9a1 1 0 0 0 1-1v-4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v4a1 1 0 0 0 1 1h2.5a1 1 0 0 0 1-1v-9"/></svg>
+    </button>
+  </div>
+  <!-- כותרת גלויה בראש הדף -->
+  <h1>STATUS </h1>
+  <div class="customer-row">
+    Customer name: <input type="text">
+  </div>
+  <div class="main-container">
+    <!-- עמודה שמאלית -->
+    <div class="col">
+      <div>
+        <div class="section-title">Configuration</div>
+        <table class="custom-table">
+          <tr><td>Serial Number</td><td><input type="text"></td></tr>
+          	  <tr><td>Name</td><td>
+            <select>
+              <option></option>
+              <option>Matan 3</option>
+              <option>Matan 5</option>
+              <option>Vutek D3r</option>
+              <option>Vutek D5r</option>
+              <option>Vutek 3r+</option>
+			  <option>Vutek 5r+</option>
+			  <option>Vutek Q3r</option>
+			  <option>Vutek Q5r</option>
+			  <option>Vutek X3r</option>
+			  <option>Vutek X5r</option>
+            </select> 
+					 
+		  		  <tr><td>Type</td><td>
+            <select>
+              <option></option>
+              <option>4 Color</option>
+              <option>4 Color + White</option>
+              <option>4 Color + White + Clear</option>
+              <option>4 Color + Clear</option>
+              <option>7 Color</option>
+			  <option>7 Color + White</option>
+			  <option>7 Color + White + Clear</option>
+			  <option>7 Color + Clear</option>
+			            </select> 	  	 		  
+		 
+                    <tr><td>S/W front end</td><td><input type="text"></td></tr>
+        </table>
+      </div>
+      <div>
+        <div class="section-title burn">Burn Version</div>
+        <table class="custom-table">
+          <tr><td>Controller</td><td><input type="text"></td></tr>
+          <tr><td>PLC/OFEK Block</td><td><input type="text"></td></tr>
+          <tr><td>PLC/OFEK Machine</td><td><input type="text"></td></tr>
+        </table>
+      </div>
+      <div>
+        <div class="section-title computers">Computers & Plugs</div>
+        <table class="custom-table">
+          <tr><td>S/N Computer</td><td><input type="text"></td></tr>
+          <tr><td>Hasp</td><td><input type="text"></td></tr>
+          <tr><td>Windows</td><td><input type="text"></td></tr>
+          <tr><td>Rip PC S/N </td><td><input type="text"></td></tr>
+          <tr><td>Rip Plug </td><td><input type="text"></td></tr>
+        </table>
+      </div>
+      <div>
+        <div class="section-title new">For NEW data pass options</div>
+        <table class="custom-table">
+          <tr><td>Video card FPGA</td><td><input type="text" value="0x"></td></tr>
+          <tr><td>Carriage FPGA </td><td><input type="text" value="0x"></td></tr>
+          <tr><td>Id Card FPGA </td><td><input type="text" value="0x"></td></tr>
+          <tr><td>DP SW Ver</td><td><input type="text"></td></tr>
+        </table>
+      </div>
+      <div>
+        <div class="section-title old">For OLD data pass options</div>
+        <table class="custom-table">
+          <tr><td>PCI uC</td><td><input type="text"></td></tr>
+          <tr><td>PCI fpga</td><td><input type="text"></td></tr>
+          <tr><td>BCC uC</td><td><input type="text"></td></tr>
+          <tr><td>BCC fpga</td><td><input type="text"></td></tr>
+        </table>
+      </div>
+      <!-- טבלה חדשה מתחת לטבלאות הקיימות בעמודה השמאלית -->
+      <div>
+       
+        <!-- אזור הערות מתחת לטבלה החדשה -->
+        <div class="section-title custom">Comments</div>
+        <textarea class="notes-area" rows="3" placeholder="..."></textarea>
+      </div>
+    </div>
+    <!-- עמודה ימנית -->
+    <div class="col">
+      <div>
+        <div class="section-title">OPTIONS INCLUDET</div>
+        <table class="custom-table options-table">
+          <tr><td>MIST SEAL</td><td><input type="checkbox"></td></tr>
+          <tr><td>INK INCLUDET</td><td>
+            <select>
+              <option></option>
+              <option>Without</option>
+              <option>CMYK</option>
+              <option>CMYK+Lt</option>
+              <option>CMYK+W</option>
+              <option>CMYK+Lt+W</option>
+            </select>
+          </td></tr>
+          <tr><td>MIST COLLECTOR</td><td><input type="checkbox"></td></tr>
+          <tr><td>LEDS</td><td>
+            <select>
+              <option></option>
+              <option>LONG</option>
+              <option>SHORT</option>
+            </select>
+          </td></tr>
+          <tr><td>X MOTOR SUPPORT</td><td><input type="checkbox"></td></tr>
+          <tr><td>MEDIA SHAFT 5.20M</td><td><input type="checkbox"></td></tr>
+          <tr><td>PHOTO INTERRUPTER</td><td><input type="checkbox"></td></tr>
+          <tr><td>CUTTER</td><td><input type="checkbox"></td></tr>
+          <tr><td colspan="2" style="padding:0;">
+            <table class="airshaft-table">
+              <tr><th colspan="4">AIR SHAFT FRONT</th></tr>
+              <tr><td>5.20M</td><td>3.20M</td><td>2.50M</td><td>1.60M</td></tr>
+              <tr>
+                <td><input type="checkbox"></td>
+                <td><input type="checkbox"></td>
+                <td>
+                  <select>
+                    <option></option>
+                    <option>x1</option>
+                    <option>x2</option>
+                  </select>
+                </td>
+                <td>
+                  <select>
+                    <option></option>
+                    <option>x1</option>
+                    <option>x2</option>
+                    <option>x3</option>
+                  </select>
+                </td>
+              </tr>
+            </table>
+          </td></tr>
+          <tr><td colspan="2" style="padding:0;">
+            <table class="airshaft-table">
+              <tr><th colspan="4">AIR SHAFT REAR</th></tr>
+              <tr><td>5.20M</td><td>3.20M</td><td>2.50M</td><td>1.60M</td></tr>
+              <tr>
+                <td><input type="checkbox"></td>
+                <td><input type="checkbox"></td>
+                <td>
+                  <select>
+                    <option></option>
+                    <option>x1</option>
+                    <option>x2</option>
+                  </select>
+                </td>
+                <td>
+                  <select>
+                    <option></option>
+                    <option>x1</option>
+                    <option>x2</option>
+                    <option>x3</option>
+                  </select>
+                </td>
+              </tr>
+            </table>
+          </td></tr>
+          <tr>
+            <td>AUTO SLITTER</td>
+            <td>
+              <select>
+                <option></option>
+                <option>x4</option>
+                <option>x6</option>
+              </select>
+            </td>
+          </tr> 
+		   <tr>
+            <td>SMART SLIDE</td>
+            <td>
+              <select>
+                <option></option>
+                <option>x1</option>
+		        <option>x2</option>
+                <option>x3</option>
+              </select>
+            </td>
+          </tr>
+  		 <tr><td>NITROGEN</td><td><input type="checkbox"></td></tr>
+ 		 <tr><td>API</td><td><input type="checkbox"></td></tr>
+		 <tr><td>AUTO MESH</td><td><input type="checkbox"></td></tr>
+		  <tr><td>HD WINDER FRONT</td><td><input type="checkbox"></td></tr> 
+		  <tr><td>HD WINDER REAR</td><td><input type="checkbox"></td></tr>
+	      <tr><td>BLOCK OUT</td><td><input type="checkbox"></td></tr>
+          <tr><td>BACKLIT</td><td><input type="checkbox"></td></tr>
+          <tr><td>CAMERA</td><td><input type="checkbox"></td></tr>
+          <tr><td>ID BACK PRINTER</td><td><input type="checkbox"></td></tr>
+          <tr><td>H DETECTOR</td><td><input type="checkbox"></td></tr>
+          <tr>
+            <td>SHEET COLLECTOR</td>
+            <td>
+              <select>
+                <option></option>
+                <option>x1</option>
+                <option>x2</option>
+                <option>x3</option>
+              </select>
+            </td>
+          </tr>
+          <tr><td>ONE SITE REPAIR KIT</td><td><input type="checkbox"></td></tr>
+          <tr><td>INSTALLATION KIT</td><td><input type="checkbox"></td></tr>
+          <tr><td>SLITTER</td>
+		  <td>
+		  <select>
+      <option></option>
+      <option>x1</option>
+      <option>x2</option>
+      <option>x3</option>
+	  <option>x4</option>
+      <option>x5</option>
+      <option>x6</option>
+	  <option>x7</option>
+      <option>x8</option>
+      <option>x9</option>
+      <option>x10</option>
+      <option>x11</option>
+      <option>x12</option>
+       </select></td></tr>
+          <tr><td>MULTI ROLL KIT</td><td><input type="checkbox"></td></tr>
+          <tr><td>SPREADERS KIT</td><td><input type="checkbox"></td></tr>
+          <tr>
+            <td>WASTE</td>
+            <td>
+              <select>
+                <option></option>
+                <option>PLASTIC</option>
+                <option>BIG</option>
+				<option>SMALL</option>
+              </select>
+            </td>
+          </tr>
+          <tr><td>CHILLER</td><td><input type="checkbox"></td></tr>
+          <tr><td>ORANGE CABLES 110V</td><td><input type="checkbox"></td></tr>
+          <tr><td>INSPECTION </td><td><input type="checkbox"></td></tr>
+          <tr><td>SCANNER KIT</td><td><input type="checkbox"></td></tr>
+           <tr><td>EDGE GUARD</td>
+		  <td>
+		  <select>
+      <option></option>
+      <option>x1</option>
+      <option>x2</option>
+      <option>x3</option>
+	  <option>x4</option>
+      <option>x5</option>
+      <option>x6</option>
+	  <option>x7</option>
+      <option>x8</option>
+      <option>x9</option>
+      <option>x10</option>
+      <option>x11</option>
+      <option>x12</option>
+       </select></td></tr>
+        </table>
+      </div>
+    </div>
+  </div>
+  <script>
+    // גרירה של החלון הצף
+    const floatWin = document.getElementById('floatWin');
+    let isDragging = false, startX, startY;
+    floatWin.addEventListener('mousedown', e => {
+      if (e.target.closest('button')) return;
+      isDragging = true;
+      startX = e.clientX - floatWin.offsetLeft;
+      startY = e.clientY - floatWin.offsetTop;
+    });
+    document.addEventListener('mousemove', e => {
+      if (!isDragging) return;
+      floatWin.style.left = (e.clientX - startX) + 'px';
+      floatWin.style.top  = (e.clientY - startY) + 'px';
+    });
+    document.addEventListener('mouseup', () => { isDragging = false; });
+	  
+  document.addEventListener('input', function (e) {
+    if (e.target.matches('input, select, textarea')) window.__pageDirty = true;
+  });
+  document.addEventListener('change', function (e) {
+    if (e.target.matches('input, select, textarea')) window.__pageDirty = true;
+  });
+
+  window.addEventListener("beforeunload", function (e) {
+  if (!window.__pageDirty) return;
+  var confirmationMessage = "האם אתה בטוח שברצונך לאפס את כל המידע בדף?";
+  (e || window.event).returnValue = confirmationMessage; // עבור דפדפנים ישנים
+  return confirmationMessage; // עבור דפדפנים חדשים
+});
+  </script>
+</body>
+</html>

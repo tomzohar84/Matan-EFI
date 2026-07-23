@@ -1,0 +1,256 @@
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>EFI Tools - Tom Zohar</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background-color: #fff;
+      font-family: Arial, sans-serif;
+    }
+    /* הצעה לסובב את המכשיר לרוחב במסכים צרים ובמצב Portrait - נעלמת אוטומטית עם סיבוב */
+    @media (max-width: 700px) and (orientation: portrait) {
+      body::before {
+        content: "📱 מומלץ לסובב את המכשיר לרוחב לתצוגה נוחה יותר";
+        display: block;
+        position: sticky;
+        top: 0;
+        z-index: 9999;
+        background: #23b6d8;
+        color: #fff;
+        text-align: center;
+        padding: 8px 10px;
+        font-size: 14px;
+        font-weight: bold;
+      }
+    }
+    .navbar {
+      background-color: #343a40;
+    }
+    .navbar-dark .navbar-nav .nav-link {
+      color: #fff;
+    }
+    .card {
+      background-color: #2e2e2e;
+      color: white;
+      margin: 20px;
+      border-radius: 10px;
+    }
+    .card input, .card select, .card output {
+      margin-top: 10px;
+      width: 100%;
+    }
+    footer {
+      background-color: #343a40;
+      color: white;
+      text-align: center;
+      padding: 10px;
+      margin-top: 20px;
+    }
+    .navbar-brand img {
+      height: 32px;
+    }
+    .hero {
+      position: relative;
+      height: 140px;
+      background: url("assets/images/hero-printhead-closeup.webp") center center / cover no-repeat;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: #fff;
+    }
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(10,15,25,0.55), rgba(10,15,25,0.75));
+    }
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      padding: 0 20px;
+    }
+    .hero-content h1 {
+      font-size: 1.6rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      margin-bottom: 4px;
+      text-shadow: 0 2px 8px rgba(0,0,0,0.5);
+    }
+    .hero-content p {
+      font-size: 0.95rem;
+      color: #dfe6ec;
+      margin: 0;
+    }
+    .product-showcase {
+      background: #fff;
+      text-align: center;
+      padding: 28px 16px;
+    }
+    .product-showcase img {
+      max-width: 95%;
+      width: 1100px;
+      height: auto;
+    }
+    .product-showcase p {
+      margin-top: 10px;
+      color: #444;
+      font-weight: bold;
+      letter-spacing: 0.5px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="hero-content">
+    <h1>EFI Tools</h1>
+    <p>Maintenance, Status &amp; Calibration Utilities for EFI VUTEk Printers</p>
+  </div>
+</div>
+
+<nav class="navbar navbar-expand-lg navbar-dark">
+  <a class="navbar-brand" href="#"><img src="assets/images/efi-logo.png" alt="EFI"></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainNav"
+          aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="mainNav">
+    <ul class="navbar-nav mr-auto">
+
+      <!-- פריט ה־Status הפך ל־dropdown -->
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="statusDropdown" role="button"
+           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Status
+        </a>
+        <div class="dropdown-menu bg-dark" aria-labelledby="statusDropdown">
+          <a class="dropdown-item text-white" href="SVutek.html">Vutek</a>
+         <div class="dropdown-divider" style="border-color: #555;"></div>
+          <a class="dropdown-item text-white" href="SPRO.html">PRO</a>
+        </div>
+      </li>
+
+	   <!-- פריט ה־MATAN הפך ל־dropdown -->
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="statusDropdown" role="button"
+           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Matan
+        </a>
+        <div class="dropdown-menu bg-dark" aria-labelledby="statusDropdown">
+          
+          <!-- כאן הוספנו את הקישור -->
+          <a class="dropdown-item text-white" href="Matan 5M.html">Matan 5M</a>
+          <div class="dropdown-divider" style="border-color: #555;"></div>
+          <a class="dropdown-item text-white" href="Matan 3M.html">Matan 3M</a>
+        </div>
+     
+      </li>
+	  <!-- פריט ה־Vutek DR  הפך ל־dropdown -->
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="statusDropdown" role="button"
+           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Vutek DR
+        </a>
+        <div class="dropdown-menu bg-dark" aria-labelledby="statusDropdown">
+          
+          <!-- כאן הוספנו את הקישור -->
+          <a class="dropdown-item text-white" href="Vutek D 5r.html">Vutek D 5r</a>
+          <div class="dropdown-divider" style="border-color: #555;"></div>
+          <a class="dropdown-item text-white" href="Vutek D 3r.html">Vutek D 3r</a>
+        </div>
+      </li>
+	   </li>
+	<!-- פריט ה־Vutek R+ הפך ל־dropdown -->
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="statusDropdown" role="button"
+           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Vutek R
+        </a>
+        <div class="dropdown-menu bg-dark" aria-labelledby="statusDropdown">
+         
+          <!-- כאן הוספנו את הקישור -->
+          <a class="dropdown-item text-white" href="Vutek5R+.html">Vutek5R+</a>
+          <div class="dropdown-divider" style="border-color: #555;"></div>
+          <a class="dropdown-item text-white" href="Vutek3R+.html">Vutek3R+</a>
+        </div>
+	  
+	  <!-- פריט ה־ Vutek QR  הפך ל־dropdown -->
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="statusDropdown" role="button"
+           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+           Vutek QR 
+        </a>
+        <div class="dropdown-menu bg-dark" aria-labelledby="statusDropdown">
+          
+          <!-- כאן הוספנו את הקישור -->
+          <a class="dropdown-item text-white" href=" Vutek QR 5.html"> Vutek Q5R </a>
+          <div class="dropdown-divider" style="border-color: #555;"></div>
+          <a class="dropdown-item text-white" href=" Vutek QR 3.html"> Vutek Q3R </a>
+        </div>
+      </li>
+	  
+	
+	    
+	  <!-- פריט ה־ Vutek XR  הפך ל־dropdown -->
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="statusDropdown" role="button"
+           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Vutek XR 
+        </a>
+        <div class="dropdown-menu bg-dark" aria-labelledby="statusDropdown">
+          
+          <!-- כאן הוספנו את הקישור -->
+          <a class="dropdown-item text-white" href=" Vutek X5R.html"> Vutek X5R </a>
+          <div class="dropdown-divider" style="border-color: #555;"></div>
+          <a class="dropdown-item text-white" href=" Vutek X3R.html"> Vutek X3R </a>
+        </div>
+      </li>
+	  
+	    
+	  
+	  <!-- פריט ה־ PRO  הפך ל־dropdown -->
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="statusDropdown" role="button"
+           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          PRO 
+        </a>
+        <div class="dropdown-menu bg-dark" aria-labelledby="statusDropdown">
+          
+          <!-- כאן הוספנו את הקישור -->
+          <a class="dropdown-item text-white" href=" PRO32.html"> PRO32 </a>
+          <div class="dropdown-divider" style="border-color: #555;"></div>
+          <a class="dropdown-item text-white" href=" PRO33.html"> PRO33 </a>
+        </div>
+      </li>
+	
+	  
+	  
+	  
+	  
+      <!-- שאר הפריטים כפי שהיו כאן אתה מוסיף את השמות אב בתפריט --> 
+      
+     
+     
+      <li class="nav-item"><a class="nav-link" href="#">EFI OPTION</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="product-showcase">
+  <img src="assets/images/vutek-x5r-product.png" alt="EFI VUTEk X5r">
+</div>
+
+<footer>
+  Created by ©Tom Zohar 2019-2025
+</footer>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
